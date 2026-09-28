@@ -57,7 +57,7 @@ export default function AnnualDaysInfo() {
         </p>
       </Overview>
 
-      <IconGrid kicker="What's involved" title="The parts of a great school show" items={parts} alt />
+      <IconGrid kicker="What's involved" title="The parts of a great school show" items={parts} alt img="/live/ayush-stage.jpg" imgAlt="Ayush Lokre at the Kho Kho World Cup India" />
 
       <Explainer kicker="Why it matters" title="More than a performance" img="/live/g5.jpg" imgAlt="Performers on stage" reverse>
         <p>

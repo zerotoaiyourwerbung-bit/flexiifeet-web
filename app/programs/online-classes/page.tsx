@@ -59,7 +59,7 @@ export default function OnlineClassesInfo() {
         </p>
       </Overview>
 
-      <IconGrid kicker="How it's different" title="What online classes with us look like" items={features} alt />
+      <IconGrid kicker="How it's different" title="What online classes with us look like" items={features} alt img="/live/hero.png" imgAlt="Ayush Lokre backstage at the IIFA Awards" />
 
       <section className="ff-section">
         <div className="container">

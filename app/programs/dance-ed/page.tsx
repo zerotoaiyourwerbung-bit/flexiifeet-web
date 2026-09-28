@@ -68,7 +68,7 @@ export default function DanceEdInfo() {
         </p>
       </Overview>
 
-      <IconGrid kicker="The approach" title="What makes DanceED work" items={pillars} alt />
+      <IconGrid kicker="The approach" title="What makes DanceED work" items={pillars} alt img="/live/mic.jpg" imgAlt="Ayush Lokre teaching a dance class at a school" />
       <AgeLevels />
 
       <Explainer kicker="Why dance in school" title="Learning that goes beyond the steps" img="/live/g3.jpg" imgAlt="Choreographers from The FlexiiFeet">

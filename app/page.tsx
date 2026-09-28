@@ -9,14 +9,50 @@ const stages = ["IIFA", "Filmfare", "IPL", "Dubai Expo 2020", "World Chess Olymp
 export default function Home() {
   return (
     <>
-      <section className="ff-hero">
+      {/* Full-bleed photo hero; the split hero below follows it */}
+      <section className="ff-hero-full" style={{ backgroundImage: "url(/live/ayush-stage.jpg)" }}>
+        <div className="container">
+          <div className="ff-hero-full-copy">
+            <div className="kicker">The FlexiiFeet · Ayush S K Lokre</div>
+            <h1>
+              Let loose.
+              <br /> <span>Let&apos;s groove.</span>
+            </h1>
+            <p>
+              Dance education, classes and choreography for schools, families and celebrations, from the team that has
+              trained 8,000+ students across India and the USA.
+            </p>
+            <div className="ff-cta-buttons" style={{ justifyContent: "flex-start" }}>
+              <Link className="ff-btn ff-btn--grad" href="/programs">
+                Explore programs
+              </Link>
+              <a className="ff-btn ff-btn--outline" href="#enquire">
+                Enquire now
+              </a>
+            </div>
+          </div>
+          <ul className="ff-hero-full-stats">
+            <li>
+              <strong>10+</strong>years of expertise
+            </li>
+            <li>
+              <strong>8,000+</strong>students trained
+            </li>
+            <li>
+              <strong>30+</strong>partner schools
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="ff-hero ff-hero--second">
         <div className="container ff-hero-grid">
           <div>
             <div className="kicker">India · Dance education · Choreography · USA</div>
-            <h1>
+            <h2>
               Dance begins in the classroom.
               <br /> <span>Confidence takes the stage.</span>
-            </h1>
+            </h2>
             <p>
               Led by choreographer Ayush S K Lokre, The FlexiiFeet brings structured dance education and personal
               choreography to learners, schools, and celebrations across India and the USA.

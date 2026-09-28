@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LeadForm from "@/components/LeadForm";
-import { Cta, Faq, Featured, PageBanner, SecTitle, Stats, Team, WhatWeDo } from "@/components/sections";
+import { Cta, Faq, Featured, PageBanner, SecTitle, Stats, TeamSpotlight, WhatWeDo } from "@/components/sections";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -163,7 +163,7 @@ export default function About() {
       <WhatWeDo title={<>Three stages, one passion.</>} />
       <Featured items={why} img="/live/mic.jpg" />
       <Stats />
-      <Team />
+      <TeamSpotlight />
       <Cta
         title="A Trusted Partner in Bringing Dance to Life"
         text="Whether you're looking to educate, entertain, or celebrate, our team delivers with passion and professionalism."

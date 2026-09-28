@@ -527,21 +527,36 @@ export function CredStrip() {
   );
 }
 
-// Icon cards grid: "what you get" / "who it's for" blocks on landing pages.
-export function IconGrid({ kicker, title, items, alt }: { kicker: string; title: ReactNode; items: Card[]; alt?: boolean }) {
+// Icon cards grid: "what you get" / "who it's for" blocks. With `img`, a tall photo sits beside two columns of cards.
+export function IconGrid({ kicker, title, items, alt, img, imgAlt = "" }: { kicker: string; title: ReactNode; items: Card[]; alt?: boolean; img?: string; imgAlt?: string }) {
+  const cards = (
+    <div className="ff-icon-grid">
+      {items.map((c) => (
+        <div key={c.title} className="ff-icon-card">
+          <span className={`ff-icon-card-icon ${c.icon}`} aria-hidden="true"></span>
+          <h3>{c.title}</h3>
+          <p>{c.text}</p>
+        </div>
+      ))}
+    </div>
+  );
   return (
     <section className={`ff-section${alt ? " alt" : ""}`}>
       <div className="container">
         <SecTitle kicker={kicker} title={title} center />
-        <div className="ff-icon-grid">
-          {items.map((c) => (
-            <div key={c.title} className="ff-icon-card">
-              <span className={`ff-icon-card-icon ${c.icon}`} aria-hidden="true"></span>
-              <h3>{c.title}</h3>
-              <p>{c.text}</p>
-            </div>
-          ))}
-        </div>
+        {img ? (
+          <div className="ff-icon-split">
+            <figure className="ff-icon-photo">
+              <img src={img} alt={imgAlt} loading="lazy" />
+              <figcaption>
+                <strong>8,000+</strong> students trained across India &amp; the USA
+              </figcaption>
+            </figure>
+            {cards}
+          </div>
+        ) : (
+          cards
+        )}
       </div>
     </section>
   );
@@ -698,6 +713,54 @@ export function ExplorePrograms({ current }: { current: string }) {
                 </em>
               </div>
             </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// About page team: founder spotlight + faculty portrait cards (a different look from the template team-area).
+export function TeamSpotlight() {
+  const [founder, ...faculty] = team;
+  return (
+    <section className="ff-section ff-team2">
+      <div className="container">
+        <SecTitle kicker="Our Team" title="The people behind the movement" center />
+        <div className="ff-founder">
+          <div className="ff-founder-photo">
+            <img src={founder.img} alt={`${founder.name} ${founder.surname}`} loading="lazy" />
+          </div>
+          <div className="ff-founder-body">
+            <span className="ff-founder-role">{founder.role}</span>
+            <h3>
+              {founder.name} {founder.surname}
+            </h3>
+            <p>
+              Trained under Shiamak Davar, Ayush spent more than a decade teaching at SDIPA and assisting on grand stage
+              shows before founding The FlexiiFeet. He has trained over 8,000 students in India and the USA.
+            </p>
+            <ul className="ff-founder-tags">
+              <li>International choreographer</li>
+              <li>Performer</li>
+              <li>Educator</li>
+            </ul>
+            <a className="ff-founder-link" href={site.founderInstagram} target="_blank" rel="noopener">
+              <i className="fa fa-instagram" aria-hidden="true"></i> Follow Ayush on Instagram
+            </a>
+          </div>
+        </div>
+        <div className="ff-faculty">
+          {faculty.map((m) => (
+            <figure key={m.img} className="ff-faculty-card">
+              <img src={m.img} alt={`${m.name} ${m.surname}`} loading="lazy" />
+              <figcaption>
+                <h3>
+                  {m.name} {m.surname}
+                </h3>
+                <span>{m.role}</span>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>

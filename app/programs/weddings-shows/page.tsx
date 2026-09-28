@@ -97,7 +97,7 @@ export default function WeddingsShowsInfo() {
         </div>
       </section>
 
-      <IconGrid kicker="Our approach" title="How we work with families" items={why} />
+      <IconGrid kicker="Our approach" title="How we work with families" items={why} img="/live/g1.jpg" imgAlt="Ayush Lokre with fellow artists" />
 
       <section className="ff-section alt">
         <div className="container">

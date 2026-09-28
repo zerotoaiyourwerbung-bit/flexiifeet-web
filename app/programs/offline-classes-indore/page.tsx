@@ -51,7 +51,7 @@ export default function OfflineIndoreInfo() {
         </p>
       </Overview>
 
-      <IconGrid kicker="The studio" title="What classes in Indore offer" items={features} alt />
+      <IconGrid kicker="The studio" title="What classes in Indore offer" items={features} alt img="/live/g1.jpg" imgAlt="Ayush Lokre with fellow artists" />
 
       <section className="ff-section">
         <div className="container">
