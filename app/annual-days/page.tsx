@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Cta, Intro, NumberedFeatures, PageBanner, SecTitle, Testimonials } from "@/components/sections";
-import { gallery, whatsappLink } from "@/lib/site";
+import { CredStrip, Cta, EnquireFaq, IconGrid, LeadHero, Moments, SchoolLogos, SplitList, Steps, Testimonials } from "@/components/sections";
+import type { LeadField } from "@/components/LeadForm";
 
 export const metadata: Metadata = {
   title: "Annual Day Choreography",
@@ -8,65 +8,86 @@ export const metadata: Metadata = {
     "Annual day and school function choreography by The FlexiiFeet—theme concepts, age-wise acts, props, rehearsals and stage-ready shows for every class.",
 };
 
-const features = [
-  { title: "Theme & Concept", icon: "icon-content", text: "A complete show concept built around your annual day theme, story and message." },
-  { title: "Every Class on Stage", icon: "icon-student", text: "Age-appropriate acts for every group—from Nursery tiny tots to senior school." },
-  { title: "Props & Costume Guidance", icon: "icon-star", text: "Shiny props, costume ideas and visual concepts that make each act pop." },
-  { title: "Rehearsal Schedule", icon: "icon-calendar", text: "Structured rehearsals planned around your school calendar, ending in a full-dress run." },
+const program = "Annual Days";
+
+const fields: LeadField[] = [
+  { name: "school", label: "School name", required: true },
+  { name: "city", label: "City", required: true },
+  { name: "event_date", label: "Event month / date" },
+  { name: "students", label: "Approx. students performing", type: "number" },
 ];
 
-const process = [
+const features = [
+  { title: "Theme & Concept", icon: "icon-content", text: "A complete show concept built around your annual day theme, story and message." },
+  { title: "Every Class on Stage", icon: "icon-student", text: "Age-appropriate acts for every group, from Nursery tiny tots to senior school." },
+  { title: "Props & Costume Guidance", icon: "icon-star", text: "Props, costume ideas and visual concepts that make each act pop on stage." },
+  { title: "Rehearsal Schedule", icon: "icon-calendar", text: "Structured rehearsals planned around your school calendar, ending in a full-dress run." },
+  { title: "Stage Blocking", icon: "icon-optimization", text: "Entries, exits, formations and transitions planned so the show flows without gaps." },
+  { title: "Show-Day Support", icon: "icon-support", text: "Our team backstage on the day so teachers can enjoy the show with parents." },
+];
+
+const handled = [
   "Theme discussion with your management and teachers",
   "Act-wise song selection and choreography plan",
   "School-hours rehearsals led by our choreographers",
   "Stage blocking, entries & exits, and a full dress rehearsal",
-  "Show-day support backstage",
+  "Backstage support on show day",
+];
+
+const steps = [
+  { title: "Share your date & theme", text: "Tell us your event date, theme and how many classes will perform." },
+  { title: "Get a show plan", text: "We propose acts, songs and a rehearsal schedule for every class." },
+  { title: "Rehearse", text: "Our choreographers run rehearsals in school hours, then a full-dress run." },
+  { title: "Curtain up", text: "We're backstage on the day so every act hits its mark." },
+];
+
+const faqs = [
+  { q: "How early should we book?", a: "The earlier the better, since rehearsal slots fill up before annual day season. Share your event date and we'll confirm availability and a schedule." },
+  { q: "Can every class perform?", a: "Yes. We create age-appropriate acts for every group, from Nursery to senior school, so no class is left out." },
+  { q: "Do you work with our theme?", a: "Absolutely. We build the show concept, songs and acts around your theme, story and message." },
+  { q: "Do you help with props and costumes?", a: "We give props and costume guidance and visual concepts for each act, so your team knows exactly what to arrange." },
+  { q: "How is it priced?", a: "It depends on the number of acts, students and rehearsal days. We share a clear quote once we know your date, theme and classes." },
 ];
 
 export default function AnnualDays() {
   return (
     <>
-      <PageBanner title="Annual Days" sub="Stage shows that leave students, parents and teachers inspired" />
+      <LeadHero
+        kicker="Annual Days · For schools"
+        title={
+          <>
+            An annual day parents will <span>talk about</span> for years.
+          </>
+        }
+        sub="Concept, choreography, rehearsals and staging for every class, handled end to end by our choreographers."
+        points={["Theme-based show concept", "Acts for every class, Nursery to senior", "Rehearsals in school hours"]}
+        program={program}
+        fields={fields}
+        formTitle="Plan your annual day"
+        submitLabel="Get a show plan"
+      />
+      <CredStrip />
 
-      <Intro
-        title="Your annual day, choreographed end to end."
-        cta={{ label: "Plan Your Annual Day", href: whatsappLink("Hi! I'd like to plan our school's annual day with FlexiiFeet.") }}
-      >
-        <p>
-          From Annual Days to Inter-School Competitions, we choreograph memorable stage shows. Our team has mentored
-          dancers of all levels for annual school shows, competitions and stage productions across India and the USA.
-        </p>
-        <p>We handle concept, choreography, rehearsals and staging—so your teachers can focus on the day itself.</p>
-      </Intro>
-
-      <NumberedFeatures items={features} />
-
-      <section className="ff-section">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6">
-              <SecTitle kicker="How It Works" title="From theme to curtain call" />
-              <ul className="ff-ticks">
-                {process.map((p) => (
-                  <li key={p}>{p}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="col-lg-6">
-              <div className="ff-img-card">
-                <img src={gallery[2]} alt="Students performing at an annual day" loading="lazy" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <IconGrid kicker="What we handle" title="Your annual day, choreographed end to end" items={features} />
+      <SplitList
+        kicker="So your teachers don't have to"
+        title="From theme to curtain call"
+        text="We take care of the creative work and the rehearsals, so your staff can focus on the day itself."
+        items={handled}
+        img="/live/g5.jpg"
+        imgAlt="Performers rehearsing on stage"
+        reverse
+      />
+      <Steps title="How we plan your show" items={steps} alt />
+      <Moments title="From our stages" />
+      <SchoolLogos />
       <Testimonials />
       <Cta
-        title="Make This Year's Annual Day the Best Yet"
-        text="Tell us your date, theme and number of classes—we'll send a plan."
-        message="Hi! We'd like annual day choreography. Date: , Theme: , Classes: "
+        title="Make this year's annual day the best yet"
+        text="Tell us your date, theme and number of classes, and we'll send a show plan."
+        button="Get a show plan"
       />
+      <EnquireFaq faqItems={faqs} program={program} fields={fields} submitLabel="Get a show plan" />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import EnquiryForm from "@/components/EnquiryForm";
+import LeadForm from "@/components/LeadForm";
 import { PageBanner } from "@/components/sections";
 import { site } from "@/lib/site";
 
@@ -59,7 +59,7 @@ export default function Contact() {
       </section>
 
       {/* contact.html "contact-form-area" */}
-      <section className="contact-form-area">
+      <section id="enquire" className="contact-form-area ff-contact-form">
         <div className="container">
           <div className="row">
             <div className="col-xl-5 col-lg-12">
@@ -85,7 +85,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="col-xl-7 col-lg-12">
-              <EnquiryForm />
+              <LeadForm title="Send us an enquiry" subtitle="Tell us what you're planning and our team will call you back." />
             </div>
           </div>
         </div>

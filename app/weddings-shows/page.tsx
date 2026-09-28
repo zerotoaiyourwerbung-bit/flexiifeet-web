@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Cta, Intro, NumberedFeatures, PageBanner, SecTitle } from "@/components/sections";
-import { whatsappLink } from "@/lib/site";
+import { CredStrip, Cta, EnquireFaq, Intro, LeadHero, NumberedFeatures, SecTitle, Steps } from "@/components/sections";
+import type { LeadField } from "@/components/LeadForm";
 
 export const metadata: Metadata = {
   title: "Weddings & Shows",
@@ -39,14 +39,51 @@ const styles = [
   "Thematic Acts with Props & Visual Effects",
 ];
 
+const program = "Weddings & Shows";
+
+const fields: LeadField[] = [
+  { name: "event_type", label: "What are you planning?", type: "select", options: ["Sangeet / Mehndi", "Couple dance", "Bride / groom entry", "Family performance", "Corporate event / stage show", "Other"], required: true },
+  { name: "event_date", label: "Event date" },
+  { name: "city", label: "City / venue" },
+];
+
+const steps = [
+  { title: "Free consultation", text: "Tell us about your functions, songs, people performing and your vibe." },
+  { title: "Concept & song plan", text: "We design the acts, entries and medleys around your story." },
+  { title: "Rehearsals", text: "At home, at our studio or online, on a schedule that fits your family." },
+  { title: "Showtime", text: "Everyone walks on stage confident, and the crowd never forgets it." },
+];
+
+const faqs = [
+  { q: "We've never danced before. Can you still help?", a: "Yes. Our choreography is tailored to your comfort level, and rehearsals are fun and pressure-free. First-timers are our speciality." },
+  { q: "Can family members in other cities rehearse too?", a: "Yes. We offer rehearsals at home, at our studio or online, so relatives in other cities or countries can learn too." },
+  { q: "Do you choreograph destination weddings?", a: "We have choreographed destination weddings in Goa, Udaipur and Dubai. Share your venue and dates and we'll plan around them." },
+  { q: "How early should we book?", a: "As early as you can, especially for peak wedding season. Share your date and we'll confirm availability." },
+  { q: "How is it priced?", a: "It depends on the number of performances, people and rehearsal sessions. We share a clear quote after the free consultation." },
+];
+
 export default function WeddingsShows() {
   return (
     <>
-      <PageBanner title="Weddings & Shows" sub="Turn your wedding moments and events into magical performances" />
+      <LeadHero
+        kicker="Weddings, Sangeet & Shows"
+        title={
+          <>
+            Turn your wedding into a <span>showstopper</span>.
+          </>
+        }
+        sub="Sangeet, couple dances, entries and family acts by the team that assisted Shiamak Davar at India's most elite weddings."
+        points={["Tailored to your comfort level", "Rehearsals at home, studio or online", "Destination weddings covered"]}
+        program={program}
+        fields={fields}
+        formTitle="Book a free consultation"
+        submitLabel="Book a free consultation"
+      />
+      <CredStrip />
 
       <Intro
         title="We don't just teach steps—we create unforgettable moments."
-        cta={{ label: "Book a Free Consultation", href: whatsappLink("Hi! I'd like a free consultation for wedding/show choreography.") }}
+        cta={{ label: "Book a Free Consultation", href: "#enquire" }}
       >
         <p>
           Whether you're planning a classic Sangeet, a dreamy couple performance, a high-energy family medley or a
@@ -108,11 +145,13 @@ export default function WeddingsShows() {
         </div>
       </section>
 
+      <Steps title="From first call to final bow" items={steps} />
       <Cta
         title="Let's Make Your Wedding a Dance Spectacle"
         text="Intimate celebration or royal wedding week—book a free consultation and let us choreograph your happily-ever-after."
-        message="Hi! I'd like to book a free wedding choreography consultation."
+        button="Book a free consultation"
       />
+      <EnquireFaq faqItems={faqs} program={program} fields={fields} submitLabel="Book a free consultation" />
     </>
   );
 }

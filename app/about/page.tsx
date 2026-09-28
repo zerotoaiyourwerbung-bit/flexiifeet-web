@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Cta, Featured, PageBanner, SecTitle, Stats, Team, WhatWeDo } from "@/components/sections";
+import LeadForm from "@/components/LeadForm";
+import { Cta, Faq, Featured, PageBanner, SecTitle, Stats, Team, WhatWeDo } from "@/components/sections";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -8,14 +9,16 @@ export const metadata: Metadata = {
 };
 
 const stages = [
-  "IIFA 2019, 2024 & Filmfare Awards",
-  "Zee Cine Awards, Mirchi Music Awards, Lux Golden Awards",
-  "IPL 2021 & 2022",
-  "Dubai Expo 2020",
-  "Hockey India League 2023",
-  "Anant & Radhika Ambani's Wedding Celebrations",
-  "World Chess Olympiad 2022 (for the Prime Minister of India) & BRICS Summit 2016",
+  { name: "IIFA Awards", detail: "2019 & 2024", icon: "fa-trophy" },
+  { name: "Filmfare Awards", detail: "Awards night", icon: "fa-star" },
+  { name: "IPL", detail: "2021 & 2022", icon: "fa-bolt" },
+  { name: "Dubai Expo", detail: "2020", icon: "fa-globe" },
+  { name: "World Chess Olympiad", detail: "2022 · for the Prime Minister of India", icon: "fa-flag" },
+  { name: "Ambani Wedding", detail: "Anant & Radhika's celebrations", icon: "fa-diamond" },
+  { name: "BRICS Summit", detail: "2016", icon: "fa-users" },
+  { name: "Hockey India League", detail: "2023", icon: "fa-shield" },
 ];
+const moreStages = ["Zee Cine Awards", "Mirchi Music Awards", "Lux Golden Awards"];
 
 const why = [
   { title: "10+ Years Experience", icon: "icon-star", text: "In school programs, wedding choreography, and high-profile events." },
@@ -82,48 +85,76 @@ export default function About() {
         </div>
       </section>
 
-      <section className="ff-section alt">
+      {/* As seen on: dark "marquee lights" band */}
+      <section className="ff-stages">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-6">
-              <SecTitle kicker="As Seen On" title="Some of the world's grandest stages" />
-            </div>
-            <div className="col-lg-6">
-              <ul className="ff-ticks">
-                {stages.map((s) => (
-                  <li key={s}>{s}</li>
-                ))}
-                <li>…and many more</li>
-              </ul>
-            </div>
+          <div className="ff-stages-head">
+            <SecTitle kicker="As Seen On" title={<>Some of the world&apos;s <span>grandest stages</span></>} />
+            <p>
+              From award nights to stadiums and state events, our choreographers have performed and assisted on stages
+              watched by millions.
+            </p>
           </div>
+          <ul className="ff-stage-grid">
+            {stages.map((s) => (
+              <li key={s.name} className="ff-stage">
+                <i className={`fa ${s.icon}`} aria-hidden="true"></i>
+                <strong>{s.name}</strong>
+                <span>{s.detail}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="ff-stages-more">
+            Also: {moreStages.join(" · ")} <em>…and many more</em>
+          </p>
+        </div>
+        <div className="ff-stages-marquee" aria-hidden="true">
+          <span>IIFA · FILMFARE · IPL · DUBAI EXPO · ZEE CINE AWARDS · BRICS · </span>
+          <span>IIFA · FILMFARE · IPL · DUBAI EXPO · ZEE CINE AWARDS · BRICS · </span>
         </div>
       </section>
 
-      <section className="ff-section">
+      {/* Who we are: photo collage + story + vision/mission cards */}
+      <section className="ff-section ff-who">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-6">
-              <SecTitle kicker="Who We Are" title="Dance is more than movement." />
+          <div className="ff-who-grid">
+            <div className="ff-who-media">
+              <img className="ff-who-main" src="/live/g1.jpg" alt="Ayush Lokre with fellow artists" loading="lazy" />
+              <img className="ff-who-sub" src="/live/mic.jpg" alt="The FlexiiFeet at an event" loading="lazy" />
+              <div className="ff-who-badge">
+                <strong>10+</strong>
+                <span>years in professional dance</span>
+              </div>
             </div>
-            <div className="col-lg-6">
-              <p>
-                At The FlexiiFeet, dance is a form of expression, celebration, and education. With a legacy of 10+ years
-                in professional dance, we have trained 8,000+ students, delivered prestigious performances across the
-                globe, and partnered with leading schools and luxury wedding clients alike.
+            <div>
+              <SecTitle kicker="Who We Are" title="Dance is more than movement." />
+              <p className="ff-who-lead">
+                At The FlexiiFeet, dance is a form of expression, celebration, and education.
               </p>
               <p>
-                Our versatile team brings together choreographers, educators, and performers who merge creativity with
+                With a legacy of 10+ years in professional dance, we have trained 8,000+ students, delivered prestigious
+                performances across the globe, and partnered with leading schools and luxury wedding clients alike. Our
+                versatile team brings together choreographers, educators, and performers who merge creativity with
                 structure—delivering unforgettable experiences at every level.
               </p>
-              <p>
-                <strong>Vision:</strong> To empower individuals, families, and institutions by unlocking the joy,
-                discipline, and energy of dance—through education, celebration, and entertainment.
-              </p>
-              <p>
-                <strong>Mission:</strong> To make high-quality dance accessible to every stage of life—whether in a
-                classroom, at a wedding, or under the spotlight.
-              </p>
+              <div className="ff-vm">
+                <div>
+                  <i className="fa fa-eye" aria-hidden="true"></i>
+                  <h3>Vision</h3>
+                  <p>
+                    To empower individuals, families, and institutions by unlocking the joy, discipline, and energy of
+                    dance—through education, celebration, and entertainment.
+                  </p>
+                </div>
+                <div>
+                  <i className="fa fa-bullseye" aria-hidden="true"></i>
+                  <h3>Mission</h3>
+                  <p>
+                    To make high-quality dance accessible to every stage of life—whether in a classroom, at a wedding, or
+                    under the spotlight.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -137,6 +168,19 @@ export default function About() {
         title="A Trusted Partner in Bringing Dance to Life"
         text="Whether you're looking to educate, entertain, or celebrate, our team delivers with passion and professionalism."
       />
+      <section id="enquire" className="contact-form-area ff-enquiry">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-6 col-lg-12">
+              <SecTitle kicker="Start a conversation" title="Tell us what you're planning." />
+              <LeadForm />
+            </div>
+            <div className="col-xl-6 col-lg-12">
+              <Faq />
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

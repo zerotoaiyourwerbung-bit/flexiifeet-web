@@ -2,7 +2,8 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import Counter from "./Counter";
 import Marquee from "./Marquee";
-import { heroImage, services, stats, team, testimonials, ageLevels, whatsappLink, gallery, paths, schoolLogos, journey, faqs } from "@/lib/site";
+import LeadForm, { type LeadField } from "./LeadForm";
+import { heroImage, site, services, stats, team, testimonials, ageLevels, gallery, paths, schoolLogos, journey, faqs } from "@/lib/site";
 
 // Reusable sections, each a straight port of a Jixic template block (class names kept so style.css applies).
 
@@ -229,8 +230,8 @@ export function Testimonials() {
   );
 }
 
-// index.html "statements-area" used as a closing call to action.
-export function Cta({ kicker = "Let's Talk", title, text, message }: { kicker?: string; title: string; text: string; message?: string }) {
+// index.html "statements-area" used as a closing call to action; the button jumps to the page's enquiry form.
+export function Cta({ kicker = "Let's Talk", title, text, button = "Get a free consultation" }: { kicker?: string; title: string; text: string; button?: string }) {
   return (
     <section className="statements-area ff-grad-bg">
       <div className="container">
@@ -251,12 +252,12 @@ export function Cta({ kicker = "Let's Talk", title, text, message }: { kicker?: 
             <p>{text}</p>
           </div>
           <div className="ff-cta-buttons">
-            <a className="ff-btn ff-btn--light" href={whatsappLink(message)} target="_blank" rel="noopener">
-              <i className="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp Us
+            <a className="ff-btn ff-btn--light" href="#enquire">
+              {button} <i className="fa fa-arrow-right" aria-hidden="true"></i>
             </a>
-            <Link className="ff-btn ff-btn--outline" href="/contact">
-              Enquiry Form
-            </Link>
+            <a className="ff-btn ff-btn--outline" href={site.phoneHref}>
+              <i className="fa fa-phone" aria-hidden="true"></i> Call {site.phone}
+            </a>
           </div>
         </div>
       </div>
@@ -280,7 +281,7 @@ export function Intro({ title, children, cta }: { title: ReactNode; children: Re
               <div className="text">
                 {children}
                 {cta && (
-                  <a className="thm-btn6" href={cta.href} target={cta.href.startsWith("http") ? "_blank" : undefined} rel="noopener">
+                  <a className="thm-btn6" href={cta.href}>
                     {cta.label}
                   </a>
                 )}
@@ -436,16 +437,177 @@ export function Journey() {
 }
 
 // Native <details> accordion — no JS.
-export function Faq() {
+export function Faq({ items = faqs, title = "A few helpful answers." }: { items?: { q: string; a: string }[]; title?: string }) {
   return (
     <div className="ff-faq">
-      <SecTitle kicker="Frequently asked" title="A few helpful answers." />
-      {faqs.map((f) => (
+      <SecTitle kicker="Frequently asked" title={title} />
+      {items.map((f) => (
         <details key={f.q}>
           <summary>{f.q}</summary>
           <p>{f.a}</p>
         </details>
       ))}
     </div>
+  );
+}
+
+// Landing-page hero for ad traffic: promise + proof on the left, the lead form on the right (anchor #enquire).
+export function LeadHero({
+  kicker,
+  title,
+  sub,
+  points,
+  program,
+  fields,
+  formTitle,
+  submitLabel,
+  bg = heroImage,
+}: {
+  kicker: string;
+  title: ReactNode;
+  sub: string;
+  points: string[];
+  program: string;
+  fields: LeadField[];
+  formTitle: string;
+  submitLabel?: string;
+  bg?: string;
+}) {
+  return (
+    <section className="ff-lead-hero" style={{ backgroundImage: `url(${bg})` }}>
+      <div className="container">
+        <div className="ff-lead-grid">
+          <div className="ff-lead-copy">
+            <div className="ff-eyebrow">{kicker}</div>
+            <h1>{title}</h1>
+            <p className="ff-lead-sub">{sub}</p>
+            <ul className="ff-lead-points">
+              {points.map((p) => (
+                <li key={p}>
+                  <i className="fa fa-check" aria-hidden="true"></i>
+                  {p}
+                </li>
+              ))}
+            </ul>
+            <ul className="ff-proof">
+              <li>
+                <strong>10+</strong>years of expertise
+              </li>
+              <li>
+                <strong>8,000+</strong>students trained
+              </li>
+              <li>
+                <strong>30+</strong>partner schools
+              </li>
+            </ul>
+          </div>
+          <div id="enquire" className="ff-lead-form">
+            <LeadForm program={program} fields={fields} title={formTitle} submitLabel={submitLabel} />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// "Trained by the people behind…" credibility strip used on landing pages.
+export function CredStrip() {
+  const items = ["IIFA", "Filmfare", "IPL", "Dubai Expo 2020", "World Chess Olympiad", "Ambani Wedding", "Zee Cine Awards"];
+  return (
+    <div className="ff-cred">
+      <div className="container">
+        <span className="ff-cred-label">Choreographers who have worked on</span>
+        <ul>
+          {items.map((i) => (
+            <li key={i}>{i}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+// Icon cards grid: "what you get" / "who it's for" blocks on landing pages.
+export function IconGrid({ kicker, title, items, alt }: { kicker: string; title: ReactNode; items: Card[]; alt?: boolean }) {
+  return (
+    <section className={`ff-section${alt ? " alt" : ""}`}>
+      <div className="container">
+        <SecTitle kicker={kicker} title={title} center />
+        <div className="ff-icon-grid">
+          {items.map((c) => (
+            <div key={c.title} className="ff-icon-card">
+              <span className={`ff-icon-card-icon ${c.icon}`} aria-hidden="true"></span>
+              <h3>{c.title}</h3>
+              <p>{c.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Numbered process steps.
+export function Steps({ kicker = "How it works", title, items, alt }: { kicker?: string; title: ReactNode; items: { title: string; text: string }[]; alt?: boolean }) {
+  return (
+    <section className={`ff-section${alt ? " alt" : ""}`}>
+      <div className="container">
+        <SecTitle kicker={kicker} title={title} center />
+        <ol className="ff-steps">
+          {items.map((s, i) => (
+            <li key={s.title}>
+              <span className="ff-steps-num">{String(i + 1).padStart(2, "0")}</span>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
+// Split block: image on one side, heading + tick list on the other.
+export function SplitList({ kicker, title, text, items, img, imgAlt, reverse }: { kicker: string; title: ReactNode; text?: string; items: string[]; img: string; imgAlt: string; reverse?: boolean }) {
+  return (
+    <section className="ff-section">
+      <div className="container">
+        <div className={`ff-split${reverse ? " ff-split--rev" : ""}`}>
+          <div className="ff-split-img">
+            <img src={img} alt={imgAlt} loading="lazy" />
+          </div>
+          <div>
+            <SecTitle kicker={kicker} title={title} />
+            {text && <p className="ff-split-text">{text}</p>}
+            <ul className="ff-ticks">
+              {items.map((i) => (
+                <li key={i}>{i}</li>
+              ))}
+            </ul>
+            <a className="ff-btn ff-btn--grad" href="#enquire">
+              Enquire now <i className="fa fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// FAQ + a second enquiry form at the end of a page (for visitors who read everything first).
+export function EnquireFaq({ faqItems, program, fields, submitLabel }: { faqItems: { q: string; a: string }[]; program?: string; fields?: LeadField[]; submitLabel?: string }) {
+  return (
+    <section className="contact-form-area ff-enquiry">
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-6 col-lg-12">
+            <Faq items={faqItems} title="Your questions, answered." />
+          </div>
+          <div className="col-xl-6 col-lg-12">
+            <LeadForm program={program} fields={fields} title="Still deciding? Talk to us." subtitle="Leave your number and we'll answer every question personally." submitLabel={submitLabel} />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

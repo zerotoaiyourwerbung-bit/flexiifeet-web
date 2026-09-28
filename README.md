@@ -1,3 +1,22 @@
+# The FlexiiFeet website
+
+## Lead form setup (required in production)
+
+Every enquiry form posts to `/api/lead` (`app/api/lead/route.ts`), which forwards the lead to the team.
+Set at least one of these environment variables in your hosting (e.g. Vercel → Project → Settings → Environment Variables):
+
+| Variable | What it does |
+| --- | --- |
+| `LEAD_WEBHOOK_URL` | Each lead is POSTed here as JSON. Use a Google Apps Script web app (to append to a Google Sheet), Zapier, Make, Pabbly or your CRM. |
+| `RESEND_API_KEY` + `LEAD_EMAIL_TO` | Each lead is emailed via [Resend](https://resend.com). `LEAD_EMAIL_TO` can be a comma-separated list. Optional `LEAD_EMAIL_FROM` (a verified sender, e.g. `FlexiiFeet <leads@theflexiifeet.com>`). |
+
+Without either, the form shows an error in production (so no lead is silently lost); in `next dev` leads are only logged to the console.
+
+Each lead includes the page it came from and any `utm_*`, `gclid` and `fbclid` URL parameters, so ad campaigns can be tracked.
+If Google Ads/GA4 (`gtag`) or the Meta Pixel (`fbq`) is installed, a successful submit also fires `generate_lead` / `Lead` conversion events.
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

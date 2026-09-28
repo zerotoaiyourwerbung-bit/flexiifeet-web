@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { nav, whatsappLink, type NavItem } from "@/lib/site";
+import { nav, type NavItem } from "@/lib/site";
 
 // Template markup: about.html "main-header style5 style5withstyle6".
 // custom.js behaviours (mobile collapse, dropdown toggle) are re-done in React. The header itself is sticky (CSS),
@@ -88,8 +88,9 @@ export default function Header() {
             </div>
           </div>
           <div className="header-upper-right clearfix">
-            <a className="thm-btn1 ff-connect" href={whatsappLink()} target="_blank" rel="noopener">
-              <span></span>Connect Now
+            {/* Every page has an #enquire lead form */}
+            <a className="ff-btn ff-btn--grad ff-connect" href="#enquire">
+              Enquire Now
             </a>
           </div>
         </div>

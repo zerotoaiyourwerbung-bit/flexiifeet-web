@@ -1,5 +1,5 @@
 import Link from "next/link";
-import EnquiryForm from "@/components/EnquiryForm";
+import LeadForm from "@/components/LeadForm";
 import { heroImage } from "@/lib/site";
 import { Faq, Journey, Moments, Paths, SchoolLogos, SecTitle, StatsTicker, Testimonials } from "@/components/sections";
 
@@ -119,13 +119,12 @@ export default function Home() {
       <Moments title="Across celebrated stages" />
 
       {/* contact.html "contact-form-area": enquiry + FAQ */}
-      <section className="contact-form-area ff-enquiry">
+      <section id="enquire" className="contact-form-area ff-enquiry">
         <div className="container">
           <div className="row">
             <div className="col-xl-6 col-lg-12">
               <SecTitle kicker="Start a conversation" title="Tell us where you'd like dance to take you." />
-              <EnquiryForm />
-              <p className="ff-small">No payment required. We'll respond personally.</p>
+              <LeadForm />
             </div>
             <div className="col-xl-6 col-lg-12">
               <Faq />

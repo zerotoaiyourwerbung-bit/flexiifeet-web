@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollTop from "@/components/ScrollTop";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Footer />
         </div>
         <ScrollTop />
+        <WhatsAppButton />
       </body>
     </html>
   );
