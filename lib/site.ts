@@ -35,11 +35,21 @@ export const programs: NavItem[] = [
   { label: "Offline Classes – Indore", href: "/programs/offline-classes-indore" },
 ];
 
+// Ad landing (sales) pages, listed under "Enroll" in the nav.
+export const salesPages: NavItem[] = [
+  { label: "DanceED for Schools", href: "/dance-ed" },
+  { label: "Annual Day Choreography", href: "/annual-days" },
+  { label: "Online Dance Classes", href: "/online-classes" },
+  { label: "Dance Classes in Indore", href: "/offline-classes-indore" },
+  { label: "Wedding Choreography", href: "/weddings-shows" },
+];
+
 export const nav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Programs", href: "/programs", children: programs },
   { label: "Weddings & Shows", href: "/programs/weddings-shows" },
+  { label: "Enroll", href: "/dance-ed", children: salesPages },
   { label: "Contact", href: "/contact" },
 ];
 

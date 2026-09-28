@@ -77,10 +77,18 @@ body .boxed_wrapper { overflow: visible; overflow-x: clip; }
   .main-header.ff-header .navigation > li > ul { top: calc(100% - 14px); width: 260px; padding: 10px 0; border: 1px solid #efefef; border-top: 0; border-radius: 12px; background: #fff; box-shadow: var(--ff-shadow-hover); }
   .main-header.ff-header .navigation > li > ul::before { display: none; }
   .main-header.ff-header .navigation > li > ul > li { padding: 0 8px; }
-  .main-header.ff-header .navigation > li > ul > li > a { padding: 10px 14px; border-radius: 8px; color: #1b1b1b; font: 600 15px/1.4 Montserrat, sans-serif; letter-spacing: 0; }
+  .main-header.ff-header .navigation > li > ul > li > a { padding: 10px 14px; border-radius: 8px; color: #1b1b1b; font: 600 15px/1.4 Montserrat, sans-serif; letter-spacing: 0; text-transform: none; }
   .main-header.ff-header .navigation > li > ul > li > a::before, .main-header.ff-header .navigation > li > ul > li > a::after { display: none; }
   .main-header.ff-header .navigation > li > ul > li:hover > a { padding-left: 14px; background: #fff4ec; color: var(--ff-orange); }
   .main-header.ff-header .navigation > li > .dropdown-btn { display: none; }
+}
+/* Seven nav items: tighten spacing on smaller desktops so the menu stays on one line */
+@media (min-width: 992px) and (max-width: 1299px) {
+  .main-header.ff-header .header-upper-middle .main-menu.style4 .navigation > li { margin-right: 18px; }
+  .main-header.ff-header .header-upper-middle .main-menu.style4 .navigation > li > a { font-size: 14px; }
+  .main-header .header-upper-style5 .header-upper-left { max-width: 200px; }
+  .ff-logo { height: 52px; }
+  .ff-connect.ff-btn { padding: 12px 16px; font-size: 12px; }
 }
 
 .pricing-table-style2-area.ff-levels { margin-top: 0; padding: 110px 0 80px; }
