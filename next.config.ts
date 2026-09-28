@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Old WordPress URLs on theflexiifeet.com -> new routes
+  async redirects() {
+    return [
+      { source: "/about-us", destination: "/about", permanent: true },
+      { source: "/schools", destination: "/dance-ed", permanent: true },
+      { source: "/weddings-sangeet", destination: "/weddings-shows", permanent: true },
+      { source: "/events", destination: "/weddings-shows", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;
