@@ -26,7 +26,7 @@ const process = [
 export default function AnnualDays() {
   return (
     <>
-      <PageBanner bg="/live/g5.jpg" title="Annual Days" sub="Stage shows that leave students, parents and teachers inspired" />
+      <PageBanner title="Annual Days" sub="Stage shows that leave students, parents and teachers inspired" />
 
       <Intro
         title="Your annual day, choreographed end to end."

@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import Counter from "./Counter";
 import Marquee from "./Marquee";
-import { services, stats, team, testimonials, ageLevels, whatsappLink, gallery, paths, schoolLogos, journey, faqs } from "@/lib/site";
+import { heroImage, services, stats, team, testimonials, ageLevels, whatsappLink, gallery, paths, schoolLogos, journey, faqs } from "@/lib/site";
 
 // Reusable sections, each a straight port of a Jixic template block (class names kept so style.css applies).
 
@@ -26,7 +26,7 @@ export function SecTitle({ kicker, title, center }: { kicker: string; title: Rea
 }
 
 // services.html "breadcrumb-style3-area"
-export function PageBanner({ title, sub, bg = "/live/g1.jpg" }: { title: ReactNode; sub?: string; bg?: string }) {
+export function PageBanner({ title, sub, bg = heroImage }: { title: ReactNode; sub?: string; bg?: string }) {
   return (
     <section
       className="breadcrumb-style3-area ff-banner"

@@ -27,7 +27,7 @@ const why = [
 export default function About() {
   return (
     <>
-      <PageBanner bg="/live/mic.jpg" title="About Us" sub="Bringing stories to life through dance – in schools, on stage, and at celebrations" />
+      <PageBanner title="About Us" sub="Bringing stories to life through dance – in schools, on stage, and at celebrations" />
 
       {/* about.html "about-style3-area" */}
       <section className="about-style3-area about-page pd130-0">

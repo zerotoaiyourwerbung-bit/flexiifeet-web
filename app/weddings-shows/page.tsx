@@ -42,7 +42,7 @@ const styles = [
 export default function WeddingsShows() {
   return (
     <>
-      <PageBanner bg="/live/w-sangeet.jpg" title="Weddings & Shows" sub="Turn your wedding moments and events into magical performances" />
+      <PageBanner title="Weddings & Shows" sub="Turn your wedding moments and events into magical performances" />
 
       <Intro
         title="We don't just teach steps—we create unforgettable moments."

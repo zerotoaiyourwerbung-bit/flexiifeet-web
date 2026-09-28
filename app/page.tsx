@@ -1,5 +1,6 @@
 import Link from "next/link";
 import EnquiryForm from "@/components/EnquiryForm";
+import { heroImage } from "@/lib/site";
 import { Faq, Journey, Moments, Paths, SchoolLogos, SecTitle, StatsTicker, Testimonials } from "@/components/sections";
 
 // Section order follows the FlexFlow reference: hero → ticker → paths → schools → proof → why → journey → founder → stages → enquiry + FAQ.
@@ -8,25 +9,28 @@ const stages = ["IIFA", "Filmfare", "IPL", "Dubai Expo 2020", "World Chess Olymp
 export default function Home() {
   return (
     <>
-      <section className="ff-hero" style={{ backgroundImage: "url(/live/g1.jpg)" }}>
-        <div className="container">
-          <div className="kicker">India · Dance education · Choreography · USA</div>
-          <h1>
-            Dance begins in the classroom.
-            <br /> <span>Confidence takes the stage.</span>
-          </h1>
-          <p>
-            Led by choreographer Ayush S K Lokre, The FlexiiFeet brings structured dance education and personal
-            choreography to learners, schools, and celebrations across India and the USA.
-          </p>
-          <div className="ff-cta-buttons" style={{ justifyContent: "flex-start" }}>
-            <a className="ff-btn ff-btn--grad" href="#paths">
-              Find your path
-            </a>
-            <Link className="ff-btn ff-btn--outline" href="/contact">
-              Talk to us
-            </Link>
+      <section className="ff-hero">
+        <div className="container ff-hero-grid">
+          <div>
+            <div className="kicker">India · Dance education · Choreography · USA</div>
+            <h1>
+              Dance begins in the classroom.
+              <br /> <span>Confidence takes the stage.</span>
+            </h1>
+            <p>
+              Led by choreographer Ayush S K Lokre, The FlexiiFeet brings structured dance education and personal
+              choreography to learners, schools, and celebrations across India and the USA.
+            </p>
+            <div className="ff-cta-buttons" style={{ justifyContent: "flex-start" }}>
+              <a className="ff-btn ff-btn--grad" href="#paths">
+                Find your path
+              </a>
+              <Link className="ff-btn ff-btn--outline" href="/contact">
+                Talk to us
+              </Link>
+            </div>
           </div>
+          <img className="ff-hero-img" src={heroImage} alt="Ayush S K Lokre at the Kho Kho World Cup India 2025" />
         </div>
       </section>
 

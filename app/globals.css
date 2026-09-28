@@ -30,13 +30,13 @@
 
 .ff-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
 
-/* Home hero (replaces the jQuery Revolution slider) */
-.ff-hero { position: relative; min-height: 88vh; display: flex; align-items: center; background: #0a0a0a center / cover no-repeat; color: #fff; }
-.ff-hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 10, 10, .88) 0%, rgba(10, 10, 10, .6) 45%, rgba(10, 10, 10, .15) 100%), linear-gradient(0deg, rgba(10, 10, 10, .55) 0%, transparent 35%); }
-.ff-hero .container { position: relative; }
+/* Home hero (replaces the jQuery Revolution slider): copy left, photo right */
+.ff-hero { position: relative; overflow: hidden; padding: 90px 0 100px; background: radial-gradient(700px 420px at 85% 20%, rgba(255, 107, 26, .16), transparent 70%), #0e0e0e; color: #fff; }
+.ff-hero-grid { position: relative; display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: center; }
+.ff-hero-img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 30% center; border-radius: 20px; box-shadow: 0 30px 60px rgba(0, 0, 0, .45); }
 .ff-hero .kicker { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 22px; color: rgba(255, 255, 255, .8); }
 .ff-hero .kicker::before { content: ""; width: 36px; height: 2px; border-radius: 2px; background: var(--ff-orange); }
-.ff-hero h1 { color: #fff; font-size: clamp(36px, 5.2vw, 68px); line-height: 1.08; font-weight: 800; letter-spacing: -.02em; margin-bottom: 24px; }
+.ff-hero h1 { color: #fff; font-size: clamp(34px, 4.2vw, 58px); line-height: 1.08; font-weight: 800; letter-spacing: -.02em; margin-bottom: 24px; }
 .ff-hero h1 span { background: var(--ff-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .ff-hero p { color: rgba(255, 255, 255, .82); font-size: 19px; line-height: 1.65; max-width: 540px; margin-bottom: 38px; }
 
@@ -62,12 +62,27 @@
 .ff-about-img { position: relative; z-index: 2; max-height: 640px; width: auto; }
 
 /* Header: template style4 nav is white-on-transparent; our header sits on white */
-.main-header.style5.ff-header { background: #fff; box-shadow: 0 2px 20px rgba(0, 0, 0, .05); }
+/* Template wrapper uses overflow:hidden, which disables position:sticky; clip keeps the same cropping without that */
+body .boxed_wrapper { overflow: visible; overflow-x: clip; }
+.main-header.style5.ff-header { position: sticky; top: 0; z-index: 999; background: #fff; box-shadow: 0 2px 20px rgba(0, 0, 0, .05); }
 .main-header .header-upper-style5 .header-upper-left { max-width: 260px; }
 .main-header .header-upper-style5 .header-upper-middle { max-width: none; width: auto; flex: 1; display: flex; justify-content: center; }
 .main-header.ff-header .header-upper-middle .main-menu.style4 .navigation > li > a { color: #1b1b1b; padding: 38px 0; }
 .main-header.ff-header .header-upper-middle .main-menu.style4 .navigation > li { margin-right: 34px; }
 .main-header .header-upper-style5 .header-upper-right { width: auto; }
+
+/* Programs dropdown: template opened it with jQuery; show it on hover/focus as a light card */
+@media (min-width: 992px) {
+  .main-header.ff-header .navigation > li.dropdown > a::after { content: "\f107"; font-family: FontAwesome; margin-left: 6px; font-size: 14px; }
+  .main-header.ff-header .navigation > li.dropdown:hover > ul, .main-header.ff-header .navigation > li.dropdown:focus-within > ul { display: block; }
+  .main-header.ff-header .navigation > li > ul { top: calc(100% - 14px); width: 260px; padding: 10px 0; border: 1px solid #efefef; border-top: 0; border-radius: 12px; background: #fff; box-shadow: var(--ff-shadow-hover); }
+  .main-header.ff-header .navigation > li > ul::before { display: none; }
+  .main-header.ff-header .navigation > li > ul > li { padding: 0 8px; }
+  .main-header.ff-header .navigation > li > ul > li > a { padding: 10px 14px; border-radius: 8px; color: #1b1b1b; font: 600 15px/1.4 Montserrat, sans-serif; letter-spacing: 0; }
+  .main-header.ff-header .navigation > li > ul > li > a::before, .main-header.ff-header .navigation > li > ul > li > a::after { display: none; }
+  .main-header.ff-header .navigation > li > ul > li:hover > a { padding-left: 14px; background: #fff4ec; color: var(--ff-orange); }
+  .main-header.ff-header .navigation > li > .dropdown-btn { display: none; }
+}
 
 .pricing-table-style2-area.ff-levels { margin-top: 0; padding: 110px 0 80px; }
 
@@ -79,7 +94,7 @@
 .ff-stats span { display: block; color: #bdbdbd; font-size: 16px; margin-top: 14px; }
 .fact-counter-area { padding: 100px 0; }
 
-.breadcrumb-style3-area.ff-banner { margin-top: 0; background-size: cover; background-position: center; }
+.breadcrumb-style3-area.ff-banner { margin-top: 0; background-size: cover; background-position: center 30%; }
 .breadcrumb-style3-area.ff-banner .big-title, .breadcrumb-style3-area.ff-banner span { color: #fff; }
 .features-style2-area .single-features-box-style2.width23percent { width: 25%; }
 @media (max-width: 991px) { .features-style2-area .single-features-box-style2.width23percent { width: 50%; } }
@@ -170,7 +185,7 @@
 .ff-step:hover::after { transform: scaleX(1); }
 .ff-step-num { position: absolute; top: 24px; right: 28px; font: 800 44px/1 Montserrat, sans-serif; color: rgba(255, 107, 26, .22); }
 .ff-step-icon::before { font-size: 44px; color: var(--ff-orange); }
-.ff-num { font: 800 44px/1 Montserrat, sans-serif; color: rgba(255, 107, 26, .3); margin-bottom: 14px; }
+.ff-num { display: block; font: 800 44px/1.15 Montserrat, sans-serif; color: rgba(255, 107, 26, .35); margin-bottom: 12px; }
 .ff-step h3 { font-size: 22px; margin: 18px 0 10px; }
 
 /* Enquiry + FAQ */
@@ -212,6 +227,8 @@ body .contact-form form button span { margin-left: 10px; }
   .main-header.ff-header .main-menu .navbar-header { position: relative; z-index: 2; height: 90px; }
   .main-header.ff-header .main-menu .navbar-header .navbar-toggle { position: absolute; right: 0; left: auto; top: 24px; margin: 0; }
   .main-header.ff-header .header-upper-middle .main-menu.style4 .navigation > li > a { padding: 12px 20px; color: #fff; }
+  .main-header.ff-header .main-menu .navbar-collapse { max-height: calc(100vh - 100px); overflow-y: auto; }
   .ff-logo { height: 48px; }
-  .ff-hero { min-height: 70vh; }
+  .ff-hero { padding: 50px 0 60px; }
+  .ff-hero-grid { grid-template-columns: 1fr; gap: 36px; }
 }

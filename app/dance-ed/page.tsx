@@ -30,7 +30,7 @@ const steps = [
 export default function DanceEd() {
   return (
     <>
-      <PageBanner bg="/live/g3.jpg" title="DanceED" sub="School-integrated dance curriculum · Nursery to Class 12 · NEP 2020 aligned" />
+      <PageBanner title="DanceED" sub="School-integrated dance curriculum · Nursery to Class 12 · NEP 2020 aligned" />
 
       <Intro
         title="Transforming Classrooms Through the Power of Performing Arts"

@@ -19,7 +19,7 @@ const features = [
 export default function OfflineIndore() {
   return (
     <>
-      <PageBanner bg="/live/g4.jpg" title="Offline Classes – Indore" sub="Dance classes at our Indore studio for kids, teens and adults" />
+      <PageBanner title="Offline Classes – Indore" sub="Dance classes at our Indore studio for kids, teens and adults" />
 
       <Intro
         title="Let loose & let's groove—in Indore."

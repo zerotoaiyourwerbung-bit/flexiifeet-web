@@ -14,6 +14,9 @@ export const site = {
   city: "Indore",
 };
 
+// Background for the home hero and every page banner.
+export const heroImage = "/live/hero-khokho.jpg";
+
 export type NavItem = { label: string; href: string; children?: NavItem[] };
 
 export const programs: NavItem[] = [

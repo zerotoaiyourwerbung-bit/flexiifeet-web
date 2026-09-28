@@ -21,7 +21,7 @@ const styles = ["Bollywood", "Contemporary", "Hip-Hop", "Jazz", "Semi-Classical 
 export default function OnlineClasses() {
   return (
     <>
-      <PageBanner bg="/live/g2.jpg" title="Online Classes" sub="Live dance classes with The FlexiiFeet—wherever you are" />
+      <PageBanner title="Online Classes" sub="Live dance classes with The FlexiiFeet—wherever you are" />
 
       <Intro
         title="The FlexiiFeet studio, on your screen."

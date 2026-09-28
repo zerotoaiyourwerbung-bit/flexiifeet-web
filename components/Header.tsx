@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav, whatsappLink, type NavItem } from "@/lib/site";
 
-// Template markup: about.html "main-header style5 style5withstyle6" + sticky header.
-// custom.js behaviours (fixed-header on scroll, mobile collapse, dropdown toggle) are re-done in React.
+// Template markup: about.html "main-header style5 style5withstyle6".
+// custom.js behaviours (mobile collapse, dropdown toggle) are re-done in React. The header itself is sticky (CSS),
+// so the same header stays on screen while scrolling instead of swapping to the template's sticky clone.
 
 function Menu({ id, onNavigate }: { id?: string; onNavigate?: () => void }) {
   const pathname = usePathname();
@@ -70,17 +71,8 @@ function Menu({ id, onNavigate }: { id?: string; onNavigate?: () => void }) {
 }
 
 export default function Header() {
-  const [fixed, setFixed] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setFixed(window.scrollY >= 110);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header className={`main-header style5 style5withstyle6 ff-header${fixed ? " fixed-header" : ""}`}>
+    <header className="main-header style5 style5withstyle6 ff-header">
       <div className="header-upper-style5">
         <div className="outer-container clearfix">
           <div className="header-upper-left clearfix">
@@ -99,21 +91,6 @@ export default function Header() {
             <a className="thm-btn1 ff-connect" href={whatsappLink()} target="_blank" rel="noopener">
               <span></span>Connect Now
             </a>
-          </div>
-        </div>
-      </div>
-
-      <div className="sticky-header">
-        <div className="container">
-          <div className="clearfix">
-            <div className="logo float-left">
-              <Link href="/" className="img-responsive">
-                <img src="/live/logo.png" alt="The FlexiiFeet" className="ff-logo ff-logo--sticky" />
-              </Link>
-            </div>
-            <div className="right-col float-right">
-              <Menu />
-            </div>
           </div>
         </div>
       </div>
