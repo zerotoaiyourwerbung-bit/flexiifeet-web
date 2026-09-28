@@ -14,23 +14,32 @@ export const site = {
   city: "Indore",
 };
 
+// Information pages under /programs (the root-level program URLs are the ad landing pages).
+export const infoPages = [
+  { who: "For schools", title: "DanceED", href: "/programs/dance-ed", img: "/live/g3.jpg", text: "A structured, NEP 2020-aligned dance curriculum from Nursery to Class 12." },
+  { who: "For school events", title: "Annual Days", href: "/programs/annual-days", img: "/live/g5.jpg", text: "Theme-based annual day shows, choreographed for every class." },
+  { who: "Learn from anywhere", title: "Online Classes", href: "/programs/online-classes", img: "/live/g2.jpg", text: "Live, interactive dance classes for kids, teens and adults." },
+  { who: "In Indore", title: "Offline Classes", href: "/programs/offline-classes-indore", img: "/live/g4.jpg", text: "Studio classes in Indore with our lead choreographers." },
+  { who: "For celebrations", title: "Weddings & Shows", href: "/programs/weddings-shows", img: "/live/w-sangeet.jpg", text: "Sangeet, couple dances, entries and stage shows." },
+];
+
 // Background for the home hero and every page banner.
 export const heroImage = "/live/hero-khokho.jpg";
 
 export type NavItem = { label: string; href: string; children?: NavItem[] };
 
 export const programs: NavItem[] = [
-  { label: "DanceED (Schools)", href: "/dance-ed" },
-  { label: "Annual Days", href: "/annual-days" },
-  { label: "Online Classes", href: "/online-classes" },
-  { label: "Offline Classes – Indore", href: "/offline-classes-indore" },
+  { label: "DanceED (Schools)", href: "/programs/dance-ed" },
+  { label: "Annual Days", href: "/programs/annual-days" },
+  { label: "Online Classes", href: "/programs/online-classes" },
+  { label: "Offline Classes – Indore", href: "/programs/offline-classes-indore" },
 ];
 
 export const nav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Programs", href: "/dance-ed", children: programs },
-  { label: "Weddings & Shows", href: "/weddings-shows" },
+  { label: "Programs", href: "/programs", children: programs },
+  { label: "Weddings & Shows", href: "/programs/weddings-shows" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -46,19 +55,19 @@ export const services = [
   {
     title: "DanceED – School Curriculum",
     icon: "icon-student",
-    href: "/dance-ed",
+    href: "/programs/dance-ed",
     text: "Structured, NEP-aligned dance education in classrooms—boosting confidence, creativity, physical fitness and social skills from Nursery to Class 12.",
   },
   {
     title: "Weddings & Shows",
     icon: "icon-heart",
-    href: "/weddings-shows",
+    href: "/programs/weddings-shows",
     text: "From bride & groom entries and musical pheras to full Sangeet nights and corporate stage shows—tailored to your traditions, style and energy.",
   },
   {
     title: "Annual Days",
     icon: "icon-music",
-    href: "/annual-days",
+    href: "/programs/annual-days",
     text: "Complete annual function choreography with high-energy concepts, props and professional staging that leaves parents and teachers inspired.",
   },
 ];
@@ -118,10 +127,10 @@ export const schoolLogos: { name: string; logo?: string; dark?: boolean }[] = [
 ];
 
 export const paths = [
-  { who: "For educators", title: "DanceED for Schools", href: "/dance-ed", img: "/live/g3.jpg" },
-  { who: "For school events", title: "Annual Days", href: "/annual-days", img: "/live/g5.jpg" },
-  { who: "For families", title: "Online & Indore Classes", href: "/online-classes", img: "/live/g2.jpg" },
-  { who: "For celebrations", title: "Weddings & Shows", href: "/weddings-shows", img: "/live/g4.jpg" },
+  { who: "For educators", title: "DanceED for Schools", href: "/programs/dance-ed", img: "/live/g3.jpg" },
+  { who: "For school events", title: "Annual Days", href: "/programs/annual-days", img: "/live/g5.jpg" },
+  { who: "For families", title: "Online & Indore Classes", href: "/programs/online-classes", img: "/live/g2.jpg" },
+  { who: "For celebrations", title: "Weddings & Shows", href: "/programs/weddings-shows", img: "/live/g4.jpg" },
 ];
 
 export const journey = [

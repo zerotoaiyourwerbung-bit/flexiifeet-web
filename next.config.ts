@@ -5,9 +5,9 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/about-us", destination: "/about", permanent: true },
-      { source: "/schools", destination: "/dance-ed", permanent: true },
-      { source: "/weddings-sangeet", destination: "/weddings-shows", permanent: true },
-      { source: "/events", destination: "/weddings-shows", permanent: true },
+      { source: "/schools", destination: "/programs/dance-ed", permanent: true },
+      { source: "/weddings-sangeet", destination: "/programs/weddings-shows", permanent: true },
+      { source: "/events", destination: "/programs/weddings-shows", permanent: true },
     ];
   },
 };

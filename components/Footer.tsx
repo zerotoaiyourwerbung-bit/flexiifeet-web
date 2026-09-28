@@ -61,7 +61,7 @@ export default function Footer() {
                   </li>
                 ))}
                 <li>
-                  <Link href="/weddings-shows">Weddings & Shows</Link>
+                  <Link href="/programs/weddings-shows">Weddings & Shows</Link>
                 </li>
               </ul>
             </div>

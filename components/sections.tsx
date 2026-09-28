@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import Counter from "./Counter";
 import Marquee from "./Marquee";
 import LeadForm, { type LeadField } from "./LeadForm";
-import { heroImage, site, services, stats, team, testimonials, ageLevels, gallery, paths, schoolLogos, journey, faqs } from "@/lib/site";
+import { heroImage, infoPages, site, services, stats, team, testimonials, ageLevels, gallery, paths, schoolLogos, journey, faqs } from "@/lib/site";
 
 // Reusable sections, each a straight port of a Jixic template block (class names kept so style.css applies).
 
@@ -606,6 +606,99 @@ export function EnquireFaq({ faqItems, program, fields, submitLabel }: { faqItem
           <div className="col-xl-6 col-lg-12">
             <LeadForm program={program} fields={fields} title="Still deciding? Talk to us." subtitle="Leave your number and we'll answer every question personally." submitLabel={submitLabel} />
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ---------- Information-page blocks (the /programs/* pages: explain, don't sell) ----------
+
+// Long-form overview with an "at a glance" fact card.
+export function Overview({ kicker = "Overview", title, children, facts }: { kicker?: string; title: ReactNode; children: ReactNode; facts: { label: string; value: string }[] }) {
+  return (
+    <section className="ff-section">
+      <div className="container">
+        <div className="ff-overview">
+          <div className="ff-prose">
+            <SecTitle kicker={kicker} title={title} />
+            {children}
+          </div>
+          <aside className="ff-glance" aria-label="At a glance">
+            <h3>At a glance</h3>
+            <dl>
+              {facts.map((f) => (
+                <div key={f.label}>
+                  <dt>{f.label}</dt>
+                  <dd>{f.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Heading + paragraphs beside a photo, for explanatory sections.
+export function Explainer({ kicker, title, children, img, imgAlt, reverse, alt }: { kicker: string; title: ReactNode; children: ReactNode; img: string; imgAlt: string; reverse?: boolean; alt?: boolean }) {
+  return (
+    <section className={`ff-section${alt ? " alt" : ""}`}>
+      <div className="container">
+        <div className={`ff-split${reverse ? " ff-split--rev" : ""}`}>
+          <div className="ff-split-img">
+            <img src={img} alt={imgAlt} loading="lazy" />
+          </div>
+          <div className="ff-prose">
+            <SecTitle kicker={kicker} title={title} />
+            {children}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Quiet closing block: FAQ plus an optional question form (keeps the header's #enquire anchor working).
+export function InfoAsk({ faqItems, program, topic }: { faqItems: { q: string; a: string }[]; program?: string; topic: string }) {
+  return (
+    <section id="enquire" className="contact-form-area ff-enquiry">
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-6 col-lg-12">
+            <Faq items={faqItems} title={`Common questions about ${topic}`} />
+          </div>
+          <div className="col-xl-6 col-lg-12">
+            <LeadForm program={program} title="Have a question?" subtitle={`Ask us anything about ${topic} and our team will get back to you.`} submitLabel="Send my question" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Links to the other program information pages.
+export function ExplorePrograms({ current }: { current: string }) {
+  const items = infoPages.filter((p) => p.href !== current);
+  return (
+    <section className="ff-section alt">
+      <div className="container">
+        <SecTitle kicker="Explore" title="Other ways to dance with us" center />
+        <div className="ff-explore">
+          {items.map((p) => (
+            <Link key={p.href} href={p.href} className="ff-explore-card">
+              <img src={p.img} alt="" loading="lazy" />
+              <div>
+                <span>{p.who}</span>
+                <h3>{p.title}</h3>
+                <p>{p.text}</p>
+                <em>
+                  Learn more <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </em>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

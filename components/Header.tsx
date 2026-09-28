@@ -14,7 +14,9 @@ function Menu({ id, onNavigate }: { id?: string; onNavigate?: () => void }) {
   const [openDrop, setOpenDrop] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
   const isCurrent = (item: NavItem) =>
-    item.href === "/" ? pathname === "/" : [item, ...(item.children ?? [])].some((i) => pathname.startsWith(i.href));
+    item.href === "/"
+      ? pathname === "/"
+      : pathname === item.href || (item.children ?? [item]).some((i) => pathname.startsWith(i.href));
 
   useEffect(() => setOpen(false), [pathname]);
 
