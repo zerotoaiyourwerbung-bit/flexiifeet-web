@@ -59,7 +59,7 @@ export default function DanceEd() {
               <div key={s.title} className="col-lg-4">
                 <div className="ff-img-card">
                   <div className="body">
-                    <div className="ff-grad-text" style={{ fontSize: 48, fontWeight: 800 }}>
+                    <div className="ff-num">
                       {String(i + 1).padStart(2, "0")}
                     </div>
                     <h3>{s.title}</h3>
