@@ -484,7 +484,7 @@ input:-webkit-autofill:focus {
     height: 50px;
     padding: 0px 0;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .cart-area .bootstrap-touchspin .input-group-btn-vertical {
     display: none;
@@ -559,7 +559,7 @@ input:-webkit-autofill:focus {
     height: 50px;
     padding: 7px 0 8px;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -742,7 +742,7 @@ input:-webkit-autofill:focus {
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     transform: rotate(-90deg);
 }
 .gm-style-iw-d h4{
@@ -755,7 +755,7 @@ input:-webkit-autofill:focus {
     font-weight: 600;
     text-transform: capitalize;
     margin: 0 0 22px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .gm-style-iw-d p{
     color: #7e7e7e;

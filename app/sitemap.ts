@@ -5,13 +5,14 @@ import { infoPages, site } from "@/lib/site";
 const routes = [
   "",
   "/about",
-  "/programs",
+  "/offerings",
   ...infoPages.map((p) => p.href),
   "/dance-ed",
   "/annual-days",
   "/online-classes",
-  "/offline-classes-indore",
+  "/regular-classes",
   "/weddings-shows",
+  "/gallery",
   "/contact",
 ];
 

@@ -97,7 +97,7 @@ export default function WeddingsShows() {
 
       <section className="ff-section alt">
         <div className="container">
-          <SecTitle kicker="What We Offer" title="Weddings, Sangeet & Shows" center />
+          <SecTitle kicker="Offerings" title="Weddings, Sangeet & Shows" center />
           <div className="row">
             {offers.map((o) => (
               <div key={o.title} className="col-lg-4 col-md-6">

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "About Annual Day Choreography",
   description:
     "How The FlexiiFeet choreographs school annual days: theme concepts, age-wise acts for every class, rehearsals in school hours, stage blocking and show-day support.",
-  alternates: { canonical: "/programs/annual-days" },
+  alternates: { canonical: "/offerings/annual-days" },
 };
 
 const facts = [
@@ -43,7 +43,7 @@ const faqs = [
 export default function AnnualDaysInfo() {
   return (
     <>
-      <PageBanner title="Annual Days" sub="How we choreograph school annual days, from theme to curtain call" />
+      <PageBanner kicker="For school events" bg="/live/g5.jpg" title="Annual Days" sub="How we choreograph school annual days, from theme to curtain call" />
 
       <Overview title="An annual day, choreographed end to end" facts={facts}>
         <p>
@@ -74,7 +74,7 @@ export default function AnnualDaysInfo() {
       <Moments title="From our stages" />
       <SchoolLogos />
       <Testimonials />
-      <ExplorePrograms current="/programs/annual-days" />
+      <ExplorePrograms current="/offerings/annual-days" />
       <InfoAsk faqItems={faqs} program="Annual Days" topic="annual days" />
     </>
   );

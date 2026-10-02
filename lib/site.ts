@@ -1,26 +1,60 @@
 // Single source for site-wide content. Copy is taken from the live site (theflexiifeet.com);
 // items marked TODO are new sections the live site doesn't have yet and need real details.
 
+import { title } from "process";
+
 export const site = {
   name: "The FlexiiFeet",
-  tagline: "Let Loose & Let's Groove",
+  tagline: "Your Stage Starts Here",
   url: "https://theflexiifeet.com",
-  phone: "+91 76980 03092",
-  phoneHref: "tel:+917698003092",
-  whatsapp: "917698003092",
-  email: "collaborations@placemint.in",
+  phone: "+91 96304 21593",
+  phoneHref: "tel:+919630421593",
+  whatsapp: "919630421593",
+  email: "connect@theflexiifeet.com",
   instagram: "https://www.instagram.com/theflexiifeet",
   founderInstagram: "https://www.instagram.com/aayushsklokre",
+  youtube: "https://www.youtube.com/@theflexiifeet", // guessed from the Instagram handle, verify
   city: "Indore",
+  address: "Patrakar Square 5, near SBI, Joy Builder Colony, Saket Nagar, Indore, Madhya Pradesh 452018",
 };
 
-// Information pages under /programs (the root-level program URLs are the ad landing pages).
+// Information pages under /offerings (the root-level program URLs are the ad landing pages).
 export const infoPages = [
-  { who: "For schools", title: "DanceED", href: "/programs/dance-ed", img: "/live/g3.jpg", text: "A structured, NEP 2020-aligned dance curriculum from Nursery to Class 12." },
-  { who: "For school events", title: "Annual Days", href: "/programs/annual-days", img: "/live/g5.jpg", text: "Theme-based annual day shows, choreographed for every class." },
-  { who: "Learn from anywhere", title: "Online Classes", href: "/programs/online-classes", img: "/live/g2.jpg", text: "Live, interactive dance classes for kids, teens and adults." },
-  { who: "In Indore", title: "Offline Classes", href: "/programs/offline-classes-indore", img: "/live/g4.jpg", text: "Studio classes in Indore with our lead choreographers." },
-  { who: "For celebrations", title: "Weddings & Shows", href: "/programs/weddings-shows", img: "/live/w-sangeet.jpg", text: "Sangeet, couple dances, entries and stage shows." },
+  {
+    who: "For schools",
+    title: "DanceED",
+    href: "/offerings/dance-ed",
+    img: "/live/g3.jpg",
+    text: "A structured, NEP 2020-aligned dance curriculum from Nursery to Class 12.",
+  },
+  // {
+  //   who: "For school events",
+  //   title: "Annual Days",
+  //   href: "/offerings/annual-days",
+  //   img: "/live/g5.jpg",
+  //   text: "Theme-based annual day shows, choreographed for every class.",
+  // },
+  {
+    who: "Learn from anywhere",
+    title: "Online Classes",
+    href: "/offerings/online-classes",
+    img: "/live/g2.jpg",
+    text: "Live, interactive dance classes for kids, teens and adults.",
+  },
+  {
+    who: "In Indore",
+    title: "Offline Classes",
+    href: "/offerings/regular-classes",
+    img: "/live/g4.jpg",
+    text: "Studio classes in Indore with our lead choreographers.",
+  },
+  {
+    who: "For celebrations",
+    title: "Weddings & Shows",
+    href: "/offerings/weddings-shows",
+    img: "/live/w-sangeet.jpg",
+    text: "Sangeet, couple dances, entries and stage shows.",
+  },
 ];
 
 // Background for the home hero and every page banner.
@@ -28,11 +62,15 @@ export const heroImage = "/live/hero-khokho.jpg";
 
 export type NavItem = { label: string; href: string; children?: NavItem[] };
 
-export const programs: NavItem[] = [
-  { label: "DanceED (Schools)", href: "/programs/dance-ed" },
-  { label: "Annual Days", href: "/programs/annual-days" },
-  { label: "Online Classes", href: "/programs/online-classes" },
-  { label: "Offline Classes – Indore", href: "/programs/offline-classes-indore" },
+export const offerings: NavItem[] = [
+  { label: "DanceED", href: "/offerings/dance-ed" },
+  // { label: "Annual Days", href: "/offerings/annual-days" },
+  { label: "Online Dance", href: "/offerings/online-classes" },
+  {
+    label: "Regular Classes",
+    href: "/offerings/regular-classes",
+  },
+  { label: "Weddings & Shows", href: "/offerings/weddings-shows" },
 ];
 
 // Ad landing (sales) pages, listed under "Enroll" in the nav.
@@ -40,16 +78,17 @@ export const salesPages: NavItem[] = [
   { label: "DanceED for Schools", href: "/dance-ed" },
   { label: "Annual Day Choreography", href: "/annual-days" },
   { label: "Online Dance Classes", href: "/online-classes" },
-  { label: "Dance Classes in Indore", href: "/offline-classes-indore" },
+  { label: "Dance Classes in Indore", href: "/regular-classes" },
   { label: "Wedding Choreography", href: "/weddings-shows" },
 ];
 
 export const nav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Programs", href: "/programs", children: programs },
-  { label: "Weddings & Shows", href: "/programs/weddings-shows" },
-  { label: "Enroll", href: "/dance-ed", children: salesPages },
+  { label: "Our Offerings", href: "/offerings", children: offerings },
+  { label: "Gallery", href: "/gallery" },
+  // { label: "Weddings & Shows", href: "/offerings/weddings-shows" },
+  // { label: "Enroll", href: "/dance-ed", children: salesPages },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -65,35 +104,71 @@ export const services = [
   {
     title: "DanceED – School Curriculum",
     icon: "icon-student",
-    href: "/programs/dance-ed",
+    href: "/offerings/dance-ed",
     text: "Structured, NEP-aligned dance education in classrooms—boosting confidence, creativity, physical fitness and social skills from Nursery to Class 12.",
   },
   {
     title: "Weddings & Shows",
     icon: "icon-heart",
-    href: "/programs/weddings-shows",
+    href: "/offerings/weddings-shows",
     text: "From bride & groom entries and musical pheras to full Sangeet nights and corporate stage shows—tailored to your traditions, style and energy.",
   },
   {
     title: "Annual Days",
     icon: "icon-music",
-    href: "/programs/annual-days",
+    href: "/offerings/annual-days",
     text: "Complete annual function choreography with high-energy concepts, props and professional staging that leaves parents and teachers inspired.",
   },
 ];
 
 export const ageLevels = [
-  { title: "Foundational Level", range: "Nursery – Grade 2", text: "Focus on motor skills and basic rhythms" },
-  { title: "Exploratory Level", range: "Grades 3 – 5", text: "Introduction to diverse dance forms" },
-  { title: "Intermediate Level", range: "Grades 6 – 8", text: "Coordination, expression, and creativity" },
-  { title: "Advanced Level", range: "Grades 9 – 12", text: "Performance, choreography, and personal style" },
+  {
+    title: "Foundational Level",
+    range: "Nursery – Grade 2",
+    text: "Focus on motor skills and basic rhythms",
+  },
+  {
+    title: "Exploratory Level",
+    range: "Grades 3 – 5",
+    text: "Introduction to diverse dance forms",
+  },
+  {
+    title: "Intermediate Level",
+    range: "Grades 6 – 8",
+    text: "Coordination, expression, and creativity",
+  },
+  {
+    title: "Advanced Level",
+    range: "Grades 9 – 12",
+    text: "Performance, choreography, and personal style",
+  },
 ];
 
 export const team = [
-  { name: "Aayush S K", surname: "Lokre", role: "Founder & Artistic Director", img: "/live/team-ayush.jpg" },
-  { name: "Ekta", surname: "Wankhede", role: "Managing Head & Lead Choreographer", img: "/live/team-ekta.jpg" },
-  { name: "Prachi", surname: "Joshi", role: "Master Classical Faculty", img: "/live/team-prachi.png" },
-  { name: "Harshit", surname: "Chouhan", role: "Master Faculty / Lead Choreographer", img: "/live/team-harshit.png" },
+  {
+    name: "Aayush S K",
+    surname: "Lokre",
+    role: "Founder & Artistic Director",
+    img: "/live/team-ayush.jpg",
+  },
+  {
+    name: "Ekta",
+    surname: "Wankhede",
+    role: "Managing Head & Lead Choreographer",
+    img: "/live/team-ekta.jpg",
+  },
+  {
+    name: "Prachi",
+    surname: "Joshi",
+    role: "Master Classical Faculty",
+    img: "/live/team-prachi.png",
+  },
+  {
+    name: "Harshit",
+    surname: "Chouhan",
+    role: "Master Faculty / Lead Choreographer",
+    img: "/live/team-harshit.png",
+  },
 ];
 
 export const testimonials = [
@@ -128,8 +203,15 @@ export const gallery = [
 // Logos from the FlexFlow reference; schools without a usable logo render as text.
 export const schoolLogos: { name: string; logo?: string; dark?: boolean }[] = [
   { name: "KLE International, Belgaum", logo: "/flow/school-kle.png" },
-  { name: "HVB Global Academy, Mumbai", logo: "/flow/school-hvb.png", dark: true },
-  { name: "Dhirubhai Ambani International School, Mumbai", logo: "/flow/school-dais.png" },
+  {
+    name: "HVB Global Academy, Mumbai",
+    logo: "/flow/school-hvb.png",
+    dark: true,
+  },
+  {
+    name: "Dhirubhai Ambani International School, Mumbai",
+    logo: "/flow/school-dais.png",
+  },
   { name: "SVIS, Gorai", logo: "/flow/school-svis.gif" },
   { name: "Universal School, Dahisar" },
   { name: "Lakshya International, Kakinada" },
@@ -137,16 +219,48 @@ export const schoolLogos: { name: string; logo?: string; dark?: boolean }[] = [
 ];
 
 export const paths = [
-  { who: "For educators", title: "DanceED for Schools", href: "/programs/dance-ed", img: "/live/g3.jpg" },
-  { who: "For school events", title: "Annual Days", href: "/programs/annual-days", img: "/live/g5.jpg" },
-  { who: "For families", title: "Online & Indore Classes", href: "/programs/online-classes", img: "/live/g2.jpg" },
-  { who: "For celebrations", title: "Weddings & Shows", href: "/programs/weddings-shows", img: "/live/g4.jpg" },
+  {
+    // who: "For families",
+    title: "Online Classes",
+    href: "/offerings/online-classes",
+    img: "/live/g2.jpg",
+  },
+  {
+    title: "Regular Classes",
+    href: "/offerings/regular-classes",
+    img: "/live/g5.jpg",
+  },
+  {
+    // who: "For educators",
+    title: "DanceED for Schools",
+    href: "/offerings/dance-ed",
+    img: "/live/g3.jpg",
+  },
+  
+  {
+    // who: "For celebrations",
+    title: "Weddings & Shows",
+    href: "/offerings/weddings-shows",
+    img: "/live/g4.jpg",
+  },
 ];
 
 export const journey = [
-  { title: "Learn with structure", icon: "icon-content", text: "Real instructors and a curriculum shaped by trained choreographers." },
-  { title: "Rehearse with purpose", icon: "icon-music", text: "Every session builds technique, expression, and confidence." },
-  { title: "Perform with joy", icon: "icon-star", text: "The journey leads toward a showcase, recital, or moment worth remembering." },
+  {
+    title: "Learn with structure",
+    icon: "icon-content",
+    text: "Real instructors and a curriculum shaped by trained choreographers.",
+  },
+  {
+    title: "Rehearse with purpose",
+    icon: "icon-music",
+    text: "Every session builds technique, expression, and confidence.",
+  },
+  {
+    title: "Perform with joy",
+    icon: "icon-star",
+    text: "The journey leads toward a showcase, recital, or moment worth remembering.",
+  },
 ];
 
 export const faqs = [

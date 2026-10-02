@@ -3,54 +3,103 @@ import type { ReactNode } from "react";
 import Counter from "./Counter";
 import Marquee from "./Marquee";
 import LeadForm, { type LeadField } from "./LeadForm";
-import { heroImage, infoPages, site, services, stats, team, testimonials, ageLevels, gallery, paths, schoolLogos, journey, faqs } from "@/lib/site";
+import {
+  heroImage,
+  infoPages,
+  site,
+  services,
+  stats,
+  team,
+  testimonials,
+  ageLevels,
+  gallery,
+  paths,
+  schoolLogos,
+  journey,
+  faqs,
+} from "@/lib/site";
 
 // Reusable sections, each a straight port of a Jixic template block (class names kept so style.css applies).
 
-export function SecTitle({ kicker, title, center }: { kicker: string; title: ReactNode; center?: boolean }) {
+export function SecTitle({
+  kicker,
+  title,
+  center,
+  kickerVisibility = true,
+}: {
+  kicker?: string;
+  title: ReactNode;
+  center?: boolean;
+  kickerVisibility?: boolean;
+}) {
   return (
     <div className={`sec-title-style1${center ? " pdb-52 text-center" : ""}`}>
-      <div className="title">
-        {center && (
-          <span className="dotted-left">
+      {kickerVisibility && (
+        <div className="title">
+          {center && (
+            <span className="dotted-left">
+              <span className="dot"></span>
+            </span>
+          )}
+          <span>{kicker}</span>
+          <span className="dotted-right">
             <span className="dot"></span>
           </span>
-        )}
-        <span>{kicker}</span>
-        <span className="dotted-right">
-          <span className="dot"></span>
-        </span>
-      </div>
+        </div>
+      )}
       <div className="big-title">{title}</div>
     </div>
   );
 }
 
 // services.html "breadcrumb-style3-area"
-export function PageBanner({ title, sub, bg = heroImage }: { title: ReactNode; sub?: string; bg?: string }) {
+export function PageBanner({
+  title,
+  sub,
+  bg = heroImage,
+  kicker = "The FlexiiFeet",
+}: {
+  title: ReactNode;
+  sub?: string;
+  bg?: string;
+  kicker?: string;
+}) {
   return (
-    <section
-      className="breadcrumb-style3-area ff-banner"
-      style={{ backgroundImage: `linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(${bg})` }}
-    >
-      <div className="container">
-        <div className="row">
-          <div className="col-xl-12">
-            <div className="inner-content text-center clearfix">
-              <h1 className="big-title">{title}</h1>
-              {sub && <span>{sub}</span>}
-            </div>
+    <section className="ff-dhero">
+      <div className="container ff-dhero-grid">
+        <div>
+          <span className="ff-pill-tag">{kicker}</span>
+          <h1>{title}</h1>
+          {sub && <p>{sub}</p>}
+          <div className="ff-cta-buttons" style={{ justifyContent: "flex-start" }}>
+            <a className="ff-btn ff-btn--grad" href="#enquire">
+              Enquire now
+            </a>
+            <Link className="ff-btn ff-btn--outline" href="/contact">
+              Contact us
+            </Link>
           </div>
+        </div>
+        <div className="ff-dhero-photo">
+          <img src={bg} alt="" />
         </div>
       </div>
     </section>
   );
 }
 
-type Card = { title: string; icon: string; text: string; href?: string };
+type Card = { title: string; icon: string; text: string; href?: string; iconImg?: string };
 
 // index.html "whatwe-do-area"
-export function WhatWeDo({ kicker = "What We Do Best", title, items = services }: { kicker?: string; title: ReactNode; items?: Card[] }) {
+export function WhatWeDo({
+  kicker = "What We Do Best",
+  title,
+  items = services,
+}: {
+  kicker?: string;
+  title: ReactNode;
+  items?: Card[];
+}) {
   return (
     <section className="whatwe-do-area">
       <div className="container">
@@ -87,7 +136,10 @@ export function WhatWeDo({ kicker = "What We Do Best", title, items = services }
 // index.html "fact-counter-area"
 export function Stats() {
   return (
-    <section className="fact-counter-area" style={{ backgroundImage: "url(/images/pattern/fact-counter-bg.png)" }}>
+    <section
+      className="fact-counter-area"
+      style={{ backgroundImage: "url(/images/pattern/fact-counter-bg.png)" }}
+    >
       <div className="container">
         <ul className="ff-stats">
           {stats.map((s) => (
@@ -141,27 +193,39 @@ export function Featured({ items, img }: { items: Card[]; img: string }) {
 }
 
 // Age-wise curriculum levels, styled as pricing-table-style2 cards.
-export function AgeLevels() {
+export function AgeLevels({
+  levels = ageLevels,
+  kicker = "Curriculum",
+  title = "Tailored Dance Curriculum For Every Age Group",
+}: {
+  levels?: { title: string; range: string; text: string }[];
+  kicker?: string;
+  title?: string;
+} = {}) {
   return (
     <section className="pricing-table-style2-area ff-levels">
       <div className="container">
-        <SecTitle kicker="Programs" title="Tailored Dance Curriculum For Every Age Group" center />
-        <div className="row">
-          {ageLevels.map((l) => (
-            <div key={l.title} className="single-price-box-style2 col-xl-3 col-lg-6 col-md-6 col-sm-12">
-              <div className="inner-box">
-                <div className="top">
-                  <h4>{l.title}</h4>
-                  <p>{l.range}</p>
-                </div>
-                <ul className="price-list">
-                  <li>{l.text}</li>
-                </ul>
+        <SecTitle kicker={kicker} title={title} center />
+        <ol className="ff-track">
+          {levels.map((l, i) => (
+            <li key={l.title} className="ff-track-step">
+              <span className="ff-track-num">{i + 1}</span>
+              <div className="ff-track-card">
+                <span className="ff-track-range">{l.range}</span>
+                <h3>{l.title}</h3>
+                <p>{l.text}</p>
+                <span className="ff-track-bars" aria-hidden="true">
+                  {levels.map((_, j) => (
+                    <i key={j} className={j <= i ? "on" : ""}></i>
+                  ))}
+                </span>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
-        <p className="text-center ff-note">Build confidence, creativity, and coordination – one step at a time.</p>
+        </ol>
+        <p className="text-center ff-note">
+          Build confidence, creativity, and coordination – one step at a time.
+        </p>
       </div>
     </section>
   );
@@ -178,7 +242,12 @@ export function Team() {
             <div key={m.img} className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div className="single-team-member">
                 <div className="img-holder">
-                  <img src={m.img} alt={`${m.name} ${m.surname}`} loading="lazy" className="ff-team-img" />
+                  <img
+                    src={m.img}
+                    alt={`${m.name} ${m.surname}`}
+                    loading="lazy"
+                    className="ff-team-img"
+                  />
                   <div className="round-box"></div>
                   <div className="round-box-top"></div>
                 </div>
@@ -192,25 +261,41 @@ export function Team() {
             </div>
           ))}
         </div>
-        <p className="text-center ff-note">Together, we make every step count.</p>
+        <p className="text-center ff-note">
+          Together, we make every step count.
+        </p>
       </div>
     </section>
   );
 }
 
 // index.html "testimonial-area" — owl carousel replaced with a static grid.
-export function Testimonials() {
+export function Testimonials({
+  items = testimonials,
+}: {
+  items?: { text: string; name: string; role: string; img?: string; initials: string }[];
+} = {}) {
   return (
-    <section className="testimonial-area" style={{ backgroundImage: "url(/images/pattern/testimonial-bg.png)" }}>
+    <section
+      className="testimonial-area"
+      style={{ backgroundImage: "url(/images/pattern/testimonial-bg.png)" }}
+    >
       <div className="container">
-        <SecTitle kicker="Testimonials" title="Words from our partner schools" />
+        <SecTitle
+          kicker="Testimonials"
+          title="Words from our partner schools"
+        />
         <div className="row">
-          {testimonials.map((t) => (
+          {items.map((t) => (
             <div key={t.role} className="col-xl-6 col-lg-6">
               <div className="single-testimonial-item">
                 <div className="client-info">
                   <div className="img-box">
-                    {t.img ? <img src={t.img} alt={t.name} loading="lazy" /> : <div className="ff-avatar">{t.initials}</div>}
+                    {t.img ? (
+                      <img src={t.img} alt={t.name} loading="lazy" />
+                    ) : (
+                      <div className="ff-avatar">{t.initials}</div>
+                    )}
                     <span className="icon-quote1"></span>
                   </div>
                 </div>
@@ -231,7 +316,17 @@ export function Testimonials() {
 }
 
 // index.html "statements-area" used as a closing call to action; the button jumps to the page's enquiry form.
-export function Cta({ kicker = "Let's Talk", title, text, button = "Get a free consultation" }: { kicker?: string; title: string; text: string; button?: string }) {
+export function Cta({
+  kicker = "Let's Talk",
+  title,
+  text,
+  button = "Get a free consultation",
+}: {
+  kicker?: string;
+  title: string;
+  text: string;
+  button?: string;
+}) {
   return (
     <section className="statements-area ff-grad-bg">
       <div className="container">
@@ -256,7 +351,8 @@ export function Cta({ kicker = "Let's Talk", title, text, button = "Get a free c
               {button} <i className="fa fa-arrow-right" aria-hidden="true"></i>
             </a>
             <a className="ff-btn ff-btn--outline" href={site.phoneHref}>
-              <i className="fa fa-phone" aria-hidden="true"></i> Call {site.phone}
+              <i className="fa fa-phone" aria-hidden="true"></i> Call{" "}
+              {site.phone}
             </a>
           </div>
         </div>
@@ -266,7 +362,15 @@ export function Cta({ kicker = "Let's Talk", title, text, button = "Get a free c
 }
 
 // services.html "whatwe-do-area main-service" top box: heading left, copy right.
-export function Intro({ title, children, cta }: { title: ReactNode; children: ReactNode; cta?: { label: string; href: string } }) {
+export function Intro({
+  title,
+  children,
+  cta,
+}: {
+  title: ReactNode;
+  children: ReactNode;
+  cta?: { label: string; href: string };
+}) {
   return (
     <section className="whatwe-do-area main-service ff-intro">
       <div className="container">
@@ -300,7 +404,10 @@ export function NumberedFeatures({ items }: { items: Card[] }) {
     <section className="features-style2-area">
       <div className="outer-container clearfix">
         {items.map((s, i) => (
-          <div key={s.title} className={`single-features-box-style2 width23percent${i % 2 ? " bg2" : ""}`}>
+          <div
+            key={s.title}
+            className={`single-features-box-style2 width23percent${i % 2 ? " bg2" : ""}`}
+          >
             <div className="count-box">{String(i + 1).padStart(2, "0")}</div>
             <div className="outer-box">
               <div className="shape-top zoom-fade"></div>
@@ -337,7 +444,12 @@ export function NumberedFeatures({ items }: { items: Card[] }) {
 
 // Scrolling stats ribbon under the hero (FlexFlow reference flow).
 export function StatsTicker() {
-  const items = ["10+ years of expertise", "30+ partner schools", "8,000+ students trained", "India to the USA"];
+  const items = [
+    "10+ years of expertise",
+    "30+ partner schools",
+    "10,000+ students trained",
+    "India to the USA",
+  ];
   return (
     <div className="ff-ticker ff-grad-bg">
       <Marquee speed={30}>
@@ -356,7 +468,17 @@ export function Paths() {
   return (
     <section className="latest-project-style1-area ff-paths">
       <div className="container">
-        <SecTitle kicker="Choose your path" title={<>One love of movement.<br /> Four ways in.</>} center />
+        <SecTitle
+
+          kickerVisibility={false}
+          title={
+            <>
+              One Passion, 
+              <br /> four ways to move.
+            </>
+          }
+          center
+        />
         <div className="row">
           {paths.map((p) => (
             <div key={p.href} className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
@@ -364,9 +486,12 @@ export function Paths() {
                 <div className="img-holder">
                   <img src={p.img} alt="" loading="lazy" />
                   <div className="ff-path-caption">
-                    <span>{p.who}</span>
+                    {/* <span>{p.who}</span> */}
                     <h3>{p.title}</h3>
-                    <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    <i
+                      className="fa fa-long-arrow-right"
+                      aria-hidden="true"
+                    ></i>
                   </div>
                 </div>
               </Link>
@@ -382,13 +507,27 @@ export function SchoolLogos() {
   return (
     <section className="ff-section ff-logos">
       <div className="container">
-        <SecTitle kicker="Trusted in classrooms" title="Schools we've moved with" center />
-        <p className="text-center ff-lead">Part of a growing network of 30+ partner schools.</p>
+        <SecTitle
+          kicker="Trusted in classrooms"
+          title="Schools we've moved with"
+          center
+        />
+        <p className="text-center ff-lead">
+          Part of a growing network of 30+ partner schools.
+        </p>
       </div>
       <Marquee speed={35}>
         {schoolLogos.map((s) => (
-          <div key={s.name} className={`ff-logo-tile${s.dark ? " is-dark" : ""}`} title={s.name}>
-            {s.logo ? <img src={s.logo} alt={s.name} loading="lazy" /> : <span>{s.name}</span>}
+          <div
+            key={s.name}
+            className={`ff-logo-tile${s.dark ? " is-dark" : ""}`}
+            title={s.name}
+          >
+            {s.logo ? (
+              <img src={s.logo} alt={s.name} loading="lazy" />
+            ) : (
+              <span>{s.name}</span>
+            )}
           </div>
         ))}
       </Marquee>
@@ -397,7 +536,11 @@ export function SchoolLogos() {
 }
 
 // Auto-scrolling photo carousel (pauses on hover).
-export function Moments({ title = "From our stages & classrooms" }: { title?: string }) {
+export function Moments({
+  title = "From our stages & classrooms",
+}: {
+  title?: string;
+}) {
   return (
     <section className="ff-section ff-moments">
       <div className="container">
@@ -418,12 +561,18 @@ export function Journey() {
   return (
     <section className="ff-section alt">
       <div className="container">
-        <SecTitle kicker="The journey" title="From first step to spotlight" center />
+        <SecTitle
+          kicker="The journey"
+          title="From first step to spotlight"
+          center
+        />
         <div className="row">
           {journey.map((s, i) => (
             <div key={s.title} className="col-lg-4">
               <div className="ff-step">
-                <div className="ff-step-num">{String(i + 1).padStart(2, "0")}</div>
+                <div className="ff-step-num">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
                 <span className={`ff-step-icon ${s.icon}`}></span>
                 <h3>{s.title}</h3>
                 <p>{s.text}</p>
@@ -437,7 +586,13 @@ export function Journey() {
 }
 
 // Native <details> accordion — no JS.
-export function Faq({ items = faqs, title = "A few helpful answers." }: { items?: { q: string; a: string }[]; title?: string }) {
+export function Faq({
+  items = faqs,
+  title = "A few helpful answers.",
+}: {
+  items?: { q: string; a: string }[];
+  title?: string;
+}) {
   return (
     <div className="ff-faq">
       <SecTitle kicker="Frequently asked" title={title} />
@@ -494,7 +649,7 @@ export function LeadHero({
                 <strong>10+</strong>years of expertise
               </li>
               <li>
-                <strong>8,000+</strong>students trained
+                <strong>10,000+</strong>students trained
               </li>
               <li>
                 <strong>30+</strong>partner schools
@@ -502,7 +657,12 @@ export function LeadHero({
             </ul>
           </div>
           <div id="enquire" className="ff-lead-form">
-            <LeadForm program={program} fields={fields} title={formTitle} submitLabel={submitLabel} />
+            <LeadForm
+              program={program}
+              fields={fields}
+              title={formTitle}
+              submitLabel={submitLabel}
+            />
           </div>
         </div>
       </div>
@@ -512,7 +672,15 @@ export function LeadHero({
 
 // "Trained by the people behind…" credibility strip used on landing pages.
 export function CredStrip() {
-  const items = ["IIFA", "Filmfare", "IPL", "Dubai Expo 2020", "World Chess Olympiad", "Ambani Wedding", "Zee Cine Awards"];
+  const items = [
+    "IIFA",
+    "Filmfare",
+    "IPL",
+    "Dubai Expo 2020",
+    "World Chess Olympiad",
+    "Ambani Wedding",
+    "Zee Cine Awards",
+  ];
   return (
     <div className="ff-cred">
       <div className="container">
@@ -528,12 +696,34 @@ export function CredStrip() {
 }
 
 // Icon cards grid: "what you get" / "who it's for" blocks. With `img`, a tall photo sits beside two columns of cards.
-export function IconGrid({ kicker, title, items, alt, img, imgAlt = "" }: { kicker: string; title: ReactNode; items: Card[]; alt?: boolean; img?: string; imgAlt?: string }) {
+export function IconGrid({
+  kicker,
+  title,
+  items,
+  alt,
+  img,
+  imgAlt = "",
+  twoCol,
+}: {
+  kicker: string;
+  title: ReactNode;
+  items: Card[];
+  alt?: boolean;
+  twoCol?: boolean;
+  img?: string;
+  imgAlt?: string;
+}) {
   const cards = (
-    <div className="ff-icon-grid">
+    <div className={`ff-icon-grid${twoCol ? " ff-icon-grid--2" : ""}`}>
       {items.map((c) => (
         <div key={c.title} className="ff-icon-card">
-          <span className={`ff-icon-card-icon ${c.icon}`} aria-hidden="true"></span>
+          {c.iconImg ? (
+            <span className="ff-icon-card-icon ff-icon-card-icon--img" aria-hidden="true">
+              <img src={c.iconImg} alt="" />
+            </span>
+          ) : (
+            <span className={`ff-icon-card-icon ${c.icon}`} aria-hidden="true"></span>
+          )}
           <h3>{c.title}</h3>
           <p>{c.text}</p>
         </div>
@@ -549,7 +739,8 @@ export function IconGrid({ kicker, title, items, alt, img, imgAlt = "" }: { kick
             <figure className="ff-icon-photo">
               <img src={img} alt={imgAlt} loading="lazy" />
               <figcaption>
-                <strong>8,000+</strong> students trained across India &amp; the USA
+                <strong>10,000+</strong> students trained across India &amp; the
+                USA
               </figcaption>
             </figure>
             {cards}
@@ -563,7 +754,17 @@ export function IconGrid({ kicker, title, items, alt, img, imgAlt = "" }: { kick
 }
 
 // Numbered process steps.
-export function Steps({ kicker = "How it works", title, items, alt }: { kicker?: string; title: ReactNode; items: { title: string; text: string }[]; alt?: boolean }) {
+export function Steps({
+  kicker = "How it works",
+  title,
+  items,
+  alt,
+}: {
+  kicker?: string;
+  title: ReactNode;
+  items: { title: string; text: string }[];
+  alt?: boolean;
+}) {
   return (
     <section className={`ff-section${alt ? " alt" : ""}`}>
       <div className="container">
@@ -571,7 +772,9 @@ export function Steps({ kicker = "How it works", title, items, alt }: { kicker?:
         <ol className="ff-steps">
           {items.map((s, i) => (
             <li key={s.title}>
-              <span className="ff-steps-num">{String(i + 1).padStart(2, "0")}</span>
+              <span className="ff-steps-num">
+                {String(i + 1).padStart(2, "0")}
+              </span>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
             </li>
@@ -583,7 +786,23 @@ export function Steps({ kicker = "How it works", title, items, alt }: { kicker?:
 }
 
 // Split block: image on one side, heading + tick list on the other.
-export function SplitList({ kicker, title, text, items, img, imgAlt, reverse }: { kicker: string; title: ReactNode; text?: string; items: string[]; img: string; imgAlt: string; reverse?: boolean }) {
+export function SplitList({
+  kicker,
+  title,
+  text,
+  items,
+  img,
+  imgAlt,
+  reverse,
+}: {
+  kicker: string;
+  title: ReactNode;
+  text?: string;
+  items: string[];
+  img: string;
+  imgAlt: string;
+  reverse?: boolean;
+}) {
   return (
     <section className="ff-section">
       <div className="container">
@@ -600,7 +819,8 @@ export function SplitList({ kicker, title, text, items, img, imgAlt, reverse }: 
               ))}
             </ul>
             <a className="ff-btn ff-btn--grad" href="#enquire">
-              Enquire now <i className="fa fa-arrow-right" aria-hidden="true"></i>
+              Enquire now{" "}
+              <i className="fa fa-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -610,27 +830,52 @@ export function SplitList({ kicker, title, text, items, img, imgAlt, reverse }: 
 }
 
 // FAQ + a second enquiry form at the end of a page (for visitors who read everything first).
-export function EnquireFaq({ faqItems, program, fields, submitLabel }: { faqItems: { q: string; a: string }[]; program?: string; fields?: LeadField[]; submitLabel?: string }) {
+export function EnquireFaq({
+  faqItems,
+  program,
+  fields,
+  submitLabel,
+}: {
+  faqItems: { q: string; a: string }[];
+  program?: string;
+  fields?: LeadField[];
+  submitLabel?: string;
+}) {
   return (
-    <section className="contact-form-area ff-enquiry">
-      <div className="container">
-        <div className="row">
-          <div className="col-xl-6 col-lg-12">
-            <Faq items={faqItems} title="Your questions, answered." />
-          </div>
-          <div className="col-xl-6 col-lg-12">
-            <LeadForm program={program} fields={fields} title="Still deciding? Talk to us." subtitle="Leave your number and we'll answer every question personally." submitLabel={submitLabel} />
-          </div>
+    <>
+      <section className="ff-section alt">
+        <div className="container ff-faq-wrap">
+          <Faq items={faqItems} title="Your questions, answered." />
         </div>
-      </div>
-    </section>
+      </section>
+      <GetInTouch
+        id="enquire-bottom"
+        title="We'd love to hear from you."
+        intro="Leave your number and we'll answer every question personally. Prefer to talk? Reach us directly:"
+        program={program}
+        fields={fields}
+        formTitle="Still deciding? Talk to us."
+        formSubtitle="Leave your number and we'll answer every question personally."
+        submitLabel={submitLabel}
+      />
+    </>
   );
 }
 
-// ---------- Information-page blocks (the /programs/* pages: explain, don't sell) ----------
+// ---------- Information-page blocks (the /offerings/* pages: explain, don't sell) ----------
 
 // Long-form overview with an "at a glance" fact card.
-export function Overview({ kicker = "Overview", title, children, facts }: { kicker?: string; title: ReactNode; children: ReactNode; facts: { label: string; value: string }[] }) {
+export function Overview({
+  kicker = "Overview",
+  title,
+  children,
+  facts,
+}: {
+  kicker?: string;
+  title: ReactNode;
+  children: ReactNode;
+  facts: { label: string; value: string }[];
+}) {
   return (
     <section className="ff-section">
       <div className="container">
@@ -657,7 +902,56 @@ export function Overview({ kicker = "Overview", title, children, facts }: { kick
 }
 
 // Heading + paragraphs beside a photo, for explanatory sections.
-export function Explainer({ kicker, title, children, img, imgAlt, reverse, alt }: { kicker: string; title: ReactNode; children: ReactNode; img: string; imgAlt: string; reverse?: boolean; alt?: boolean }) {
+// Big photo with a white text card overlapping one edge (alternate sides with `reverse`).
+export function OverlapFeature({
+  kicker,
+  title,
+  img,
+  imgAlt,
+  reverse,
+  cutout,
+  children,
+}: {
+  kicker: string;
+  title: ReactNode;
+  img: string;
+  imgAlt: string;
+  reverse?: boolean;
+  cutout?: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <section className="ff-section">
+      <div className="container">
+        <div className={`ff-overlap${reverse ? " ff-overlap--rev" : ""}`}>
+          <img src={img} alt={imgAlt} loading="lazy" className={cutout ? "is-cutout" : undefined} />
+          <div className="ff-overlap-card">
+            <SecTitle kicker={kicker} title={title} />
+            {children}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Explainer({
+  kicker,
+  title,
+  children,
+  img,
+  imgAlt,
+  reverse,
+  alt,
+}: {
+  kicker: string;
+  title: ReactNode;
+  children: ReactNode;
+  img: string;
+  imgAlt: string;
+  reverse?: boolean;
+  alt?: boolean;
+}) {
   return (
     <section className={`ff-section${alt ? " alt" : ""}`}>
       <div className="container">
@@ -675,22 +969,90 @@ export function Explainer({ kicker, title, children, img, imgAlt, reverse, alt }
   );
 }
 
-// Quiet closing block: FAQ plus an optional question form (keeps the header's #enquire anchor working).
-export function InfoAsk({ faqItems, program, topic }: { faqItems: { q: string; a: string }[]; program?: string; topic: string }) {
+// Closing enquiry block used on every page with a form: contact details left, lead form right (anchor #enquire).
+export function GetInTouch({
+  id = "enquire",
+  topic,
+  kicker = "Get in touch",
+  title,
+  intro = "Tell us a little about your school or plans and our team will get back to you. Prefer to talk? Reach us directly:",
+  program,
+  fields,
+  formTitle = "Have a question?",
+  formSubtitle,
+  submitLabel = "Send my question",
+}: {
+  id?: string;
+  topic?: string;
+  kicker?: string;
+  title?: ReactNode;
+  intro?: string;
+  program?: string;
+  fields?: LeadField[];
+  formTitle?: string;
+  formSubtitle?: string;
+  submitLabel?: string;
+}) {
   return (
-    <section id="enquire" className="contact-form-area ff-enquiry">
+    <section id={id} className="contact-form-area ff-enquiry">
       <div className="container">
         <div className="row">
-          <div className="col-xl-6 col-lg-12">
-            <Faq items={faqItems} title={`Common questions about ${topic}`} />
+          <div className="col-xl-5 col-lg-12">
+            <div className="ff-ask-info">
+              <SecTitle kicker={kicker} title={title ?? (topic ? `Questions about ${topic}?` : "Tell us what you’re planning.")} />
+              <p>{intro}</p>
+              <ul>
+                <li>
+                  <i className="fa fa-phone" aria-hidden="true"></i>
+                  <span>
+                    <small>Call / WhatsApp</small>
+                    <a href={site.phoneHref}>{site.phone}</a>
+                  </span>
+                </li>
+                <li>
+                  <i className="fa fa-envelope" aria-hidden="true"></i>
+                  <span>
+                    <small>Email</small>
+                    <a href={`mailto:${site.email}`}>{site.email}</a>
+                  </span>
+                </li>
+                {/* <li>
+                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                  <span>
+                    <small>Visit us</small>
+                    {site.address}
+                  </span>
+                </li> */}
+                <li>
+                  <i className="fa fa-instagram" aria-hidden="true"></i>
+                  <span>
+                    <small>Follow us</small>
+                    <a href={site.instagram} target="_blank" rel="noopener">
+                      @theflexiifeet
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="col-xl-6 col-lg-12">
-            <LeadForm program={program} title="Have a question?" subtitle={`Ask us anything about ${topic} and our team will get back to you.`} submitLabel="Send my question" />
+          <div className="col-xl-7 col-lg-12">
+            <LeadForm
+              program={program}
+              fields={fields}
+              title={formTitle}
+              subtitle={formSubtitle ?? (topic ? `Ask us anything about ${topic} and our team will get back to you.` : "Leave your details and our team will call you back.")}
+              submitLabel={submitLabel}
+            />
           </div>
         </div>
       </div>
     </section>
   );
+}
+
+// Info-page closing block (FAQ intentionally not shown).
+export function InfoAsk({ program, topic }: { faqItems?: { q: string; a: string }[]; program?: string; topic: string }) {
+  return <GetInTouch topic={topic} program={program} />;
 }
 
 // Links to the other program information pages.
@@ -709,7 +1071,8 @@ export function ExplorePrograms({ current }: { current: string }) {
                 <h3>{p.title}</h3>
                 <p>{p.text}</p>
                 <em>
-                  Learn more <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  Learn more{" "}
+                  <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
                 </em>
               </div>
             </Link>
@@ -726,10 +1089,18 @@ export function TeamSpotlight() {
   return (
     <section className="ff-section ff-team2">
       <div className="container">
-        <SecTitle kicker="Our Team" title="The people behind the movement" center />
+        <SecTitle
+          kicker="Our Team"
+          title="The people behind the movement"
+          center
+        />
         <div className="ff-founder">
           <div className="ff-founder-photo">
-            <img src={founder.img} alt={`${founder.name} ${founder.surname}`} loading="lazy" />
+            <img
+              src={founder.img}
+              alt={`${founder.name} ${founder.surname}`}
+              loading="lazy"
+            />
           </div>
           <div className="ff-founder-body">
             <span className="ff-founder-role">{founder.role}</span>
@@ -737,16 +1108,24 @@ export function TeamSpotlight() {
               {founder.name} {founder.surname}
             </h3>
             <p>
-              Trained under Shiamak Davar, Ayush spent more than a decade teaching at SDIPA and assisting on grand stage
-              shows before founding The FlexiiFeet. He has trained over 8,000 students in India and the USA.
+              Trained under Shiamak Davar, Ayush spent more than a decade
+              teaching at SDIPA and assisting on grand stage shows before
+              founding The FlexiiFeet. He has trained over 10,000 students in
+              India and the USA.
             </p>
             <ul className="ff-founder-tags">
               <li>International choreographer</li>
               <li>Performer</li>
               <li>Educator</li>
             </ul>
-            <a className="ff-founder-link" href={site.founderInstagram} target="_blank" rel="noopener">
-              <i className="fa fa-instagram" aria-hidden="true"></i> Follow Ayush on Instagram
+            <a
+              className="ff-founder-link"
+              href={site.founderInstagram}
+              target="_blank"
+              rel="noopener"
+            >
+              <i className="fa fa-instagram" aria-hidden="true"></i> Follow
+              Ayush on Instagram
             </a>
           </div>
         </div>

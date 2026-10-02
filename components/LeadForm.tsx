@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { programs, site } from "@/lib/site";
+import { offerings, site } from "@/lib/site";
 
 export type LeadField = {
   name: string;
@@ -20,7 +20,7 @@ type Props = {
   submitLabel?: string;
 };
 
-const interests = [...programs.map((p) => p.label), "Weddings & Shows", "Other"];
+const interests = [...offerings.map((p) => p.label), "Other"];
 const trackingKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"];
 
 declare global {
@@ -91,7 +91,7 @@ export default function LeadForm({ program, fields = [], title, subtitle, submit
         </label>
         <label className={(3 + (program ? 0 : 1) + fields.length) % 2 ? "ff-span" : undefined}>
           <span>Email</span>
-          <input type="email" name="email" autoComplete="email" />
+          <input type="email" name="email" autoComplete="email" suppressHydrationWarning />
         </label>
         {!program && (
           <label>

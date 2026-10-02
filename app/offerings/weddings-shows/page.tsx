@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "About Wedding & Show Choreography",
   description:
     "About The FlexiiFeet's wedding, sangeet and stage show choreography: what we offer, dance styles, how rehearsals work, and where we've performed.",
-  alternates: { canonical: "/programs/weddings-shows" },
+  alternates: { canonical: "/offerings/weddings-shows" },
 };
 
 const facts = [
@@ -65,7 +65,7 @@ const faqs = [
 export default function WeddingsShowsInfo() {
   return (
     <>
-      <PageBanner title="Weddings & Shows" sub="About our wedding, sangeet and stage show choreography" />
+      <PageBanner kicker="For celebrations" bg="/live/w-sangeet.jpg" title="Weddings & Shows" sub="About our wedding, sangeet and stage show choreography" />
 
       <Overview title="We don't just teach steps. We create moments." facts={facts}>
         <p>
@@ -129,7 +129,7 @@ export default function WeddingsShowsInfo() {
       </section>
 
       <Steps kicker="The process" title="From first conversation to final bow" items={process} alt />
-      <ExplorePrograms current="/programs/weddings-shows" />
+      <ExplorePrograms current="/offerings/weddings-shows" />
       <InfoAsk faqItems={faqs} program="Weddings & Shows" topic="wedding choreography" />
     </>
   );

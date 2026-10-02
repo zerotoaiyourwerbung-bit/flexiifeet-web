@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { nav, programs, site } from "@/lib/site";
+import { nav, offerings, site } from "@/lib/site";
 
 // Template markup: index.html "footer-area".
 export default function Footer() {
@@ -17,11 +17,12 @@ export default function Footer() {
             <div className="single-footer-widget marbtm50">
               <div className="footer-logo">
                 <Link href="/">
-                  <img src="/live/logo.png" alt="The FlexiiFeet" className="ff-footer-logo" />
+                  <img src="/live/logo-flexiifeet.jpg" alt="The FlexiiFeet" className="ff-footer-logo" />
                 </Link>
               </div>
               <div className="footer-company-info-text">
                 <h3>{site.city}, India</h3>
+                <p className="ff-footer-address">{site.address}</p>
                 <ul>
                   <li>
                     <a href={site.phoneHref}>{site.phone}</a>
@@ -52,17 +53,14 @@ export default function Footer() {
           <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
             <div className="single-footer-widget martop30 pdbtm50">
               <div className="title">
-                <h3>Programs</h3>
+                <h3>Offerings</h3>
               </div>
               <ul className="service-links">
-                {programs.map((p) => (
+                {offerings.map((p) => (
                   <li key={p.href}>
                     <Link href={p.href}>{p.label}</Link>
                   </li>
                 ))}
-                <li>
-                  <Link href="/programs/weddings-shows">Weddings & Shows</Link>
-                </li>
               </ul>
             </div>
           </div>
@@ -88,6 +86,11 @@ export default function Footer() {
                     <li>
                       <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener" aria-label="WhatsApp">
                         <i className="fa fa-whatsapp" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href={site.youtube} target="_blank" rel="noopener" aria-label="YouTube">
+                        <i className="fa fa-youtube-play" aria-hidden="true"></i>
                       </a>
                     </li>
                     <li>

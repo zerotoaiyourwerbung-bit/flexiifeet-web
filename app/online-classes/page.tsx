@@ -59,7 +59,7 @@ export default function OnlineClasses() {
             Live dance classes from <span>anywhere</span> in the world.
           </>
         }
-        sub="Learn Bollywood, contemporary, hip-hop and more from the team that has trained 8,000+ students across India and the USA."
+        sub="Learn Bollywood, contemporary, hip-hop and more from the team that has trained 10,000+ students across India and the USA."
         points={["Live, interactive classes", "Batches by age and level", "Learn from home, in India or abroad"]}
         program={program}
         fields={fields}

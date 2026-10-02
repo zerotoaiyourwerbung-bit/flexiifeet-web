@@ -5,9 +5,14 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/about-us", destination: "/about", permanent: true },
-      { source: "/schools", destination: "/programs/dance-ed", permanent: true },
-      { source: "/weddings-sangeet", destination: "/programs/weddings-shows", permanent: true },
-      { source: "/events", destination: "/programs/weddings-shows", permanent: true },
+      { source: "/what-we-offer/:path*", destination: "/offerings/:path*", permanent: true },
+      { source: "/offline-classes-indore", destination: "/regular-classes", permanent: true },
+      { source: "/offerings/offline-classes-indore", destination: "/offerings/regular-classes", permanent: true },
+      { source: "/programs/:path*", destination: "/offerings/:path*", permanent: true },
+      { source: "/programs", destination: "/offerings", permanent: true },
+      { source: "/schools", destination: "/offerings/dance-ed", permanent: true },
+      { source: "/weddings-sangeet", destination: "/offerings/weddings-shows", permanent: true },
+      { source: "/events", destination: "/offerings/weddings-shows", permanent: true },
     ];
   },
 };

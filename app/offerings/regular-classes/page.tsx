@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "About Our Dance Classes in Indore",
   description:
     "About The FlexiiFeet's studio dance classes in Indore: styles, age-wise levels, faculty, performances and what students gain.",
-  alternates: { canonical: "/programs/offline-classes-indore" },
+  alternates: { canonical: "/offerings/regular-classes" },
 };
 
 const styles = ["Bollywood", "Contemporary", "Hip-Hop", "Jazz", "Semi-Classical & Kathak Fusion", "Fitness Dance"];
@@ -38,7 +38,7 @@ const faqs = [
 export default function OfflineIndoreInfo() {
   return (
     <>
-      <PageBanner title="Offline Classes – Indore" sub="About our studio dance classes for kids, teens and adults" />
+      <PageBanner kicker="In Indore" bg="/live/g4.jpg" title="Offline Classes – Indore" sub="About our studio dance classes for kids, teens and adults" />
 
       <Overview title="Let loose & let's groove, in Indore" facts={facts}>
         <p>
@@ -78,7 +78,7 @@ export default function OfflineIndoreInfo() {
       </Explainer>
 
       <Team />
-      <ExplorePrograms current="/programs/offline-classes-indore" />
+      <ExplorePrograms current="/offerings/regular-classes" />
       <InfoAsk faqItems={faqs} program="Offline Classes – Indore" topic="classes in Indore" />
     </>
   );

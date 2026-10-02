@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { nav, type NavItem } from "@/lib/site";
 
 // Template markup: about.html "main-header style5 style5withstyle6".
@@ -73,14 +73,31 @@ function Menu({ id, onNavigate }: { id?: string; onNavigate?: () => void }) {
 }
 
 export default function Header() {
+  const ref = useRef<HTMLElement>(null);
+
+  // Hide on scroll down, show on scroll up (always visible near the top or while the mobile menu is open)
+  useEffect(() => {
+    let last = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      const el = ref.current;
+      if (!el) return;
+      const menuOpen = !!el.querySelector(".navbar-collapse.show");
+      el.classList.toggle("ff-header--hidden", y > last && y > 120 && !menuOpen);
+      last = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="main-header style5 style5withstyle6 ff-header">
+    <header ref={ref} className="main-header style5 style5withstyle6 ff-header">
       <div className="header-upper-style5">
         <div className="outer-container clearfix">
           <div className="header-upper-left clearfix">
             <div className="logo">
               <Link href="/">
-                <img src="/live/logo.png" alt="The FlexiiFeet – Let Loose & Let's Groove" className="ff-logo" />
+                <img src="/live/logo-flexiifeet.jpg" alt="The FlexiiFeet – Your Stage Starts Here" className="ff-logo" />
               </Link>
             </div>
           </div>
