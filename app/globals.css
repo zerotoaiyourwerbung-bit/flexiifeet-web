@@ -4034,3 +4034,25 @@ body .about-style1-area .row { align-items: center; }
 body .about-style1-left-content { display: flex; justify-content: center; }
 body .about-style1-left-content .ff-about-img { position: static; float: none; display: block; width: 100%; max-width: 500px; max-height: none; height: auto; margin: 0; }
 @media (max-width: 1199px) { body .about-style1-content { margin-top: 36px; } }
+
+/* Buttons: the template's global `a:hover { border: none }` removed the 2px border and shrank every button. Keep size fixed; only colour changes. */
+body .ff-btn, body .ff-btn:hover, body .ff-btn:focus { border-width: 2px; border-style: solid; }
+body .ff-btn--grad { border-color: transparent; }
+body .ff-btn--grad:hover { background: linear-gradient(135deg, #f26a1d 0%, #e85a12 55%, #dc4f0a 100%); }
+body .ff-btn--light:hover { background: var(--ff-tint); border-color: transparent; }
+body .ff-btn--outline:hover { border-color: #fff; }
+.ff-dhero .ff-btn--outline:hover { border-color: var(--ff-ink); }
+/* Buttons never move or resize on hover: colour change only */
+body .ff-btn:hover, body .ff-wa:hover { transform: none; }
+/* No outline or border change on hover: the border keeps its resting colour, only the fill/text colour changes */
+body .ff-btn:hover { outline: none; }
+body .ff-btn--outline:hover { border-color: rgba(255, 255, 255, 0.7); }
+.ff-dhero .ff-btn--outline:hover { border-color: var(--ff-ink); }
+body .ff-btn--grad:hover, body .ff-btn--light:hover { border-color: transparent; }
+
+/* Smooth hover: gradients can't be transitioned directly, so slide a double-width gradient instead */
+body .ff-btn { transition: background-position .4s ease, background-color .3s ease, color .3s ease, border-color .3s ease; }
+body .ff-btn--grad { background: linear-gradient(110deg, #ff8236 0%, #ff6b1a 40%, #e85a12 70%, #d94d0a 100%) 0 0 / 220% 100%; }
+body .ff-btn--grad:hover { background-position: 100% 0; }
+body .ff-btn--light:hover { background-color: var(--ff-tint); }
+body .ff-wa { transition: background-color .3s ease, color .3s ease; }
