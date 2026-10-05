@@ -68,13 +68,13 @@ export default function DanceEd() {
       />
       <CredStrip />
 
-      <IconGrid kicker="Why schools choose DanceED" title="More than a dance period" items={outcomes} img="/live/mic.jpg" imgAlt="Ayush Lokre teaching a dance class at a school" />
+      <IconGrid kicker="Why schools choose DanceED" title="More than a dance period" items={outcomes} img="/live/mic.webp" imgAlt="Ayush Lokre teaching a dance class at a school" />
       <AgeLevels />
       <SplitList
         kicker="What's included"
         title="Everything your school needs, in one program"
         items={included}
-        img="/live/g3.jpg"
+        img="/live/g3.webp"
         imgAlt="Students and choreographers from The FlexiiFeet"
       />
       <Steps title="Up and running in four steps" items={steps} alt />

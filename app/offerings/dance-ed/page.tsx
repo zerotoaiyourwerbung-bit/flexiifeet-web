@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/offerings/dance-ed" },
 };
 
-// Photos framing the intro statement (top row, left side, right side, bottom row).
-const mosaic = ["g1.jpg", "g2.jpg", "g3.jpg", "g4.jpg", "g5.jpg", "mic.jpg", "team-ayush.jpg", "team-ekta.jpg", "team-harshit.png", "team-prachi.png", "hero-khokho.jpg", "ayush-stage.jpg", "about-banner.png", "g1.jpg", "g2.jpg", "g5.jpg"];
+// Four school photos framing the intro statement.
+const mosaic = ["school-class.webp", "about-banner.webp", "school-kids.webp", "mic.webp"];
 
 const different = [
   { title: "Structured Curriculum", icon: "icon-content", text: "Not random choreography. A real syllabus, Nursery to Grade 12." },
@@ -143,7 +143,7 @@ export default function DanceEdInfo() {
             </div>
             <div className="ff-proof-row">
               <span className="ff-proof-faces">
-                {["team-ayush.jpg", "team-ekta.jpg", "team-harshit.png", "team-prachi.png"].map((f) => (
+                {["team-ayush.webp", "team-ekta.webp", "team-harshit.webp", "team-prachi.webp"].map((f) => (
                   <img key={f} src={`/live/${f}`} alt="" />
                 ))}
               </span>
@@ -154,7 +154,7 @@ export default function DanceEdInfo() {
             </div>
           </div>
           <div className="ff-dhero-collage">
-            {["g1.jpg", "about-banner.png", "g4.jpg", "g2.jpg"].map((f) => (
+            {["about-banner.webp", "school-class.webp", "school-kids.webp", "mic.webp"].map((f) => (
               <img key={f} src={`/live/${f}`} alt="Students dancing with The FlexiiFeet" />
             ))}
           </div>
@@ -163,9 +163,9 @@ export default function DanceEdInfo() {
 
       <section className="ff-section">
         <div className="container">
-          <div className="ff-mosaic">
+          <div className="ff-frame4">
             {mosaic.map((f, i) => (
-              <img key={i} src={`/live/${f}`} alt="" loading="lazy" />
+              <img key={i} src={`/live/${f}`} alt="Students dancing with The FlexiiFeet" loading="lazy" />
             ))}
             <div className="ff-mosaic-center">
               <h2>
@@ -196,7 +196,7 @@ export default function DanceEdInfo() {
         </div>
       </section>
 
-      <OverlapFeature kicker="Policy" title="Dance belongs in schools. And now, policy agrees." img="/live/g3.jpg" imgAlt="Choreographers from The FlexiiFeet" reverse>
+      <OverlapFeature kicker="Policy" title="Dance belongs in schools. And now, policy agrees." img="/live/school-class.webp" imgAlt="School students performing a dance together" reverse>
         <p>
           National Education Policy (NEP) 2020 recognizes performing arts, including dance, as essential to holistic
           education. CBSE mandates art education (music, dance, visual arts, theatre) as compulsory for Classes 1–10,
@@ -207,7 +207,7 @@ export default function DanceEdInfo() {
 
       <IconGrid kicker="The 4 pillars" title="The 4 Pillars of Dance-Based Development" items={pillars} twoCol />
 
-      <Explainer kicker="Why it works" title="Dance engages the whole child" img="/live/g4.jpg" imgAlt="Students dancing together" alt>
+      <Explainer kicker="Why it works" title="Dance engages the whole child" img="/live/kids-illustration.webp" imgAlt="Illustration of joyful children dancing" alt>
         <p>
           Dance engages the whole child, body, mind, and emotion, in a single activity. It&rsquo;s experiential learning
           at its best: structured, joyful, and deeply impactful.
@@ -218,20 +218,21 @@ export default function DanceEdInfo() {
       </Explainer>
 
       <IconGrid kicker="What research tells us" title="This is not only about stage performances. It's about what happens inside your students." items={research} twoCol />
-      <p className="ff-note text-center">
-        Dance is one of the few activities that develops a child physically, emotionally, socially, and cognitively, all
-        at once.
-      </p>
-      <div className="container">
-        <figure className="ff-grad-quote">
-          <img src="/live/ayush-graduation.png" alt="Ayush Lokre at his graduation ceremony with Shiamak Davar" loading="lazy" />
-          <blockquote>
-            &ldquo;The aim of dance education is not only to teach dance. It&rsquo;s to create humans who can move
-            through life with confidence and creativity.&rdquo;
-            <cite>Ayush Lokre at his Graduation Ceremony, SDIPA 2016–17</cite>
-          </blockquote>
-        </figure>
-      </div>
+      <section className="ff-section ff-callout">
+        <div className="container">
+          <p className="ff-callout-line">
+            Dance is one of the few activities that develops a child physically, emotionally, socially, and cognitively, all at once.
+          </p>
+          <figure className="ff-grad-quote">
+            <img src="/live/ayush-graduation.webp" alt="Ayush Lokre at his graduation ceremony with Shiamak Davar" loading="lazy" />
+            <blockquote>
+              &ldquo;The aim of dance education is not only to teach dance. It&rsquo;s to create humans who can move
+              through life with confidence and creativity.&rdquo;
+              <cite>Ayush Lokre at his Graduation Ceremony, SDIPA 2016–17</cite>
+            </blockquote>
+          </figure>
+        </div>
+      </section>
 
       <section id="pathway" className="ff-section alt">
         <div className="container">
@@ -257,18 +258,18 @@ export default function DanceEdInfo() {
 
       <SplitList
         kicker="What's included"
-        title="Our in-school DanceEd Program"
+        title="In our DanceED program"
         text="It runs through the academic year, with weekly classes designed for each age group from Nursery to Grade 12."
         items={included}
-        img="/live/g5.jpg"
-        imgAlt="Students performing at a school event"
+        img="/live/school-kids.webp"
+        imgAlt="Children in costume with their dance instructor"
       />
 
       <AgeLevels levels={levels} kicker="Grade-wise curriculum snapshot" title="From Play Group to Grade 12" />
 
       <section className="ff-section alt">
         <div className="container">
-          <img className="ff-wide-photo" src="/live/school-kids.png" alt="Students and their instructor in costumes at a FlexiiFeet dance session" loading="lazy" />
+          <img className="ff-wide-photo" src="/live/school-kids.webp" alt="Students and their instructor in costumes at a FlexiiFeet dance session" loading="lazy" />
           <SecTitle kicker="More ways to bring dance into your school" title="Programs beyond the weekly class" center />
           <div className="ff-icon-grid">
             {moreWays.map((w) => (
@@ -286,7 +287,7 @@ export default function DanceEdInfo() {
             ))}
           </div>
           {/* <div className="ff-moments-row">
-            {["moment-1.png", "moment-2.png", "moment-3.png"].map((f) => (
+            {["moment-1.webp", "moment-2.webp", "moment-3.webp"].map((f) => (
               <img key={f} src={`/live/${f}`} alt="The FlexiiFeet team with industry guests" loading="lazy" />
             ))}
           </div> */}

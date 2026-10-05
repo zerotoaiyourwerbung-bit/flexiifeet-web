@@ -16,27 +16,35 @@ export default function Contact() {
             <div>
               <h1>Connect with us</h1>
               <p>For our Regular Classes | Online Classes | Wedding &amp; Shows | Brand Campaign</p>
+              <div className="ff-cta-buttons" style={{ justifyContent: "flex-start", marginTop: 28 }}>
+                <a className="ff-btn ff-btn--grad" href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener">
+                  Chat on WhatsApp
+                </a>
+                <a className="ff-btn ff-btn--outline" href="#enquire">
+                  Send an enquiry
+                </a>
+              </div>
             </div>
-            <dl className="ff-talk-details">
-              <div>
-                <dt>Email address</dt>
-                <dd>
-                  <a href={`mailto:${site.email}`}>{site.email}</a>
-                </dd>
-              </div>
-              <div>
-                <dt>Phone / WhatsApp</dt>
-                <dd>
-                  <a href={site.phoneHref}>{site.phone}</a>
-                </dd>
-              </div>
-              <div className="ff-talk-social">
-                <dt>Based in</dt>
-                <dd>{site.address}</dd>
-              </div>
-              <div className="ff-talk-social">
-                <dt>Let&rsquo;s connect</dt>
-                <dd>
+            <ul className="ff-contact-cards">
+              <li>
+                <i className="fa fa-envelope" aria-hidden="true"></i>
+                <small>Email us</small>
+                <a href={`mailto:${site.email}`}>{site.email}</a>
+              </li>
+              <li>
+                <i className="fa fa-phone" aria-hidden="true"></i>
+                <small>Call / WhatsApp</small>
+                <a href={site.phoneHref}>{site.phone}</a>
+              </li>
+              <li>
+                <i className="fa fa-map-marker" aria-hidden="true"></i>
+                <small>Visit us</small>
+                <span>{site.address}</span>
+              </li>
+              <li>
+                <i className="fa fa-instagram" aria-hidden="true"></i>
+                <small>Follow us</small>
+                <span className="ff-contact-links">
                   <a href={site.instagram} target="_blank" rel="noopener">
                     Instagram
                   </a>
@@ -46,9 +54,9 @@ export default function Contact() {
                   <a href={site.youtube} target="_blank" rel="noopener">
                     YouTube
                   </a>
-                </dd>
-              </div>
-            </dl>
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
         <img className="ff-talk-img" src="/live/hero-khokho.jpg" alt="The FlexiiFeet team at the Kho Kho World Cup India 2025" />

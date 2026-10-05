@@ -283,7 +283,7 @@ export function Testimonials({
       <div className="container">
         <SecTitle
           kicker="Testimonials"
-          title="Words from our partner schools"
+          title="Words from the schools we work with"
         />
         <div className="row">
           {items.map((t) => (
@@ -446,7 +446,6 @@ export function NumberedFeatures({ items }: { items: Card[] }) {
 export function StatsTicker() {
   const items = [
     "10+ years of expertise",
-    "30+ partner schools",
     "10,000+ students trained",
     "India to the USA",
   ];
@@ -512,9 +511,6 @@ export function SchoolLogos() {
           title="Schools we've moved with"
           center
         />
-        <p className="text-center ff-lead">
-          Part of a growing network of 30+ partner schools.
-        </p>
       </div>
       <Marquee speed={35}>
         {schoolLogos.map((s) => (
@@ -650,9 +646,6 @@ export function LeadHero({
               </li>
               <li>
                 <strong>10,000+</strong>students trained
-              </li>
-              <li>
-                <strong>30+</strong>partner schools
               </li>
             </ul>
           </div>
@@ -1028,7 +1021,7 @@ export function GetInTouch({
                   <span>
                     <small>Follow us</small>
                     <a href={site.instagram} target="_blank" rel="noopener">
-                      @theflexiifeet
+                      @theflexiifeetdance
                     </a>
                   </span>
                 </li>

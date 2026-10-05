@@ -43,7 +43,7 @@ const faqs = [
 export default function AnnualDaysInfo() {
   return (
     <>
-      <PageBanner kicker="For school events" bg="/live/g5.jpg" title="Annual Days" sub="How we choreograph school annual days, from theme to curtain call" />
+      <PageBanner kicker="For school events" bg="/live/g5.webp" title="Annual Days" sub="How we choreograph school annual days, from theme to curtain call" />
 
       <Overview title="An annual day, choreographed end to end" facts={facts}>
         <p>
@@ -57,9 +57,9 @@ export default function AnnualDaysInfo() {
         </p>
       </Overview>
 
-      <IconGrid kicker="What's involved" title="The parts of a great school show" items={parts} alt img="/live/ayush-stage.jpg" imgAlt="Ayush Lokre at the Kho Kho World Cup India" />
+      <IconGrid kicker="What's involved" title="The parts of a great school show" items={parts} alt img="/live/ayush-stage.webp" imgAlt="Ayush Lokre at the Kho Kho World Cup India" />
 
-      <Explainer kicker="Why it matters" title="More than a performance" img="/live/g5.jpg" imgAlt="Performers on stage" reverse>
+      <Explainer kicker="Why it matters" title="More than a performance" img="/live/g5.webp" imgAlt="Performers on stage" reverse>
         <p>
           For many students, the annual day is their first time on a real stage. Weeks of rehearsal teach them to
           work as a team, remember their part and hold their nerve in front of an audience.

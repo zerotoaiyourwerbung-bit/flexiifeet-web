@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: { default: `${site.name} | Dance Education, Weddings & Shows`, template: `%s | ${site.name}` },
   description:
     "The FlexiiFeet by choreographer Ayush Lokre: NEP-aligned DanceED school curriculum, annual day choreography, online & offline dance classes in Indore, and wedding & stage show choreography.",
-  openGraph: { siteName: site.name, type: "website", images: ["/live/g1.jpg"] },
+  openGraph: { siteName: site.name, type: "website", images: ["/live/g1.webp"] },
   icons: { icon: "/images/favicon/favicon-32x32.png", apple: "/images/favicon/apple-touch-icon.png" },
 };
 

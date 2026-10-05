@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Meet Ayush Lokre, international choreographer trained under Shiamak Davar, and The FlexiiFeet team—10+ years, 10,000+ students, 30+ partner schools.",
+    "Meet Ayush Lokre, international choreographer trained under Shiamak Davar, and The FlexiiFeet team—10+ years, 10,000+ students.",
 };
 
 const stages = [
@@ -52,11 +52,6 @@ const why = [
     text: "Trained across India and internationally.",
   },
   {
-    title: "30+ Partnered with International Schools",
-    icon: "icon-mission",
-    text: "Using our integrated, NEP-aligned curriculum.",
-  },
-  {
     title: "Prestigious Stages",
     icon: "icon-diamond",
     text: "IIFA, IPL, Dubai Expo, Ambani weddings & more.",
@@ -66,22 +61,23 @@ const why = [
 export default function About() {
   return (
     <>
-      <section className="ff-split-banner">
-        <img
-          src="/live/about-banner.png"
-          alt="Ayush S K Lokre with a group of smiling young dancers jumping in a dance studio"
-        />
-        <div className="container">
-          <div className="ff-split-card">
+      <section className="ff-dhero">
+        <div className="container ff-dhero-grid">
+          <div>
+            <span className="ff-pill-tag">About us</span>
             <h1>About The FlexiiFeet</h1>
-            <span className="ff-split-line"></span>
-            <p>
-              Bringing stories to life through dance in schools, on stage, and
-              at celebrations
-            </p>
-            {/* <a className="ff-btn ff-btn--grad" href="#enquire">
-              Enquire Now
-            </a> */}
+            <p>Bringing stories to life through dance in schools, on stage, and at celebrations</p>
+            <div className="ff-cta-buttons" style={{ justifyContent: "flex-start" }}>
+              <a className="ff-btn ff-btn--grad" href="#enquire">
+                Enquire now
+              </a>
+              <a className="ff-btn ff-btn--outline" href="/contact">
+                Contact us
+              </a>
+            </div>
+          </div>
+          <div className="ff-dhero-photo ff-dhero-photo--portrait">
+            <img src="/live/about-banner.webp" alt="Ayush Lokre with a group of smiling young dancers in a dance studio" />
           </div>
         </div>
       </section>
@@ -89,11 +85,11 @@ export default function About() {
       <section className="ff-story">
         <div className="container">
           <div className="ff-story-grid">
-            <h2 className="ff-story-label">About</h2>
-            <div className="ff-story-main">
-              <p className="ff-story-lead">
-                We believe every body has a story to tell and dance gives it a language.
-              </p>
+            <div className="ff-story-head">
+              <SecTitle kicker="About The FlexiiFeet" title="We believe every body has a story to tell and dance gives it a language." />
+              <img className="ff-story-photo" src="/live/ayush-stage.webp" alt="Ayush Lokre performing on stage" />
+            </div>
+            <div className="ff-story-body">
               <p>
                 The FlexiiFeet was created with a simple idea: to make dance more accessible, meaningful, and
                 inspiring, while bringing professional training and creativity into every space we enter.
@@ -105,8 +101,6 @@ export default function About() {
                 of its learning experience, or a couple wanting their celebration to be unforgettable we create
                 experiences that make people move, connect, and express.
               </p>
-            </div>
-            <div className="ff-story-side">
               <p>
                 Our approach goes beyond teaching steps. We focus on confidence, creativity, discipline, expression, and
                 the joy of movement, creating an environment where every dancer can discover what they are capable of.
@@ -119,7 +113,6 @@ export default function About() {
                 We&rsquo;re here to teach it, live it, celebrate it and help more people find their own rhythm.
               </p>
             </div>
-            <img className="ff-story-photo" src="/live/ayush-stage.jpg" alt="Ayush S K Lokre performing on stage" />
           </div>
         </div>
       </section>
@@ -138,7 +131,7 @@ export default function About() {
                 </div>
                 <div className="image-box-one">
                   <img
-                    src="/live/ayush-stage.jpg"
+                    src="/live/ayush-stage.webp"
                     alt="Ayush Lokre performing"
                     className="ff-cover"
                   />
@@ -198,13 +191,13 @@ export default function About() {
             <div className="ff-who-media">
               <img
                 className="ff-who-main"
-                src="/live/g1.jpg"
+                src="/live/g1.webp"
                 alt="Ayush Lokre with fellow artists"
                 loading="lazy"
               />
               <img
                 className="ff-who-sub"
-                src="/live/mic.jpg"
+                src="/live/mic.webp"
                 alt="The FlexiiFeet at an event"
                 loading="lazy"
               />
@@ -257,26 +250,74 @@ export default function About() {
           <SecTitle kicker="Founders" title="The people behind The FlexiiFeet." center />
           <div className="ff-founders-grid">
             <article className="ff-founder-card">
-              <img src="/live/founder-ayush.webp" alt="Ayush S K Lokre" loading="lazy" />
+              <img src="/live/founder-ayush.webp" alt="Ayush Lokre" loading="lazy" />
               <div>
-                <h3>Ayush S K Lokre</h3>
-                <span>Founder &amp; Artistic Director</span>
-                <p>
-                  Trained under Shiamak Davar, Ayush spent over a decade teaching at SDIPA and performing on major
-                  stages across India and the world. He has trained 10,000+ students in India and the USA.
-                </p>
+                <h3>Ayush Lokre</h3>
+                <span>Co-Founder</span>
+                <p>International choreographer, performer and dance educator. 10,000+ students trained across India and the USA.</p>
               </div>
             </article>
-            {/* TODO: Animesh's role and bio are placeholders, replace with real details */}
+            {/* TODO: Animesh Lunavat's bio is a placeholder, replace with real details */}
             <article className="ff-founder-card">
-              <img src="/live/founder-animesh.webp" alt="Animesh, co-founder of The FlexiiFeet" loading="lazy" />
+              <img src="/live/founder-animesh.webp" alt="Animesh Lunavat, co-founder of The FlexiiFeet" loading="lazy" />
               <div>
-                <h3>Animesh</h3>
-                <span>Co-Founder (role to be added)</span>
-                <p>Animesh&rsquo;s bio will be added here.</p>
+                <h3>Animesh Lunavat</h3>
+                <span>Co-Founder</span>
+                <p>Animesh Lunavat&rsquo;s bio will be added here.</p>
               </div>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section className="ff-section alt ff-profile" id="ayush">
+        <div className="container">
+          <div className="ff-profile-grid">
+            <img className="ff-profile-photo" src="/live/founder-ayush.webp" alt="Ayush Lokre" loading="lazy" />
+            <div>
+              <SecTitle kicker="Co-Founder" title="Ayush Lokre" />
+              <p className="ff-profile-role">Co-Founder | International Choreographer | Dance Educator</p>
+              <blockquote className="ff-quote">&ldquo;Dance is not just something to learn &mdash; it&rsquo;s something to experience.&rdquo;</blockquote>
+              <p>
+                With over a decade of experience in dance, choreography, and dance education, Ayush Lokre is the
+                Co-Founder of The FlexiiFeet, a platform built on the belief that dance should be experienced with joy,
+                expression, and purpose.
+              </p>
+              <p>
+                Having trained 10,000+ students, Ayush has built a diverse career spanning education, performance,
+                choreography, and international dance training. His performance journey includes prestigious platforms
+                such as the IIFA Awards, Filmfare Awards, Zee Cine Awards, and the World Chess Olympiad 2022 and many
+                more.
+              </p>
+              <p>
+                He has also had the honour of representing India at the Asian Culture Carnival and the Dubai Expo 2020,
+                bringing Indian dance and culture to international platforms.
+              </p>
+              <p>
+                As an international choreographer and dance educator, Ayush has conducted dance training and workshops
+                in both India and the USA, working with dancers from different backgrounds and age groups.
+              </p>
+              <p>
+                Today, through The FlexiiFeet, Ayush continues to combine his experience as a performer, choreographer,
+                and educator to create an environment where dancers don&rsquo;t just learn choreography &mdash; they
+                build confidence, express themselves, and truly experience the joy of dance.
+              </p>
+            </div>
+          </div>
+          <ul className="ff-profile-stats">
+            {[
+              ["10+", "Years of Experience"],
+              ["10,000+", "Students Trained"],
+              ["International", "Choreographer"],
+              ["Performer", "at Major Award Shows"],
+              ["Represented", "India Internationally"],
+            ].map(([a, b]) => (
+              <li key={a}>
+                <strong>{a}</strong>
+                {b}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -323,7 +364,7 @@ export default function About() {
       
 
       {/* <WhatWeDo title={<>Three stages, one passion.</>} /> */}
-      <Featured items={why} img="/live/mic.jpg" />
+      <Featured items={why} img="/live/mic.webp" />
       {/* <Stats /> */}
       {/* <TeamSpotlight /> */}
       {/* <Cta

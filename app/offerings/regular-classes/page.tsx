@@ -38,7 +38,7 @@ const faqs = [
 export default function OfflineIndoreInfo() {
   return (
     <>
-      <PageBanner kicker="In Indore" bg="/live/g4.jpg" title="Offline Classes – Indore" sub="About our studio dance classes for kids, teens and adults" />
+      <PageBanner kicker="In Indore" bg="/live/g4.webp" title="Offline Classes – Indore" sub="About our studio dance classes for kids, teens and adults" />
 
       <Overview title="Let loose & let's groove, in Indore" facts={facts}>
         <p>
@@ -51,7 +51,7 @@ export default function OfflineIndoreInfo() {
         </p>
       </Overview>
 
-      <IconGrid kicker="The studio" title="What classes in Indore offer" items={features} alt img="/live/g1.jpg" imgAlt="Ayush Lokre with fellow artists" />
+      <IconGrid kicker="The studio" title="What classes in Indore offer" items={features} alt img="/live/g1.webp" imgAlt="Ayush Lokre with fellow artists" />
 
       <section className="ff-section">
         <div className="container">
@@ -66,7 +66,7 @@ export default function OfflineIndoreInfo() {
 
       <AgeLevels />
 
-      <Explainer kicker="What students gain" title="More than steps" img="/live/g4.jpg" imgAlt="Ayush Lokre with a fellow choreographer" reverse alt>
+      <Explainer kicker="What students gain" title="More than steps" img="/live/g4.webp" imgAlt="Ayush Lokre with a fellow choreographer" reverse alt>
         <p>
           Regular classes give children and adults a healthy, active routine they look forward to. Along the way they
           build discipline, focus and coordination.

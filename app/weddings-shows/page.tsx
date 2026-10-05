@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 };
 
 const offers = [
-  { title: "Couple Dance Choreography", img: "/live/w-couple.jpg", text: "Make your first dance as a married couple iconic—with personalised sequences, romantic storytelling, and effortless moves tailored to your comfort level." },
-  { title: "Family & Group Performances", img: "/live/w-family.jpg", text: "From your grandparents to your best friends, we create joyful, inclusive choreographies for all age groups." },
-  { title: "Sangeet & Mehndi Performances", img: "/live/w-sangeet.jpg", text: "Set the tone for your big day with high-energy, professionally guided dances for every wedding function." },
-  { title: "Rehearsals at Home, Studio or Online", img: "/live/w-rehearsal.png", text: "Flexible rehearsal options that fit your schedule and comfort—at home, online, or in our studio." },
-  { title: "Theme-Based Concepts & Entries", img: "/live/w-theme.png", text: "Bride & groom entries, musical pheras, cinematic entrances and themed acts with costumes and stage presence." },
-  { title: "Corporate Events & Stage Shows", img: "/live/g4.jpg", text: "Choreography and performances that captivate the audience—professional teaching, shiny props, and high-energy dance concepts." },
+  { title: "Couple Dance Choreography", img: "/live/w-couple.webp", text: "Make your first dance as a married couple iconic—with personalised sequences, romantic storytelling, and effortless moves tailored to your comfort level." },
+  { title: "Family & Group Performances", img: "/live/w-family.webp", text: "From your grandparents to your best friends, we create joyful, inclusive choreographies for all age groups." },
+  { title: "Sangeet & Mehndi Performances", img: "/live/w-sangeet.webp", text: "Set the tone for your big day with high-energy, professionally guided dances for every wedding function." },
+  { title: "Rehearsals at Home, Studio or Online", img: "/live/w-rehearsal.webp", text: "Flexible rehearsal options that fit your schedule and comfort—at home, online, or in our studio." },
+  { title: "Theme-Based Concepts & Entries", img: "/live/w-theme.webp", text: "Bride & groom entries, musical pheras, cinematic entrances and themed acts with costumes and stage presence." },
+  { title: "Corporate Events & Stage Shows", img: "/live/g4.webp", text: "Choreography and performances that captivate the audience—professional teaching, shiny props, and high-energy dance concepts." },
 ];
 
 const why = [

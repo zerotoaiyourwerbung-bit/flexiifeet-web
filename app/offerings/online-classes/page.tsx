@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const works = [
-  { title: "Live & Interactive", icon: "icon-chat", text: "Real-time classes taught by Ayush Lokre, with live corrections, not pre-recorded videos." },
+  { title: "Live and Interactive Dance Classes", icon: "icon-chat", text: "Live classes taught by professional instructors trained by Ayush Lokre, with master classes by Ayush Lokre himself." },
   { title: "A Structured Syllabus", icon: "icon-content", text: "Technique, discipline, confidence and joyful learning, not just choreography." },
   { title: "Batches by Age", icon: "icon-student", text: "Separate batches for ages 4–7, ages 8–15 and adults, so everyone learns at the right pace." },
   { title: "Built for the USA", icon: "icon-network", text: "Batch timings in Eastern, Central and Pacific time, twice a week, 8 classes a month." },
@@ -35,36 +35,44 @@ const zones: { name: string; label: string; rows: Row[] }[] = [
     name: "EST",
     label: "Eastern Time",
     rows: [
-      { age: "4–7", option: "Option 1", days: "Tue & Thu", time: "6:00 PM" },
-      { age: "4–7", option: "Option 2", days: "Sat & Sun", time: "1:00 PM" },
-      { age: "4–7", option: "Option 3", days: "Tue & Sun", time: "6:00 PM | 1:00 PM" },
-      { age: "8–15", option: "Option 1", days: "Tue & Thu", time: "7:00 PM" },
-      { age: "8–15", option: "Option 2", days: "Sat & Sun", time: "8:30 AM" },
-      { age: "Adults", option: "Option 1", days: "Tue & Thu", time: "8:30 PM" },
+      { age: "4–7", option: "Option 1", days: "Mon & Wed", time: "6:00 PM" },
+      { age: "4–7", option: "Option 2", days: "Tue & Thu", time: "6:00 PM" },
+      { age: "4–7", option: "Option 3", days: "Sat & Sun", time: "1:00 PM" },
+      { age: "8–15", option: "Option 1", days: "Mon & Wed", time: "7:00 PM" },
+      { age: "8–15", option: "Option 2", days: "Tue & Thu", time: "7:00 PM" },
+      { age: "8–15", option: "Option 3", days: "Mon & Wed", time: "12:00 PM" },
+      { age: "Adults", option: "Option 1", days: "Mon & Wed", time: "8:30 PM" },
+      { age: "Adults", option: "Option 2", days: "Tue & Thu", time: "8:30 PM" },
+      { age: "Adults", option: "Option 3", days: "Sat & Sun", time: "11:00 AM" },
     ],
   },
   {
     name: "CST",
     label: "Central Time",
     rows: [
-      { age: "4–7", option: "Option 1", days: "Tue & Thu", time: "5:00 PM" },
-      { age: "4–7", option: "Option 2", days: "Sat & Sun", time: "12:00 PM" },
-      { age: "4–7", option: "Option 3", days: "Tue & Sun", time: "5:00 PM | 12:00 PM" },
-      { age: "8–15", option: "Option 1", days: "Tue & Thu", time: "6:00 PM" },
-      { age: "8–15", option: "Option 2", days: "Sat & Sun", time: "7:30 AM" },
-      { age: "Adults", option: "Option 1", days: "Tue & Thu", time: "7:30 PM" },
+      { age: "4–7", option: "Option 1", days: "Mon & Wed", time: "5:00 PM" },
+      { age: "4–7", option: "Option 2", days: "Tue & Thu", time: "5:00 PM" },
+      { age: "4–7", option: "Option 3", days: "Sat & Sun", time: "12:00 PM" },
+      { age: "8–15", option: "Option 1", days: "Mon & Wed", time: "6:00 PM" },
+      { age: "8–15", option: "Option 2", days: "Tue & Thu", time: "6:00 PM" },
+      { age: "8–15", option: "Option 3", days: "Sat & Sun", time: "11:00 AM" },
+      { age: "Adults", option: "Option 1", days: "Mon & Wed", time: "7:30 PM" },
+      { age: "Adults", option: "Option 2", days: "Tue & Thu", time: "7:30 PM" },
+      { age: "Adults", option: "Option 3", days: "Sat & Sun", time: "10:00 AM" },
     ],
   },
   {
     name: "PST",
     label: "Pacific Time",
     rows: [
-      { age: "4–7", option: "Option 1", days: "Tue & Thu", time: "3:00 PM" },
-      { age: "4–7", option: "Option 2", days: "Sat & Sun", time: "10:00 AM" },
-      { age: "4–7", option: "Option 3", days: "Tue & Sun", time: "3:00 PM | 10:00 AM" },
-      { age: "8–15", option: "Option 1", days: "Tue & Thu", time: "4:00 PM" },
-      { age: "8–15", option: "Option 2", days: "Sat & Sun", time: "5:30 AM" },
+      { age: "4–7", option: "Option 1", days: "Mon & Wed", time: "6:30 PM" },
+      { age: "4–7", option: "Option 2", days: "Tue & Thu", time: "6:30 PM" },
+      { age: "4–7", option: "Option 3", days: "Sat & Sun", time: "10:00 AM" },
+      { age: "8–15", option: "Option 1", days: "Mon & Wed", time: "4:00 PM" },
+      { age: "8–15", option: "Option 2", days: "Tue & Thu", time: "7:30 PM" },
+      { age: "8–15", option: "Option 3", days: "Sat & Sun", time: "9:00 AM" },
       { age: "Adults", option: "Option 1", days: "Tue & Thu", time: "5:30 PM" },
+      { age: "Adults", option: "Option 2", days: "Sat & Sun", time: "8:00 AM" },
     ],
   },
 ];
@@ -126,8 +134,8 @@ export default function OnlineClassesInfo() {
               Online Dance Mania with <span className="ff-underline">Ayush Lokre</span>
             </h1>
             <p>
-              Live online Bollywood dance classes for kids, teens and adults, taught with the same star-level energy
-              and expertise Ayush brings to Bollywood&rsquo;s biggest stages.
+              Live online Bollywood dance classes for kids, teens and adults, taught by professional instructors trained
+              by Ayush Lokre, with master classes by Ayush himself.
             </p>
             <div className="ff-cta-buttons" style={{ justifyContent: "flex-start" }}>
               <a className="ff-btn ff-btn--grad" href="#enquire">
@@ -145,7 +153,7 @@ export default function OnlineClassesInfo() {
             </div>
           </div>
           <div className="ff-dhero-portrait">
-            <img src="/live/ayush-online-portrait.png" alt="Ayush Lokre, celebrity dance choreographer" />
+            <img src="/live/ayush-online-portrait.webp" alt="Ayush Lokre, celebrity dance choreographer" />
           </div>
         </div>
       </section>
@@ -155,7 +163,7 @@ export default function OnlineClassesInfo() {
       <OverlapFeature
         kicker="Your choreographer"
         title="Ayush Lokre, celebrity dance choreographer"
-        img="/live/ayush-online-dance.png"
+        img="/live/ayush-online-dance.webp"
         imgAlt="Ayush Lokre in a dance pose"
         cutout
         reverse
@@ -177,11 +185,11 @@ export default function OnlineClassesInfo() {
           <SecTitle kicker="Gallery" title="Moments from the classroom and the stage" center />
           <div className="ff-bento">
             {[
-              ["school-kids.png", "Ayush with young dancers in costume"],
-              ["moment-1.png", "Ayush Lokre with Shiamak Davar"],
-              ["moment-2.png", "Ayush Lokre with a Bollywood guest"],
-              ["moment-3.png", "Ayush Lokre with an IIFA award"],
-              ["ayush-stage.jpg", "Ayush Lokre on stage"],
+              ["school-kids.webp", "Ayush with young dancers in costume"],
+              ["moment-1.webp", "Ayush Lokre with Shiamak Davar"],
+              ["moment-2.webp", "Ayush Lokre with a Bollywood guest"],
+              ["moment-3.webp", "Ayush Lokre with an IIFA award"],
+              ["ayush-stage.webp", "Ayush Lokre on stage"],
             ].map(([f, alt]) => (
               <img key={f} src={`/live/${f}`} alt={alt} loading="lazy" />
             ))}

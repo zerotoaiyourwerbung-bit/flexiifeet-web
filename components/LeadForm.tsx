@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { offerings, site } from "@/lib/site";
+import { offerings, site, whatsappLink } from "@/lib/site";
 
 export type LeadField = {
   name: string;
@@ -142,8 +142,19 @@ export default function LeadForm({ program, fields = [], title, subtitle, submit
         {state === "sending" ? "Sending…" : submitLabel}
         {state !== "sending" && <i className="fa fa-arrow-right" aria-hidden="true"></i>}
       </button>
-      <p className="ff-form-note">
-        <i className="fa fa-lock" aria-hidden="true"></i> No payment needed. Our team will call you back.
+      <ul className="ff-form-trust">
+        <li>
+          <i className="fa fa-check" aria-hidden="true"></i> Free, no payment needed
+        </li>
+        <li>
+          <i className="fa fa-phone" aria-hidden="true"></i> Our team will call you back
+        </li>
+      </ul>
+      <p className="ff-form-alt">
+        Prefer to chat?{" "}
+        <a href={whatsappLink()} target="_blank" rel="noopener">
+          Message us on WhatsApp
+        </a>
       </p>
     </form>
   );

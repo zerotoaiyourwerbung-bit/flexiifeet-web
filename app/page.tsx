@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <>
       {/* Full-bleed photo hero; the split hero below follows it */}
-      <section className="ff-hero-full" style={{ backgroundImage: "url(/live/ayush-stage.jpg)" }}>
+      <section className="ff-hero-full" style={{ backgroundImage: "url(/live/ayush-stage.webp)" }}>
         <div className="container">
           <div className="ff-hero-full-copy">
-            <div className="kicker">The FlexiiFeet · Aayush S K Lokre</div>
+            <div className="kicker">The FlexiiFeet · Ayush Lokre</div>
             <h1>
               Your stage
               <br /> <span>starts here</span>
@@ -37,9 +37,6 @@ export default function Home() {
             <li>
               <strong>10,000+</strong>students trained
             </li>
-            <li>
-              <strong>30+</strong>partner schools
-            </li>
           </ul>
         </div>
       </section>
@@ -53,7 +50,7 @@ export default function Home() {
               <br /> <span>Confidence takes the stage.</span>
             </h2>
             <p>
-              Led by choreographer Ayush S K Lokre, The FlexiiFeet brings structured dance education and personal
+              Led by choreographer Ayush Lokre, The FlexiiFeet brings structured dance education and personal
               choreography to learners, schools, and celebrations across India and the USA.
             </p>
             <div className="ff-cta-buttons" style={{ justifyContent: "flex-start" }}>
@@ -65,7 +62,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <img className="ff-hero-img" src={heroImage} alt="Ayush S K Lokre at the Kho Kho World Cup India 2025" />
+          <img className="ff-hero-img" src={heroImage} alt="Ayush Lokre at the Kho Kho World Cup India 2025" />
         </div>
       </section> */}
 
@@ -77,7 +74,7 @@ export default function Home() {
       {/* <Testimonials /> */}
 
       {/* Replaces the template "statements-area": the grow-through-dance idea + transformation illustration */}
-      <section className="ff-grow secpd1">
+      <section className="ff-grow">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xl-5 col-lg-12">
@@ -96,6 +93,11 @@ export default function Home() {
                   teenager who owns the stage, the adult who finally feels at home in their body.
                 </p>
               </div>
+              <ul className="ff-chip-row ff-chip-row--left ff-grow-chips">
+                {["Confidence", "Discipline", "Creativity", "Joy"].map((c) => (
+                  <li key={c}>{c}</li>
+                ))}
+              </ul>
               <Link className="ff-btn ff-btn--grad" href="/offerings">
                 See how we do it
               </Link>
@@ -103,7 +105,7 @@ export default function Home() {
             <div className="col-xl-7 col-lg-12">
               <img
                 className="ff-grow-img"
-                src="/live/grow-through-dance.png"
+                src="/live/grow-through-dance.webp"
                 alt="A child growing from shy and hesitant to joyful and confident, ending in a dancer's leap"
                 loading="lazy"
               />
@@ -126,7 +128,7 @@ export default function Home() {
                   <div className="shape3"></div>
                   <div className="shape4"></div>
                 </div>
-                <img src="/live/ayush-stage.jpg" alt="Ayush S K Lokre, founder of The FlexiiFeet" className="ff-about-img" />
+                <img src="/live/ayush-stage.webp" alt="Ayush Lokre, founder of The FlexiiFeet" className="ff-about-img" />
               </div>
             </div>
             <div className="col-xl-6 col-lg-12">
@@ -135,14 +137,13 @@ export default function Home() {
                 <div className="inner-content">
                   <div className="text">
                     <p>
-                      The FlexiiFeet is a dance education and choreography company founded by Ayush S K Lokre. For
+                      The FlexiiFeet is a dance education and choreography company founded by Ayush Lokre. For
                       over 10 years we have brought structured, joyful dance training to schools, families and
                       celebrations across India and the USA.
                     </p>
                     <p>
                       From NEP-aligned school curriculum and annual days to online and Indore studio classes, wedding
-                      choreography and stage shows, our team has trained 10,000+ students and partnered with 30+
-                      schools, on stages like IIFA, IPL and Dubai Expo.
+                      choreography and stage shows, our team has trained 10,000+ students, on stages like IIFA, IPL and Dubai Expo.
                     </p>
                   </div>
                   <ul className="ff-chip-row ff-chip-row--left">

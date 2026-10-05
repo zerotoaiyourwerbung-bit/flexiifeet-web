@@ -17,12 +17,12 @@ const facts = [
 ];
 
 const offers = [
-  { title: "Couple Dance Choreography", img: "/live/w-couple.jpg", text: "Make your first dance as a married couple iconic, with personalised sequences, romantic storytelling and moves tailored to your comfort level." },
-  { title: "Family & Group Performances", img: "/live/w-family.jpg", text: "From grandparents to best friends, we create joyful, inclusive choreography for all age groups." },
-  { title: "Sangeet & Mehndi Performances", img: "/live/w-sangeet.jpg", text: "High-energy, professionally guided dances for every wedding function." },
-  { title: "Rehearsals at Home, Studio or Online", img: "/live/w-rehearsal.png", text: "Flexible rehearsal options that fit your schedule and comfort." },
-  { title: "Theme-Based Concepts & Entries", img: "/live/w-theme.png", text: "Bride & groom entries, musical pheras, cinematic entrances and themed acts with costumes and stage presence." },
-  { title: "Corporate Events & Stage Shows", img: "/live/g4.jpg", text: "Choreography and performances that captivate an audience, with props and high-energy concepts." },
+  { title: "Couple Dance Choreography", img: "/live/w-couple.webp", text: "Make your first dance as a married couple iconic, with personalised sequences, romantic storytelling and moves tailored to your comfort level." },
+  { title: "Family & Group Performances", img: "/live/w-family.webp", text: "From grandparents to best friends, we create joyful, inclusive choreography for all age groups." },
+  { title: "Sangeet & Mehndi Performances", img: "/live/w-sangeet.webp", text: "High-energy, professionally guided dances for every wedding function." },
+  { title: "Rehearsals at Home, Studio or Online", img: "/live/w-rehearsal.webp", text: "Flexible rehearsal options that fit your schedule and comfort." },
+  { title: "Theme-Based Concepts & Entries", img: "/live/w-theme.webp", text: "Bride & groom entries, musical pheras, cinematic entrances and themed acts with costumes and stage presence." },
+  { title: "Corporate Events & Stage Shows", img: "/live/g4.webp", text: "Choreography and performances that captivate an audience, with props and high-energy concepts." },
 ];
 
 const why = [
@@ -65,7 +65,7 @@ const faqs = [
 export default function WeddingsShowsInfo() {
   return (
     <>
-      <PageBanner kicker="For celebrations" bg="/live/w-sangeet.jpg" title="Weddings & Shows" sub="About our wedding, sangeet and stage show choreography" />
+      <PageBanner kicker="For celebrations" bg="/live/w-sangeet.webp" title="Weddings & Shows" sub="About our wedding, sangeet and stage show choreography" />
 
       <Overview title="We don't just teach steps. We create moments." facts={facts}>
         <p>
@@ -97,7 +97,7 @@ export default function WeddingsShowsInfo() {
         </div>
       </section>
 
-      <IconGrid kicker="Our approach" title="How we work with families" items={why} img="/live/g1.jpg" imgAlt="Ayush Lokre with fellow artists" />
+      <IconGrid kicker="Our approach" title="How we work with families" items={why} img="/live/g1.webp" imgAlt="Ayush Lokre with fellow artists" />
 
       <section className="ff-section alt">
         <div className="container">

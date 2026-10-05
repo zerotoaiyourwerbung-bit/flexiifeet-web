@@ -34,7 +34,7 @@
 
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 
 
@@ -132,7 +132,7 @@ body {
     font-size: 16px;
     line-height: 26px;
     font-weight: 400;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 button:focus{
     outline: none;
@@ -1993,7 +1993,7 @@ select:focus {
 	-moz-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	transition:all 300ms ease;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .main-menu .navigation > li > ul > li:hover > a{
 	color: #ffffff;
@@ -2078,7 +2078,7 @@ select:focus {
 	-moz-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	transition:all 300ms ease;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .main-menu .navigation > li > ul > li  > ul > li > a:hover{
 	color: #ffffff;
@@ -2448,7 +2448,7 @@ select:focus {
     line-height: 30px;
     font-weight: 700;
     text-align: center;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .main-slider .slide-content.right-slide .text{
     text-align: left;
@@ -2682,7 +2682,7 @@ select:focus {
 	font-weight: 400;
     letter-spacing: normal;
     text-transform: none;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .main-slider.style2 .tp-bullets {}
 .main-slider.style2 .hermes .tp-bullet {
@@ -2746,7 +2746,7 @@ select:focus {
 	font-weight: 600;
     letter-spacing: normal;
     text-transform: none;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .main-slider.style3 .slide-content .btn-box a{
     line-height: 60px;
@@ -2760,7 +2760,7 @@ select:focus {
     color: #828282;
     font-size: 20px;
     font-weight: 600;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .main-slider.style3 .slide-content .btn-box a.style2{
     color: #ec6b15;
@@ -2816,7 +2816,7 @@ select:focus {
 	font-weight: 600;
     letter-spacing: normal;
     text-transform: none;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .main-slider.style4 .slide-content.clr2 .text{
     color: #828282;    
@@ -3368,7 +3368,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 18px;
     line-height: 26px;
     font-weight: 700;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .single-fact-counter .title h3 span{
     color: #fddb4e;
@@ -4683,7 +4683,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 16px;
     line-height: 30px;
     font-weight: 400;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .top-contact-info li:last-child{
     margin-right: 0;
@@ -5845,7 +5845,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	font-family: 'Muli', sans-serif;
+	font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .pricing-tabs .tab-buttons .tab-btn:hover,
 .pricing-tabs .tab-buttons .tab-btn.active-btn{
@@ -5971,7 +5971,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
 	font-size: 16px;
     line-height: 55px;
     font-weight: 700;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .single-price-box .inner-box .price-list li:last-child{
 	margin-bottom:20px;
@@ -6354,7 +6354,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .single-blog-post-style2 .text-holder .blog-title{
     font-size: 18px;
@@ -8335,7 +8335,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 20px;
     line-height: 30px;
     font-weight: 700;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 	opacity:0;
 	-webkit-transition: all 1000ms ease;
 	-moz-transition: all 100ms ease;
@@ -9584,7 +9584,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     color: #a6a6a6;
     font-size: 16px;
     font-weight: 400;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 
@@ -9720,7 +9720,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     line-height: 20px;
     font-weight: 700;
     text-transform: capitalize;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .single-blog-post-style3 .top-overlay .date-box h3 span:before{
     position: relative;
@@ -9742,7 +9742,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     line-height: 20px;
     font-weight: 700;
     text-transform: capitalize;
-    font-family: 'Muli', sans-serif;    
+    font-family: 'Plus Jakarta Sans', sans-serif;    
 }
 .single-blog-post-style3 .top-overlay .meta-box a span:before{
     position: relative;
@@ -11486,7 +11486,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
 }
 .single-app-setup-process .count-box{
@@ -13178,7 +13178,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     z-index: 9999;
     counter-reset: slides-num;
     background-color: transparent;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0 !important;
 }
 .testimonial-style5-carousel .owl-dot {
@@ -13196,7 +13196,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-weight: 700;
     color: #fff;
     transform: translate(-50%, -50%);
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .testimonial-style5-carousel .owl-dot.active::before {
 	position: absolute;
@@ -15581,7 +15581,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 16px;
     font-weight: 700;
     transition: all 300ms ease;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     width: 105px;
     background: #ffffff;
     margin: 0 -2px;
@@ -15702,7 +15702,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     line-height: 53px;
     font-weight: 400;
     border-bottom: 1px solid #ededed;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .single-price-box-style2 .inner-box .price-list li:last-child{
 	border-bottom: none;
@@ -15818,7 +15818,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-weight: 700;
     text-transform: capitalize;
     transition: all 500ms ease;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .breadcrumb-style6-area .breadcrumb-menu ul li:before {
     position: absolute;
@@ -15960,7 +15960,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     border: 0;
     border-radius: 0;
     transition: all 500ms ease;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .project-categories-box .dropdown-item.active,
 .project-categories-box .dropdown-item:active {
@@ -16965,7 +16965,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     z-index: 9999;
     counter-reset: slides-num;
     background-color: transparent;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0 !important;
 }
 .portfolio-style9-carousel .owl-dot {
@@ -16983,7 +16983,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-weight: 700;
     color: #fff;
     transform: translate(-50%, -50%);
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .portfolio-style9-carousel .owl-dot.active::before {
 	position: absolute;
@@ -17431,7 +17431,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     line-height: 26px;
     font-weight: 700;
     margin: 15px 0 0;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 #blog-list-area .blog-post {
     position: relative;
@@ -17527,7 +17527,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .single-blog-post-style5 .text-holder .meta-box .meta-info {
     position: relative;
@@ -17768,7 +17768,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-weight: 700;
     text-transform: capitalize;
     border: 1px solid transparent;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     transition: all 700ms ease 100ms;
     z-index: 1;
 }
@@ -18792,7 +18792,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     color: #7e7e7e;
     font-size: 14px;
     font-weight: 400;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 #blog-single-area .inner-comment-box .single-comment-box .text-box .text{}
 #blog-single-area .inner-comment-box .single-comment-box .text-box .text p{
@@ -20382,7 +20382,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     line-height: 53px;
     font-weight: 400;
     border-bottom: 1px solid #ededed;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     transition: all 200ms linear;
     transition-delay: 0.1s;
 }
@@ -20488,7 +20488,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     line-height: 35px;
     border: none;
     padding: 0;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .shop-sidebar-wrapper .price-ranger .ranger-min-max-block input[type='text'].max {}
 .shop-sidebar-wrapper .price-ranger .ranger-min-max-block span {
@@ -20499,7 +20499,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-weight: 400;
     line-height: 35px;
     float: left;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 
@@ -20806,7 +20806,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-weight: 400;
     margin: 0;
     box-shadow: none !important;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .product-info .bootstrap-select>.dropdown-toggle::after {
     position: absolute;
@@ -20849,7 +20849,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     border: 0;
     border-radius: 0;
     transition: all 500ms ease;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .product-info .dropdown-item.active,
 .product-info .dropdown-item:active {
@@ -20902,7 +20902,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 16px;
     font-weight: 400;
     text-transform: capitalize;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 } 
 .product-quantity-box .input-group.bootstrap-touchspin {
     position: relative;
@@ -21033,7 +21033,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 16px;
     font-weight: 400;
     text-transform: capitalize;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 
@@ -21209,7 +21209,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 16px;
     font-weight: 400;
     text-transform: none;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .review-box-holder .single-review-box .text-holder .top .review-box ul {
     position: relative;
@@ -21471,7 +21471,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 16px;
     font-weight: 400;
     text-transform: capitalize;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .cart-table-title .right-title{
     position: relative;
@@ -21490,7 +21490,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 16px;
     font-weight: 400;
     text-transform: capitalize;
-    font-family: 'Muli', sans-serif;    
+    font-family: 'Plus Jakarta Sans', sans-serif;    
 }
 
 
@@ -21589,13 +21589,13 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     color: #7e7e7e;
     font-size: 16px;
     font-weight: 400;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .cart-area .cart-table tbody tr .sub-total {
     color: #FF6B1A;
     font-size: 16px;
     font-weight: 400;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .cart-area .cart-table tbody tr td .remove {
     position: relative;
@@ -21730,7 +21730,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-weight: 400;
     margin: 0;
     cursor: pointer;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .checkout-area .checkbox input[type="checkbox"] {
     position: relative;
@@ -21808,7 +21808,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-size: 16px;
     font-weight: 500;
     text-align: right;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .checkout-table ul {
@@ -21860,7 +21860,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     font-weight: 400;
     float: right;
     text-align: right;
-    font-family: 'Muli', sans-serif; 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
 }
 
 .checkout-table .total-price {
@@ -22110,7 +22110,7 @@ box-shadow: 0px 0px 15px 4px #ECECEC;
     color: #7e7e7e;
     font-size: 16px;
     font-weight: 400;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .login-register-area .form .right h6 span{
     color: #FF6B1A;

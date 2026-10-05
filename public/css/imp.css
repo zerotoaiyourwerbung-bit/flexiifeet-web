@@ -582,7 +582,7 @@ input:-webkit-autofill:focus {
     font-weight: 400;
     text-transform: capitalize;
     transition: all 500ms ease;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 #shop-area .showing-result-shorting .ui-selectmenu-button:focus{
     outline: none;
@@ -642,7 +642,7 @@ input:-webkit-autofill:focus {
     font-weight: 400;
     text-transform: capitalize;
     transition: all 500ms ease;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .checkout-area form .input-box .ui-selectmenu-button:focus{
     outline: none;
@@ -762,6 +762,6 @@ input:-webkit-autofill:focus {
     font-size: 16px;
     line-height: 26px;
     font-weight: 400;
-    font-family: 'Muli', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
 }

@@ -67,14 +67,14 @@ export default function OfflineIndore() {
       />
       <CredStrip />
 
-      <IconGrid kicker="Why FlexiiFeet Indore" title="Train with the team behind India's biggest stages" items={features} img="/live/g1.jpg" imgAlt="Ayush Lokre with fellow artists" />
+      <IconGrid kicker="Why FlexiiFeet Indore" title="Train with the team behind India's biggest stages" items={features} img="/live/g1.webp" imgAlt="Ayush Lokre with fellow artists" />
       <AgeLevels />
       <SplitList
         kicker="What students gain"
         title="More than steps"
         text="Our classes build confidence, discipline, creativity and self-expression through dance."
         items={benefits}
-        img="/live/g4.jpg"
+        img="/live/g4.webp"
         imgAlt="Ayush Lokre with a fellow choreographer"
         reverse
       />

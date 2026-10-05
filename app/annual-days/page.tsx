@@ -68,13 +68,13 @@ export default function AnnualDays() {
       />
       <CredStrip />
 
-      <IconGrid kicker="What we handle" title="Your annual day, choreographed end to end" items={features} img="/live/ayush-stage.jpg" imgAlt="Ayush Lokre at the Kho Kho World Cup India" />
+      <IconGrid kicker="What we handle" title="Your annual day, choreographed end to end" items={features} img="/live/ayush-stage.webp" imgAlt="Ayush Lokre at the Kho Kho World Cup India" />
       <SplitList
         kicker="So your teachers don't have to"
         title="From theme to curtain call"
         text="We take care of the creative work and the rehearsals, so your staff can focus on the day itself."
         items={handled}
-        img="/live/g5.jpg"
+        img="/live/g5.webp"
         imgAlt="Performers rehearsing on stage"
         reverse
       />

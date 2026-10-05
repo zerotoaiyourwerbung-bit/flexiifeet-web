@@ -68,7 +68,7 @@ export default function OnlineClasses() {
       />
       <CredStrip />
 
-      <IconGrid kicker="Why learn with us" title="The FlexiiFeet studio, on your screen" items={features} img="/live/hero.png" imgAlt="Ayush Lokre backstage at the IIFA Awards" />
+      <IconGrid kicker="Why learn with us" title="The FlexiiFeet studio, on your screen" items={features} img="/live/hero.webp" imgAlt="Ayush Lokre backstage at the IIFA Awards" />
 
       <section className="ff-section alt">
         <div className="container">
@@ -85,7 +85,7 @@ export default function OnlineClasses() {
         kicker="Who it's for"
         title="Made for every kind of dancer"
         items={whoFor}
-        img="/live/g2.jpg"
+        img="/live/g2.webp"
         imgAlt="Ayush Lokre with a student"
       />
       <Steps title="Start dancing in four steps" items={steps} alt />

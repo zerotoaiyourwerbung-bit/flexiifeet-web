@@ -11,7 +11,7 @@ export const site = {
   phoneHref: "tel:+919630421593",
   whatsapp: "919630421593",
   email: "connect@theflexiifeet.com",
-  instagram: "https://www.instagram.com/theflexiifeet",
+  instagram: "https://www.instagram.com/theflexiifeetdance",
   founderInstagram: "https://www.instagram.com/aayushsklokre",
   youtube: "https://www.youtube.com/@theflexiifeet", // guessed from the Instagram handle, verify
   city: "Indore",
@@ -24,35 +24,35 @@ export const infoPages = [
     who: "For schools",
     title: "DanceED",
     href: "/offerings/dance-ed",
-    img: "/live/g3.jpg",
+    img: "/live/g3.webp",
     text: "A structured, NEP 2020-aligned dance curriculum from Nursery to Class 12.",
   },
   // {
   //   who: "For school events",
   //   title: "Annual Days",
   //   href: "/offerings/annual-days",
-  //   img: "/live/g5.jpg",
+  //   img: "/live/g5.webp",
   //   text: "Theme-based annual day shows, choreographed for every class.",
   // },
   {
     who: "Learn from anywhere",
     title: "Online Classes",
     href: "/offerings/online-classes",
-    img: "/live/g2.jpg",
+    img: "/live/g2.webp",
     text: "Live, interactive dance classes for kids, teens and adults.",
   },
   {
     who: "In Indore",
     title: "Offline Classes",
     href: "/offerings/regular-classes",
-    img: "/live/g4.jpg",
+    img: "/live/g4.webp",
     text: "Studio classes in Indore with our lead choreographers.",
   },
   {
     who: "For celebrations",
     title: "Weddings & Shows",
     href: "/offerings/weddings-shows",
-    img: "/live/w-sangeet.jpg",
+    img: "/live/w-sangeet.webp",
     text: "Sangeet, couple dances, entries and stage shows.",
   },
 ];
@@ -96,7 +96,6 @@ export const stats = [
   { value: 98, suffix: "%", label: "Successful Lessons" },
   { value: 100, suffix: "%", label: "Expert Tutors" },
   { value: 10, suffix: "+", label: "Years of Expertise" },
-  { value: 30, suffix: "+", label: "Partner Schools Across India & USA" },
   { value: 8000, suffix: "+", label: "Students Trained" },
 ];
 
@@ -146,28 +145,28 @@ export const ageLevels = [
 
 export const team = [
   {
-    name: "Aayush S K",
+    name: "Ayush",
     surname: "Lokre",
     role: "Founder & Artistic Director",
-    img: "/live/team-ayush.jpg",
+    img: "/live/team-ayush.webp",
   },
   {
     name: "Ekta",
     surname: "Wankhede",
     role: "Managing Head & Lead Choreographer",
-    img: "/live/team-ekta.jpg",
+    img: "/live/team-ekta.webp",
   },
   {
     name: "Prachi",
     surname: "Joshi",
     role: "Master Classical Faculty",
-    img: "/live/team-prachi.png",
+    img: "/live/team-prachi.webp",
   },
   {
     name: "Harshit",
     surname: "Chouhan",
     role: "Master Faculty / Lead Choreographer",
-    img: "/live/team-harshit.png",
+    img: "/live/team-harshit.webp",
   },
 ];
 
@@ -190,14 +189,14 @@ export const testimonials = [
 
 // Real photos only (live site). Used by the home "moments" carousel.
 export const gallery = [
-  "/live/g1.jpg",
-  "/live/g2.jpg",
-  "/live/g3.jpg",
-  "/live/g4.jpg",
-  "/live/g5.jpg",
-  "/live/hero.png",
-  "/live/ayush-stage.jpg",
-  "/live/mic.jpg",
+  "/live/g1.webp",
+  "/live/g2.webp",
+  "/live/g3.webp",
+  "/live/g4.webp",
+  "/live/g5.webp",
+  "/live/hero.webp",
+  "/live/ayush-stage.webp",
+  "/live/mic.webp",
 ];
 
 // Logos from the FlexFlow reference; schools without a usable logo render as text.
@@ -223,25 +222,25 @@ export const paths = [
     // who: "For families",
     title: "Online Classes",
     href: "/offerings/online-classes",
-    img: "/live/g2.jpg",
+    img: "/live/g2.webp",
   },
   {
     title: "Regular Classes",
     href: "/offerings/regular-classes",
-    img: "/live/g5.jpg",
+    img: "/live/g5.webp",
   },
   {
     // who: "For educators",
     title: "DanceED for Schools",
     href: "/offerings/dance-ed",
-    img: "/live/g3.jpg",
+    img: "/live/g3.webp",
   },
   
   {
     // who: "For celebrations",
     title: "Weddings & Shows",
     href: "/offerings/weddings-shows",
-    img: "/live/g4.jpg",
+    img: "/live/g4.webp",
   },
 ];
 
