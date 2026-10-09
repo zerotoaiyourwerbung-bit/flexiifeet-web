@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AgeLevels, Explainer, ExplorePrograms, IconGrid, InfoAsk, Overview, PageBanner, SecTitle, Team } from "@/components/sections";
+import { AgeLevels, Explainer, ExplorePrograms, IconGrid, InfoAsk, Overview, PageBanner, SecTitle } from "@/components/sections";
 
 export const metadata: Metadata = {
   title: "About Our Dance Classes in Indore",
@@ -77,7 +77,6 @@ export default function OfflineIndoreInfo() {
         </p>
       </Explainer>
 
-      <Team />
       <ExplorePrograms current="/offerings/regular-classes" />
       <InfoAsk faqItems={faqs} program="Offline Classes – Indore" topic="classes in Indore" />
     </>

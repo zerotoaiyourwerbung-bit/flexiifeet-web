@@ -10,12 +10,13 @@ import {
   SecTitle,
   SplitList,
   Testimonials,
+  PageBanner,
 } from "@/components/sections";
 
 export const metadata: Metadata = {
   title: "About DanceED – Dance Education for Schools",
   description:
-    "DanceED is The FlexiiFeet's structured, NEP 2020 aligned dance education program for schools, Nursery to Grade 12: syllabus, pillars, grade-wise curriculum and ways to bring dance into your school.",
+    "DanceED is The FlexiiFeet's NEP 2020 aligned dance education program for schools, Nursery to Grade 12: syllabus, pillars and grade-wise curriculum.",
   alternates: { canonical: "/offerings/dance-ed" },
 };
 
@@ -122,44 +123,31 @@ const faqs = [
 export default function DanceEdInfo() {
   return (
     <>
-      <section className="ff-dhero">
-        <div className="container ff-dhero-grid">
-          <div>
-            {/* <span className="ff-pill-tag">Nursery to Grade 12 · NEP 2020 aligned</span> */}
-            <h1>
-              Educating and Empowering Young Minds through <span className="ff-underline">Dance & Performing Arts</span>
-            </h1>
-            <p>
-              DanceED is structured dance education for schools: a real syllabus, taught by trained instructors, right
-              within the school day.
-            </p>
-            <div className="ff-cta-buttons" style={{ justifyContent: "flex-start" }}>
-              <a className="ff-btn ff-btn--grad" href="#enquire">
-                Book a free workshop
-              </a>
-              <a className="ff-btn ff-btn--outline" href="#pathway">
-                See how it works
-              </a>
-            </div>
-            <div className="ff-proof-row">
-              <span className="ff-proof-faces">
-                {["team-ayush.webp", "team-ekta.webp", "team-harshit.webp", "team-prachi.webp"].map((f) => (
-                  <img key={f} src={`/live/${f}`} alt="" />
-                ))}
-              </span>
-              <span>
-                <strong>10,000+ students</strong>
-                trained across India &amp; the U.S.
-              </span>
-            </div>
-          </div>
-          <div className="ff-dhero-collage">
-            {["about-banner.webp", "school-class.webp", "school-kids.webp", "mic.webp"].map((f) => (
-              <img key={f} src={`/live/${f}`} alt="Students dancing with The FlexiiFeet" />
+      <PageBanner
+        bg="/live/school-class.webp"
+        cta="Book a free workshop"
+        title={
+          <>
+            Educating and Empowering Young Minds through <em>Dance &amp; Performing Arts</em>
+          </>
+        }
+        sub="DanceED is structured dance education for schools: a real syllabus, taught by trained instructors, right within the school day."
+      >
+        <a className="ff-btn ff-btn--outline" href="#pathway">
+          See how it works
+        </a>
+        <div className="ff-proof-row">
+          <span className="ff-proof-faces">
+            {["team-ayush.webp", "team-ekta.webp", "team-harshit.webp", "team-prachi.webp"].map((f) => (
+              <img key={f} src={`/live/${f}`} alt="" />
             ))}
-          </div>
+          </span>
+          <span>
+            <strong>10,000+ students</strong>
+            trained across India &amp; the USA
+          </span>
         </div>
-      </section>
+      </PageBanner>
 
       <section className="ff-section">
         <div className="container">
@@ -205,7 +193,7 @@ export default function DanceEdInfo() {
         <p>This isn&rsquo;t an &ldquo;extra.&rdquo; It&rsquo;s part of how we&rsquo;re meant to educate children.</p>
       </OverlapFeature>
 
-      <IconGrid kicker="The 4 pillars" title="The 4 Pillars of Dance-Based Development" items={pillars} twoCol />
+      <IconGrid kicker="The 4 pillars" title="The 4 pillars of dance-based development" items={pillars} twoCol />
 
       <Explainer kicker="Why it works" title="Dance engages the whole child" img="/live/kids-illustration.webp" imgAlt="Illustration of joyful children dancing" alt>
         <p>
@@ -298,7 +286,7 @@ export default function DanceEdInfo() {
       <Testimonials items={quotes} />
 
       <ExplorePrograms current="/offerings/dance-ed" />
-      <InfoAsk faqItems={faqs} program="DanceED (Schools)" topic="DanceED" />
+      <InfoAsk faqItems={faqs} program="DanceED (Schools)" topic="DanceED" action="Book a free workshop" />
     </>
   );
 }

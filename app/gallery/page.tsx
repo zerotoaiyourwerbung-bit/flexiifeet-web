@@ -3,7 +3,7 @@ import path from "node:path";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Gallery",
+  title: "Gallery – Classes, Stages & Performances",
   description: "Moments from The FlexiiFeet: school shows, classes, weddings and stage performances.",
   alternates: { canonical: "/gallery" },
 };

@@ -5,11 +5,19 @@ import { Faq, GetInTouch, Journey, Moments, Paths, SchoolLogos, SecTitle, StatsT
 // Section order follows the FlexFlow reference: hero → ticker → paths → schools → proof → why → journey → founder → stages → enquiry + FAQ.
 const stages = ["IIFA", "Filmfare", "IPL", "Dubai Expo 2020", "World Chess Olympiad 2022", "Ambani Wedding"];
 
+// Home hero background photos; they cross-fade in this order (timing in globals.css, .ff-hero-slides). Changing the count means updating --n there.
+const heroSlides = ["/live/hero-kids.webp", "/live/hero-stage.webp", "/live/hero-costumes.webp"];
+
 export default function Home() {
   return (
     <>
       {/* Full-bleed photo hero; the split hero below follows it */}
-      <section className="ff-hero-full" style={{ backgroundImage: "url(/live/ayush-stage.webp)" }}>
+      <section className="ff-hero-full">
+        <div className="ff-hero-slides" aria-hidden="true">
+          {heroSlides.map((src, i) => (
+            <img key={src} src={src} alt="" style={{ ["--i" as string]: i }} />
+          ))}
+        </div>
         <div className="container">
           <div className="ff-hero-full-copy">
             <div className="kicker">The FlexiiFeet · Ayush Lokre</div>
@@ -76,40 +84,27 @@ export default function Home() {
       {/* Replaces the template "statements-area": the grow-through-dance idea + transformation illustration */}
       <section className="ff-grow">
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-xl-5 col-lg-12">
-              <SecTitle
-                kicker="Our belief"
-                title={
-                  <>
-                    We don&rsquo;t teach dance. 
-                    <span className="ff-grad-text ff-block">We help you grow through dance.</span>
-                  </>
-                }
-              />
-              <div className="text">
-                <p>
-                  Technique is the foundation, but the real change happens inside: the shy child who finds a voice, the
-                  teenager who owns the stage, the adult who finally feels at home in their body.
-                </p>
-              </div>
-              <ul className="ff-chip-row ff-chip-row--left ff-grow-chips">
-                {["Confidence", "Discipline", "Creativity", "Joy"].map((c) => (
-                  <li key={c}>{c}</li>
-                ))}
-              </ul>
-              <Link className="ff-btn ff-btn--grad" href="/offerings">
-                See how we do it
-              </Link>
+          <div className="ff-grow-media">
+            <img
+              className="ff-grow-img"
+              src="/live/grow-through-dance.webp"
+              alt="A child growing from shy and hesitant to joyful and confident, ending in a dancer's leap"
+              loading="lazy"
+            />
+          </div>
+          <div className="ff-grow-band">
+            <div>
+              <h2>
+                We don&rsquo;t teach dance. <em>We help you grow through dance.</em>
+              </h2>
+              <p>
+                Technique is the foundation, but the real change happens inside: the shy child who finds a voice, the
+                teenager who owns the stage, the adult who finally feels at home in their body.
+              </p>
             </div>
-            <div className="col-xl-7 col-lg-12">
-              <img
-                className="ff-grow-img"
-                src="/live/grow-through-dance.webp"
-                alt="A child growing from shy and hesitant to joyful and confident, ending in a dancer's leap"
-                loading="lazy"
-              />
-            </div>
+            <Link className="ff-btn ff-btn--outline" href="/offerings">
+              See how we do it
+            </Link>
           </div>
         </div>
       </section>
@@ -169,9 +164,9 @@ export default function Home() {
       <GetInTouch
         kicker="Start a conversation"
         title="Tell us where you'd like dance to take you."
-        intro="Whether it's a school programme, classes or a celebration, tell us what you have in mind and our team will get back to you. Prefer to talk? Reach us directly:"
-        formTitle="Tell us what you're planning"
-        submitLabel="Get a free consultation"
+        intro="Whether it's a school program, classes or a celebration, tell us what you have in mind and our team will get back to you. Prefer to talk? Reach us directly:"
+        formTitle="Send us an enquiry"
+        submitLabel="Send enquiry"
       />
     </>
   );

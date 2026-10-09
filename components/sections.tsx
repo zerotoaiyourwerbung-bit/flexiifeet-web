@@ -1,10 +1,11 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { useId, type ReactNode } from "react";
 import Counter from "./Counter";
 import Marquee from "./Marquee";
 import LeadForm, { type LeadField } from "./LeadForm";
 import {
   heroImage,
+  whatsappLink,
   infoPages,
   site,
   services,
@@ -18,14 +19,15 @@ import {
   journey,
   faqs,
 } from "@/lib/site";
+import Icon from "./Icon";
 
 // Reusable sections, each a straight port of a Jixic template block (class names kept so style.css applies).
 
+// Section heading. The small dotted label above it was removed site-wide; `kicker` is still accepted so callers keep
+// their label text, but it is not rendered.
 export function SecTitle({
-  kicker,
   title,
   center,
-  kickerVisibility = true,
 }: {
   kicker?: string;
   title: ReactNode;
@@ -34,19 +36,6 @@ export function SecTitle({
 }) {
   return (
     <div className={`sec-title-style1${center ? " pdb-52 text-center" : ""}`}>
-      {kickerVisibility && (
-        <div className="title">
-          {center && (
-            <span className="dotted-left">
-              <span className="dot"></span>
-            </span>
-          )}
-          <span>{kicker}</span>
-          <span className="dotted-right">
-            <span className="dot"></span>
-          </span>
-        </div>
-      )}
       <div className="big-title">{title}</div>
     </div>
   );
@@ -57,31 +46,37 @@ export function PageBanner({
   title,
   sub,
   bg = heroImage,
-  kicker = "The FlexiiFeet",
+  kicker,
+  cta = "Enquire now",
+  children,
 }: {
   title: ReactNode;
   sub?: string;
   bg?: string;
   kicker?: string;
+  /** Label of the main button, which jumps to the enquiry form at the end of the page. */
+  cta?: string;
+  /** Extra hero content: a second button first, then anything else (proof row). */
+  children?: ReactNode;
 }) {
   return (
-    <section className="ff-dhero">
-      <div className="container ff-dhero-grid">
-        <div>
-          <span className="ff-pill-tag">{kicker}</span>
-          <h1>{title}</h1>
-          {sub && <p>{sub}</p>}
-          <div className="ff-cta-buttons" style={{ justifyContent: "flex-start" }}>
-            <a className="ff-btn ff-btn--grad" href="#enquire">
-              Enquire now
-            </a>
-            <Link className="ff-btn ff-btn--outline" href="/contact">
-              Contact us
-            </Link>
+    <section className="ff-shero">
+      <img className="ff-shero-img" src={bg} alt="" />
+      <div className="container">
+        <div className="ff-shero-card">
+          <div>
+            {kicker && <span className="ff-pill-tag">{kicker}</span>}
+            <h1>{title}</h1>
           </div>
-        </div>
-        <div className="ff-dhero-photo">
-          <img src={bg} alt="" />
+          <div className="ff-shero-copy">
+            {sub && <p>{sub}</p>}
+            <div className="ff-shero-actions">
+              <a className="ff-btn ff-btn--grad" href="#enquire">
+                {cta}
+              </a>
+              {children}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -196,7 +191,7 @@ export function Featured({ items, img }: { items: Card[]; img: string }) {
 export function AgeLevels({
   levels = ageLevels,
   kicker = "Curriculum",
-  title = "Tailored Dance Curriculum For Every Age Group",
+  title = "A dance curriculum tailored to every age group",
 }: {
   levels?: { title: string; range: string; text: string }[];
   kicker?: string;
@@ -236,7 +231,7 @@ export function Team() {
   return (
     <section className="team-area">
       <div className="container">
-        <SecTitle kicker="Our Team" title="Meet the Movement Makers" center />
+        <SecTitle kicker="Our Team" title="Meet the movement makers" center />
         <div className="row">
           {team.map((m) => (
             <div key={m.img} className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
@@ -320,26 +315,20 @@ export function Cta({
   kicker = "Let's Talk",
   title,
   text,
-  button = "Get a free consultation",
+  button = "Send enquiry",
+  whatsapp,
 }: {
   kicker?: string;
   title: string;
   text: string;
   button?: string;
+  /** Show "Chat on WhatsApp" instead of the call button (for pages aimed at visitors outside India). */
+  whatsapp?: boolean;
 }) {
   return (
     <section className="statements-area ff-grad-bg">
       <div className="container">
         <div className="single-statements-item text-center">
-          <div className="title">
-            <span className="dotted-left">
-              <span className="dot"></span>
-            </span>
-            <span>{kicker}</span>
-            <span className="dotted-right">
-              <span className="dot"></span>
-            </span>
-          </div>
           <div className="big-title">
             <span>{title}</span>
           </div>
@@ -348,12 +337,17 @@ export function Cta({
           </div>
           <div className="ff-cta-buttons">
             <a className="ff-btn ff-btn--light" href="#enquire">
-              {button} <i className="fa fa-arrow-right" aria-hidden="true"></i>
+              {button} <Icon name="arrow-right" />
             </a>
-            <a className="ff-btn ff-btn--outline" href={site.phoneHref}>
-              <i className="fa fa-phone" aria-hidden="true"></i> Call{" "}
-              {site.phone}
-            </a>
+            {whatsapp ? (
+              <a className="ff-btn ff-btn--outline" href={whatsappLink()} target="_blank" rel="noopener">
+                <Icon name="whatsapp" /> Chat on WhatsApp
+              </a>
+            ) : (
+              <a className="ff-btn ff-btn--outline" href={site.phoneHref}>
+                <Icon name="phone" /> Call {site.phone}
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -451,9 +445,10 @@ export function StatsTicker() {
   ];
   return (
     <div className="ff-ticker ff-grad-bg">
-      <Marquee speed={30}>
-        {items.map((t) => (
-          <span key={t} className="ff-ticker-item">
+      {/* Three items are narrower than a desktop screen, which left a blank stretch before the loop restarted; four runs outspan any screen */}
+      <Marquee speed={120}>
+        {[...items, ...items, ...items, ...items].map((t, i) => (
+          <span key={i} className="ff-ticker-item">
             {t} <span aria-hidden="true">✦</span>
           </span>
         ))}
@@ -487,10 +482,7 @@ export function Paths() {
                   <div className="ff-path-caption">
                     {/* <span>{p.who}</span> */}
                     <h3>{p.title}</h3>
-                    <i
-                      className="fa fa-long-arrow-right"
-                      aria-hidden="true"
-                    ></i>
+                    <Icon name="arrow-right" />
                   </div>
                 </div>
               </Link>
@@ -581,7 +573,7 @@ export function Journey() {
   );
 }
 
-// Native <details> accordion — no JS.
+// Native <details> accordion — no JS. A shared `name` makes the browser keep only one item open at a time.
 export function Faq({
   items = faqs,
   title = "A few helpful answers.",
@@ -589,11 +581,12 @@ export function Faq({
   items?: { q: string; a: string }[];
   title?: string;
 }) {
+  const group = useId();
   return (
     <div className="ff-faq">
       <SecTitle kicker="Frequently asked" title={title} />
       {items.map((f) => (
-        <details key={f.q}>
+        <details key={f.q} name={group}>
           <summary>{f.q}</summary>
           <p>{f.a}</p>
         </details>
@@ -635,7 +628,7 @@ export function LeadHero({
             <ul className="ff-lead-points">
               {points.map((p) => (
                 <li key={p}>
-                  <i className="fa fa-check" aria-hidden="true"></i>
+                  <Icon name="check" />
                   {p}
                 </li>
               ))}
@@ -813,7 +806,7 @@ export function SplitList({
             </ul>
             <a className="ff-btn ff-btn--grad" href="#enquire">
               Enquire now{" "}
-              <i className="fa fa-arrow-right" aria-hidden="true"></i>
+              <Icon name="arrow-right" />
             </a>
           </div>
         </div>
@@ -996,28 +989,28 @@ export function GetInTouch({
               <p>{intro}</p>
               <ul>
                 <li>
-                  <i className="fa fa-phone" aria-hidden="true"></i>
+                  <Icon name="phone" />
                   <span>
                     <small>Call / WhatsApp</small>
                     <a href={site.phoneHref}>{site.phone}</a>
                   </span>
                 </li>
                 <li>
-                  <i className="fa fa-envelope" aria-hidden="true"></i>
+                  <Icon name="mail" />
                   <span>
                     <small>Email</small>
                     <a href={`mailto:${site.email}`}>{site.email}</a>
                   </span>
                 </li>
                 {/* <li>
-                  <i className="fa fa-map-marker" aria-hidden="true"></i>
+                  <Icon name="pin" />
                   <span>
                     <small>Visit us</small>
                     {site.address}
                   </span>
                 </li> */}
                 <li>
-                  <i className="fa fa-instagram" aria-hidden="true"></i>
+                  <Icon name="instagram" />
                   <span>
                     <small>Follow us</small>
                     <a href={site.instagram} target="_blank" rel="noopener">
@@ -1033,7 +1026,7 @@ export function GetInTouch({
               program={program}
               fields={fields}
               title={formTitle}
-              subtitle={formSubtitle ?? (topic ? `Ask us anything about ${topic} and our team will get back to you.` : "Leave your details and our team will call you back.")}
+              subtitle={formSubtitle ?? (topic ? `Ask us anything about ${topic} and our team will get back to you.` : "Leave your details and tell us what you have in mind.")}
               submitLabel={submitLabel}
             />
           </div>
@@ -1044,8 +1037,9 @@ export function GetInTouch({
 }
 
 // Info-page closing block (FAQ intentionally not shown).
-export function InfoAsk({ program, topic }: { faqItems?: { q: string; a: string }[]; program?: string; topic: string }) {
-  return <GetInTouch topic={topic} program={program} />;
+// `action` names the form after the page's main button (e.g. "Book a trial class"), so the button and the form it jumps to match.
+export function InfoAsk({ program, topic, action = "Send enquiry" }: { faqItems?: { q: string; a: string }[]; program?: string; topic: string; action?: string }) {
+  return <GetInTouch topic={topic} program={program} formTitle={action === "Send enquiry" ? "Send us an enquiry" : action} submitLabel={action} />;
 }
 
 // Links to the other program information pages.
@@ -1065,7 +1059,7 @@ export function ExplorePrograms({ current }: { current: string }) {
                 <p>{p.text}</p>
                 <em>
                   Learn more{" "}
-                  <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  <Icon name="arrow-right" />
                 </em>
               </div>
             </Link>
@@ -1117,7 +1111,7 @@ export function TeamSpotlight() {
               target="_blank"
               rel="noopener"
             >
-              <i className="fa fa-instagram" aria-hidden="true"></i> Follow
+              <Icon name="instagram" /> Follow
               Ayush on Instagram
             </a>
           </div>

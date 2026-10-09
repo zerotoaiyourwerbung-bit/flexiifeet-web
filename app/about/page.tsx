@@ -3,36 +3,36 @@ import {
   GetInTouch,
   Cta,
   Faq,
-  Featured,
   SecTitle,
   Stats,
   TeamSpotlight,
   WhatWeDo,
 } from "@/components/sections";
+import Icon, { type IconName } from "@/components/Icon";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Ayush Lokre & Our Team",
   description:
     "Meet Ayush Lokre, international choreographer trained under Shiamak Davar, and The FlexiiFeet team—10+ years, 10,000+ students.",
 };
 
-const stages = [
-  { name: "IIFA Awards", detail: "2019 & 2024", icon: "fa-trophy" },
-  { name: "Filmfare Awards", detail: "Awards night", icon: "fa-star" },
-  { name: "IPL", detail: "2021 & 2022", icon: "fa-bolt" },
-  { name: "Dubai Expo", detail: "2020", icon: "fa-globe" },
+const stages: { name: string; detail: string; icon: IconName }[] = [
+  { name: "IIFA Awards", detail: "2019 & 2024", icon: "trophy" },
+  { name: "Filmfare Awards", detail: "Awards night", icon: "star" },
+  { name: "IPL", detail: "2021 & 2022", icon: "bolt" },
+  { name: "Dubai Expo", detail: "2020", icon: "globe" },
   {
     name: "World Chess Olympiad",
     detail: "2022 · for the Prime Minister of India",
-    icon: "fa-flag",
+    icon: "flag",
   },
   {
     name: "Ambani Wedding",
     detail: "Anant & Radhika's celebrations",
-    icon: "fa-diamond",
+    icon: "gem",
   },
-  { name: "BRICS Summit", detail: "2016", icon: "fa-users" },
-  { name: "Hockey India League", detail: "2023", icon: "fa-shield" },
+  { name: "BRICS Summit", detail: "2016", icon: "users" },
+  { name: "Hockey India League", detail: "2023", icon: "shield" },
 ];
 const moreStages = [
   "Zee Cine Awards",
@@ -40,44 +40,44 @@ const moreStages = [
   "Lux Golden Awards",
 ];
 
-const why = [
-  {
-    title: "10+ Years Experience",
-    icon: "icon-star",
-    text: "In school programs, wedding choreography, and high-profile events.",
-  },
-  {
-    title: "10,000+ Students",
-    icon: "icon-student",
-    text: "Trained across India and internationally.",
-  },
-  {
-    title: "Prestigious Stages",
-    icon: "icon-diamond",
-    text: "IIFA, IPL, Dubai Expo, Ambani weddings & more.",
-  },
-];
-
 export default function About() {
   return (
     <>
-      <section className="ff-dhero">
-        <div className="container ff-dhero-grid">
-          <div>
-            <span className="ff-pill-tag">About us</span>
-            <h1>About The FlexiiFeet</h1>
-            <p>Bringing stories to life through dance in schools, on stage, and at celebrations</p>
-            <div className="ff-cta-buttons" style={{ justifyContent: "flex-start" }}>
-              <a className="ff-btn ff-btn--grad" href="#enquire">
-                Enquire now
-              </a>
-              <a className="ff-btn ff-btn--outline" href="/contact">
-                Contact us
-              </a>
-            </div>
+      {/* Hero: intro left, photo card with social links in the middle, proof on the right */}
+      <section className="ff-ahero">
+        <div className="container ff-ahero-grid">
+          <div className="ff-ahero-intro">
+            <span className="ff-ahero-hello">Hello, we are</span>
+            <h1>
+              The <span>FlexiiFeet</span>
+            </h1>
+            <p>Bringing stories to life through dance in schools, on stage, and at celebrations.</p>
+            <a className="ff-btn ff-btn--grad" href="#enquire">
+              Enquire now <Icon name="arrow-right" />
+            </a>
           </div>
-          <div className="ff-dhero-photo ff-dhero-photo--portrait">
+
+          <div className="ff-ahero-card">
             <img src="/live/about-banner.webp" alt="Ayush Lokre with a group of smiling young dancers in a dance studio" />
+          </div>
+
+          <div className="ff-ahero-proof">
+            <p className="ff-ahero-note">International choreography and Dance Education</p>
+            <p className="ff-ahero-role">
+              Dance <span>Education</span>
+            </p>
+            <ul className="ff-ahero-faces">
+              {["ayush", "ekta", "harshit", "prachi"].map((n) => (
+                <li key={n}>
+                  <img src={`/live/team-${n}.webp`} alt="" />
+                </li>
+              ))}
+              <li className="ff-ahero-badge">10+</li>
+            </ul>
+            <p className="ff-ahero-count">
+              <strong>10,000+</strong> students trained
+            </p>
+            <p className="ff-ahero-sub">Across India and the USA</p>
           </div>
         </div>
       </section>
@@ -224,7 +224,7 @@ export default function About() {
               </p>
               <div className="ff-vm">
                 <div>
-                  <i className="fa fa-heart mb-2" role="img" aria-label="Vision"></i>
+                  <Icon name="heart" />
                   <p>
                     To empower individuals, families, and institutions by
                     unlocking the joy, discipline, and energy of dance through
@@ -232,7 +232,7 @@ export default function About() {
                   </p>
                 </div>
                 <div>
-                  <i className="fa fa-users mb-2" role="img" aria-label="Mission"></i>
+                  <Icon name="users" />
                   <p>
                     To make high-quality dance accessible to every stage of
                     life whether in a classroom, at a wedding, or under the
@@ -248,76 +248,71 @@ export default function About() {
       <section className="ff-section ff-founders">
         <div className="container">
           <SecTitle kicker="Founders" title="The people behind The FlexiiFeet." center />
-          <div className="ff-founders-grid">
-            <article className="ff-founder-card">
+          <div className="ff-cofounders">
+            <article className="ff-cofounder">
               <img src="/live/founder-ayush.webp" alt="Ayush Lokre" loading="lazy" />
               <div>
-                <h3>Ayush Lokre</h3>
-                <span>Co-Founder</span>
-                <p>International choreographer, performer and dance educator. 10,000+ students trained across India and the USA.</p>
+                <h3>
+                  Ayush Lokre <i>&mdash;</i>
+                  <span>Co-Founder</span>
+                </h3>
+                <p>
+                  With over a decade of experience in dance, choreography, and dance education, Ayush Lokre is the
+                  Co-Founder of The FlexiiFeet, a platform built on the belief that dance should be experienced with
+                  joy, expression, and purpose.
+                </p>
+                <p>
+                  Having trained 10,000+ students, Ayush has built a diverse career spanning education, performance,
+                  choreography, and international dance training. His performance journey includes prestigious
+                  platforms such as the IIFA Awards, Filmfare Awards, Zee Cine Awards, and the World Chess Olympiad
+                  2022 and many more.
+                </p>
+                <p>
+                  He has also had the honour of representing India at the Asian Culture Carnival and the Dubai Expo
+                  2020, bringing Indian dance and culture to international platforms.
+                </p>
+                <p>
+                  As an international choreographer and dance educator, Ayush has conducted dance training and
+                  workshops in both India and the USA, working with dancers from different backgrounds and age groups.
+                </p>
+                <p>
+                  Today, through The FlexiiFeet, Ayush continues to combine his experience as a performer,
+                  choreographer, and educator to create an environment where dancers don&rsquo;t just learn
+                  choreography &mdash; they build confidence, express themselves, and truly experience the joy of
+                  dance.
+                </p>
               </div>
             </article>
-            {/* TODO: Animesh Lunavat's bio is a placeholder, replace with real details */}
-            <article className="ff-founder-card">
+            <article className="ff-cofounder">
               <img src="/live/founder-animesh.webp" alt="Animesh Lunavat, co-founder of The FlexiiFeet" loading="lazy" />
               <div>
-                <h3>Animesh Lunavat</h3>
-                <span>Co-Founder</span>
-                <p>Animesh Lunavat&rsquo;s bio will be added here.</p>
+                <h3>
+                  Animesh Lunavat <i>&mdash;</i>
+                  <span>Co-Founder</span>
+                </h3>
+                <p className="ff-cofounder-lead">Four decades of experience, now giving back through dance.</p>
+                <p>
+                  With over four decades of professional experience, Animesh has led industries, projects and
+                  businesses across India and overseas, most recently heading the Indian arm of a Japanese
+                  multinational on a pan-India basis.
+                </p>
+                <p>
+                  His association with The FlexiiFeet comes from a desire to give back to the society that has given
+                  him so much. He believes dance can create meaningful change &mdash; building confidence, wellbeing,
+                  self-expression and joy across generations.
+                </p>
+                <p>
+                  He has mentored entrepreneurs on ethical business, sustainable growth and creating value for
+                  society, while also contributing to social initiatives, including work towards the critical
+                  challenge of clean and potable water.
+                </p>
+                <p>
+                  At The FlexiiFeet, he brings his experience and perspective to support a vision where dance is not
+                  just an art, but a way to enrich lives and bring people together.
+                </p>
               </div>
             </article>
           </div>
-        </div>
-      </section>
-
-      <section className="ff-section alt ff-profile" id="ayush">
-        <div className="container">
-          <div className="ff-profile-grid">
-            <img className="ff-profile-photo" src="/live/founder-ayush.webp" alt="Ayush Lokre" loading="lazy" />
-            <div>
-              <SecTitle kicker="Co-Founder" title="Ayush Lokre" />
-              <p className="ff-profile-role">Co-Founder | International Choreographer | Dance Educator</p>
-              <blockquote className="ff-quote">&ldquo;Dance is not just something to learn &mdash; it&rsquo;s something to experience.&rdquo;</blockquote>
-              <p>
-                With over a decade of experience in dance, choreography, and dance education, Ayush Lokre is the
-                Co-Founder of The FlexiiFeet, a platform built on the belief that dance should be experienced with joy,
-                expression, and purpose.
-              </p>
-              <p>
-                Having trained 10,000+ students, Ayush has built a diverse career spanning education, performance,
-                choreography, and international dance training. His performance journey includes prestigious platforms
-                such as the IIFA Awards, Filmfare Awards, Zee Cine Awards, and the World Chess Olympiad 2022 and many
-                more.
-              </p>
-              <p>
-                He has also had the honour of representing India at the Asian Culture Carnival and the Dubai Expo 2020,
-                bringing Indian dance and culture to international platforms.
-              </p>
-              <p>
-                As an international choreographer and dance educator, Ayush has conducted dance training and workshops
-                in both India and the USA, working with dancers from different backgrounds and age groups.
-              </p>
-              <p>
-                Today, through The FlexiiFeet, Ayush continues to combine his experience as a performer, choreographer,
-                and educator to create an environment where dancers don&rsquo;t just learn choreography &mdash; they
-                build confidence, express themselves, and truly experience the joy of dance.
-              </p>
-            </div>
-          </div>
-          <ul className="ff-profile-stats">
-            {[
-              ["10+", "Years of Experience"],
-              ["10,000+", "Students Trained"],
-              ["International", "Choreographer"],
-              ["Performer", "at Major Award Shows"],
-              ["Represented", "India Internationally"],
-            ].map(([a, b]) => (
-              <li key={a}>
-                <strong>{a}</strong>
-                {b}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
@@ -341,7 +336,7 @@ export default function About() {
           <ul className="ff-stage-grid">
             {stages.map((s) => (
               <li key={s.name} className="ff-stage">
-                <i className={`fa ${s.icon}`} aria-hidden="true"></i>
+                <Icon name={s.icon} />
                 <strong>{s.name}</strong>
                 <span>{s.detail}</span>
               </li>
@@ -364,7 +359,36 @@ export default function About() {
       
 
       {/* <WhatWeDo title={<>Three stages, one passion.</>} /> */}
-      <Featured items={why} img="/live/mic.webp" />
+      {/* Proof in numbers: bento of stat tiles with a tall photo tile */}
+      <section className="ff-section ff-facts">
+        <div className="container">
+          <ul className="ff-facts-grid">
+            <li className="ff-fact ff-fact--accent">
+              <strong>2</strong>
+              <p>
+                <b>Countries</b> &mdash; classes and workshops across India and the USA.
+              </p>
+            </li>
+            <li className="ff-fact">
+              <strong>10,000+</strong>
+              <p>
+                <b>Students trained</b> across India and internationally.
+              </p>
+            </li>
+            <li className="ff-fact ff-fact--photo">
+              <img src="/live/mic.webp" alt="Ayush Lokre addressing students on stage with a microphone" loading="lazy" />
+              <strong>World stages</strong>
+              <p>IIFA, IPL, Dubai Expo, Ambani weddings &amp; more.</p>
+            </li>
+            <li className="ff-fact ff-fact--wide">
+              <strong>10+</strong>
+              <p>
+                <b>Years of experience</b> in school programs, wedding choreography and high-profile events.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
       {/* <Stats /> */}
       {/* <TeamSpotlight /> */}
       {/* <Cta
@@ -375,8 +399,8 @@ export default function About() {
         kicker="Start a conversation"
         title="Tell us what you're planning."
         intro="Schools, classes, weddings or shows, tell us what you have in mind and our team will get back to you. Prefer to talk? Reach us directly:"
-        formTitle="Tell us what you're planning"
-        submitLabel="Get a free consultation"
+        formTitle="Send us an enquiry"
+        submitLabel="Send enquiry"
       />
     </>
   );

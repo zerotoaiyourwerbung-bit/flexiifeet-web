@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { offerings, site, whatsappLink } from "@/lib/site";
+import Icon from "./Icon";
 
 export type LeadField = {
   name: string;
@@ -31,7 +32,7 @@ declare global {
 }
 
 // Lead capture form: posts to /api/lead, which forwards the lead to the team (see app/api/lead/route.ts).
-export default function LeadForm({ program, fields = [], title, subtitle, submitLabel = "Get a free consultation" }: Props) {
+export default function LeadForm({ program, fields = [], title, subtitle, submitLabel = "Send enquiry" }: Props) {
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [error, setError] = useState("");
 
@@ -53,13 +54,13 @@ export default function LeadForm({ program, fields = [], title, subtitle, submit
         body: JSON.stringify(data),
       });
       const json = await res.json().catch(() => ({}));
-      if (!res.ok || !json.ok) throw new Error(json.error || "Something went wrong.");
+      if (!res.ok || !json.ok) throw new Error(json.error || "We couldn't send your enquiry.");
       setState("done");
       // Conversion events for ad platforms, if their tags are installed.
       window.gtag?.("event", "generate_lead", { program: data.program });
       window.fbq?.("track", "Lead", { content_name: data.program });
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong.");
+      setError(err instanceof Error ? err.message : "We couldn't send your enquiry.");
       setState("error");
     }
   }
@@ -68,7 +69,7 @@ export default function LeadForm({ program, fields = [], title, subtitle, submit
     return (
       <div className="ff-form ff-form--done" role="status">
         <div className="ff-form-check" aria-hidden="true">
-          <i className="fa fa-check"></i>
+          <Icon name="check" />
         </div>
         <h3>Thank you! We&apos;ve got your details.</h3>
         <p>Our team will get in touch with you shortly. Need us sooner? Call <a href={site.phoneHref}>{site.phone}</a>.</p>
@@ -140,14 +141,14 @@ export default function LeadForm({ program, fields = [], title, subtitle, submit
       )}
       <button type="submit" className="ff-btn ff-btn--grad ff-form-submit" disabled={state === "sending"}>
         {state === "sending" ? "Sending…" : submitLabel}
-        {state !== "sending" && <i className="fa fa-arrow-right" aria-hidden="true"></i>}
+        {state !== "sending" && <Icon name="arrow-right" />}
       </button>
       <ul className="ff-form-trust">
         <li>
-          <i className="fa fa-check" aria-hidden="true"></i> Free, no payment needed
+          <Icon name="check" /> Free, no payment needed
         </li>
         <li>
-          <i className="fa fa-phone" aria-hidden="true"></i> Our team will call you back
+          <Icon name="phone" /> Our team will call you back
         </li>
       </ul>
       <p className="ff-form-alt">

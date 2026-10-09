@@ -1,18 +1,45 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Faq, GetInTouch, PageBanner, SecTitle } from "@/components/sections";
+import { Faq, GetInTouch, SecTitle } from "@/components/sections";
 import { infoPages } from "@/lib/site";
+import Icon from "@/components/Icon";
 
 export const metadata: Metadata = {
-  title: "Our Offerings",
+  title: "Dance Classes, DanceED & Wedding Choreography",
   description:
-    "All The FlexiiFeet offerings: DanceED for schools, annual day choreography, online dance classes, studio classes in Indore, and wedding & show choreography.",
+    "Everything The FlexiiFeet offers: DanceED for schools, online dance classes, studio classes in Indore, and wedding & show choreography.",
 };
 
 export default function offerings() {
   return (
     <>
-      <PageBanner kicker="Explore" title="Our Offerings" sub="Dance education, classes and choreography for every stage of life" />
+      {/* Hero: offering thumbnails + headline on the left, tall photo panel with floating labels on the right */}
+      <section className="ff-ohero">
+        <div className="container ff-ohero-grid">
+          <div className="ff-ohero-copy">
+            <h1>Our Offerings</h1>
+            <p>Dance education, classes and choreography for every stage of life.</p>
+            <ul className="ff-chip-row ff-chip-row--left">
+              {["Confidence", "Discipline", "Creativity", "Joy"].map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+            <ul className="ff-ohero-thumbs">
+              {infoPages.map((p) => (
+                <li key={p.href}>
+                  <Link href={p.href}>
+                    <img src={p.img} alt="" />
+                    {/* <span>{p.title}</span> */}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="ff-ohero-panel">
+            <img src="/live/g1.webp" alt="Ayush Lokre with a fellow artist at a live show" />
+          </div>
+        </div>
+      </section>
 
       <section className="ff-section">
         <div className="container">
@@ -27,7 +54,7 @@ export default function offerings() {
                   <h3>{p.title}</h3>
                   <p>{p.text}</p>
                 </div>
-                <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+                <Icon name="arrow-right" />
               </Link>
             ))}
           </div>
@@ -43,8 +70,8 @@ export default function offerings() {
         kicker="Not sure where to start?"
         title="Not sure which program fits?"
         intro="Tell us a little about what you're looking for and we'll help you choose. Prefer to talk? Reach us directly:"
-        formTitle="Not sure which program fits?"
-        formSubtitle="Tell us a little about what you're looking for and we'll help you choose."
+        formTitle="Tell us what you're looking for"
+        formSubtitle="A few details are enough for us to suggest the right program."
         submitLabel="Help me choose"
       />
     </>

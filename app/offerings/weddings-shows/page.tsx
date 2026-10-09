@@ -48,7 +48,7 @@ const styles = [
 ];
 
 const process = [
-  { title: "Consultation", text: "We learn about your functions, songs, who is performing and the mood you want." },
+  { title: "First chat", text: "We learn about your functions, songs, who is performing and the mood you want." },
   { title: "Concept & songs", text: "We design acts, entries and medleys around your story and traditions." },
   { title: "Rehearsals", text: "At home, at our studio or online, on a schedule that suits your family." },
   { title: "Performance", text: "Everyone steps on stage prepared and confident." },

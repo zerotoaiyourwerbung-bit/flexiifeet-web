@@ -91,7 +91,8 @@ export default function OnlineClasses() {
       <Steps title="Start dancing in four steps" items={steps} alt />
       <Team />
       <Cta
-        title="Your first class is one call away"
+        whatsapp
+        title="Your first class is one message away"
         text="Tell us the learner's age and preferred style, and we'll suggest the right batch."
         button="Get batch details"
       />

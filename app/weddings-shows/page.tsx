@@ -3,9 +3,9 @@ import { CredStrip, Cta, EnquireFaq, Intro, LeadHero, NumberedFeatures, SecTitle
 import type { LeadField } from "@/components/LeadForm";
 
 export const metadata: Metadata = {
-  title: "Weddings & Shows",
+  title: "Wedding & Sangeet Choreography",
   description:
-    "Wedding & Sangeet choreography, couple dances, family performances and corporate stage shows by the team that assisted Shiamak Davar at India's most elite weddings.",
+    "Wedding and sangeet choreography, couple dances, family performances and corporate stage shows, by a team that assisted Shiamak Davar.",
 };
 
 const offers = [
@@ -48,7 +48,7 @@ const fields: LeadField[] = [
 ];
 
 const steps = [
-  { title: "Free consultation", text: "Tell us about your functions, songs, people performing and your vibe." },
+  { title: "Tell us your plans", text: "Tell us about your functions, songs, people performing and your vibe." },
   { title: "Concept & song plan", text: "We design the acts, entries and medleys around your story." },
   { title: "Rehearsals", text: "At home, at our studio or online, on a schedule that fits your family." },
   { title: "Showtime", text: "Everyone walks on stage confident, and the crowd never forgets it." },
@@ -59,7 +59,7 @@ const faqs = [
   { q: "Can family members in other cities rehearse too?", a: "Yes. We offer rehearsals at home, at our studio or online, so relatives in other cities or countries can learn too." },
   { q: "Do you choreograph destination weddings?", a: "We have choreographed destination weddings in Goa, Udaipur and Dubai. Share your venue and dates and we'll plan around them." },
   { q: "How early should we book?", a: "As early as you can, especially for peak wedding season. Share your date and we'll confirm availability." },
-  { q: "How is it priced?", a: "It depends on the number of performances, people and rehearsal sessions. We share a clear quote after the free consultation." },
+  { q: "How is it priced?", a: "It depends on the number of performances, people and rehearsal sessions. We share a clear quote after a quick chat." },
 ];
 
 export default function WeddingsShows() {
@@ -76,14 +76,14 @@ export default function WeddingsShows() {
         points={["Tailored to your comfort level", "Rehearsals at home, studio or online", "Destination weddings covered"]}
         program={program}
         fields={fields}
-        formTitle="Book a free consultation"
-        submitLabel="Book a free consultation"
+        formTitle="Plan your performance"
+        submitLabel="Plan your performance"
       />
       <CredStrip />
 
       <Intro
         title="We don't just teach steps—we create unforgettable moments."
-        cta={{ label: "Book a Free Consultation", href: "#enquire" }}
+        cta={{ label: "Plan Your Performance", href: "#enquire" }}
       >
         <p>
           Whether you're planning a classic Sangeet, a dreamy couple performance, a high-energy family medley or a
@@ -97,7 +97,7 @@ export default function WeddingsShows() {
 
       <section className="ff-section alt">
         <div className="container">
-          <SecTitle kicker="Offerings" title="Weddings, Sangeet & Shows" center />
+          <SecTitle kicker="Offerings" title="Weddings, sangeet & shows" center />
           <div className="row">
             {offers.map((o) => (
               <div key={o.title} className="col-lg-4 col-md-6">
@@ -147,11 +147,11 @@ export default function WeddingsShows() {
 
       <Steps title="From first call to final bow" items={steps} />
       <Cta
-        title="Let's Make Your Wedding a Dance Spectacle"
-        text="Intimate celebration or royal wedding week—book a free consultation and let us choreograph your happily-ever-after."
-        button="Book a free consultation"
+        title="Let's make your wedding a dance spectacle"
+        text="Intimate celebration or royal wedding week—tell us about it and let us choreograph your happily-ever-after."
+        button="Plan your performance"
       />
-      <EnquireFaq faqItems={faqs} program={program} fields={fields} submitLabel="Book a free consultation" />
+      <EnquireFaq faqItems={faqs} program={program} fields={fields} submitLabel="Plan your performance" />
     </>
   );
 }

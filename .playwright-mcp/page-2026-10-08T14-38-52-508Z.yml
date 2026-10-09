@@ -1,0 +1,818 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "The FlexiiFeet – Your Stage Starts Here" [ref=e9]
+        - navigation [ref=e12]:
+          - list [ref=e14]:
+            - listitem [ref=e15]:
+              - link "Home" [ref=e16] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e17]:
+              - link "About Us" [ref=e18] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e19]:
+              - link "Our Offerings" [ref=e20] [cursor=pointer]:
+                - /url: /offerings
+              - text: 
+            - listitem [ref=e21]:
+              - link "Gallery" [ref=e22] [cursor=pointer]:
+                - /url: /gallery
+            - listitem [ref=e23]:
+              - link "Contact" [ref=e24] [cursor=pointer]:
+                - /url: /contact
+        - link "Enquire Now" [ref=e26] [cursor=pointer]:
+          - /url: "#enquire"
+    - main [ref=e27]:
+      - generic [ref=e28]:
+        - text: 01 · Nav · split
+        - generic [ref=e29]: — brand in the middle, links either side
+      - navigation "FlexiiFeet" [ref=e30]:
+        - generic [ref=e31]:
+          - list [ref=e32]:
+            - listitem [ref=e33]:
+              - link "About" [ref=e34] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e35]:
+              - link "Offerings" [ref=e36] [cursor=pointer]:
+                - /url: /offerings
+          - link "FlexiiFeet" [ref=e37] [cursor=pointer]:
+            - /url: /
+          - list [ref=e38]:
+            - listitem [ref=e39]:
+              - link "Gallery" [ref=e40] [cursor=pointer]:
+                - /url: /gallery
+            - listitem [ref=e41]:
+              - link "Contact" [ref=e42] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=e43]:
+        - text: 02 · Nav · default
+        - generic [ref=e44]: — brand left, links, button right
+      - navigation "FlexiiFeet" [ref=e45]:
+        - generic [ref=e46]:
+          - link "FlexiiFeet" [ref=e47] [cursor=pointer]:
+            - /url: /
+          - list [ref=e48]:
+            - listitem [ref=e49]:
+              - link "About" [ref=e50] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e51]:
+              - link "Offerings" [ref=e52] [cursor=pointer]:
+                - /url: /offerings
+            - listitem [ref=e53]:
+              - link "Gallery" [ref=e54] [cursor=pointer]:
+                - /url: /gallery
+            - listitem [ref=e55]:
+              - link "Contact" [ref=e56] [cursor=pointer]:
+                - /url: /contact
+          - link "Enquire now" [ref=e57] [cursor=pointer]:
+            - /url: "#enquire"
+      - generic [ref=e58]:
+        - text: 03 · Hero · left
+        - generic [ref=e59]: — photo behind, heading top-left, small copy bottom-left
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - heading [level=1] [ref=e63]:
+            - text: Your stage
+            - emphasis [ref=e64]: starts here
+          - generic [ref=e65]:
+            - link "Enquire now" [ref=e66] [cursor=pointer]:
+              - /url: "#enquire"
+            - link "Explore offerings" [ref=e67] [cursor=pointer]:
+              - /url: /offerings
+        - paragraph [ref=e68]: Dance education, classes and choreography for schools, families and celebrations.
+      - generic [ref=e69]:
+        - text: 04 · Strip
+        - generic [ref=e70]: — thin scrolling line of facts
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - generic [ref=e75]: 10+ years of expertise✦
+          - generic [ref=e76]: 10,000+ students trained✦
+          - generic [ref=e77]: India to the USA✦
+        - generic [aria-hidden] [ref=e78]:
+          - generic [ref=e79]: 10+ years of expertise✦
+          - generic [ref=e80]: 10,000+ students trained✦
+          - generic [ref=e81]: India to the USA✦
+      - generic [ref=e82]:
+        - text: 05 · Hero · center
+        - generic [ref=e83]: — photo behind, everything centred
+      - generic [ref=e86]:
+        - heading [level=2] [ref=e87]:
+          - text: Dance begins in the classroom.
+          - emphasis [ref=e88]: Confidence takes the stage.
+        - paragraph [ref=e89]: Structured dance education and personal choreography across India and the USA.
+        - generic [ref=e90]:
+          - link "Enquire now" [ref=e91] [cursor=pointer]:
+            - /url: "#enquire"
+          - link "Explore offerings" [ref=e92] [cursor=pointer]:
+            - /url: /offerings
+      - generic [ref=e93]:
+        - text: 06 · Hero · light
+        - generic [ref=e94]: — white background, heading above a wide photo
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - heading [level=2] [ref=e98]:
+            - text: We bridge the gap between
+            - emphasis [ref=e99]: steps and confidence
+          - paragraph [ref=e100]: Technique is the foundation, but the real change happens inside.
+          - generic [ref=e101]:
+            - link "Enquire now" [ref=e102] [cursor=pointer]:
+              - /url: "#enquire"
+            - link "Explore offerings" [ref=e103] [cursor=pointer]:
+              - /url: /offerings
+        - figure [ref=e104]:
+          - img "The FlexiiFeet team on stage" [ref=e105]
+      - generic [ref=e106]:
+        - text: 07 · StatRow · icons
+        - generic [ref=e107]: — icon + label in each column
+      - list [ref=e110]:
+        - listitem [ref=e111]:
+          - generic [aria-hidden] [ref=e112]: 
+          - text: 10+ years of expertise
+        - listitem [ref=e113]:
+          - generic [aria-hidden] [ref=e114]: 
+          - text: 10,000+ students trained
+        - listitem [ref=e115]:
+          - generic [aria-hidden] [ref=e116]: 
+          - text: India and the USA
+        - listitem [ref=e117]:
+          - generic [aria-hidden] [ref=e118]: 
+          - text: IIFA, IPL and Dubai Expo stages
+      - generic [ref=e119]:
+        - text: 08 · StatRow · numbers
+        - generic [ref=e120]: — big number + label in each column
+      - list [ref=e123]:
+        - listitem [ref=e124]:
+          - strong [ref=e125]: 10+
+          - text: Years of expertise
+        - listitem [ref=e126]:
+          - strong [ref=e127]: 10,000+
+          - text: Students trained
+        - listitem [ref=e128]:
+          - strong [ref=e129]: "2"
+          - text: Countries
+      - generic [ref=e130]:
+        - text: 09 · Statement
+        - generic [ref=e131]: — one large centred sentence, second half in grey
+      - generic [ref=e133]:
+        - generic [ref=e134]: Our belief
+        - paragraph [ref=e136]: "We don't teach dance. We help you grow through dance: the shy child who finds a voice, the teenager who owns the stage, the adult who feels at home in their body."
+      - generic [ref=e137]:
+        - text: 10 · Intro · collage
+        - generic [ref=e138]: — copy, small photo, tall photo, ruled list (torn top edge)
+      - generic [ref=e140]:
+        - heading [level=2] [ref=e142]:
+          - text: FlexiiFeet is your gateway
+          - emphasis [ref=e143]: to the stage
+        - generic [ref=e144]:
+          - generic [ref=e145]:
+            - paragraph [ref=e146]: From school programmes to wedding sangeets, we plan every step with you.
+            - link "Our story" [ref=e148] [cursor=pointer]:
+              - /url: /about
+          - figure [ref=e149]:
+            - img "A school dance class" [ref=e150]
+          - figure [ref=e151]:
+            - img "A couple rehearsing their wedding dance" [ref=e152]
+          - list [ref=e153]:
+            - listitem [ref=e154]: 10,000+ students trained
+            - listitem [ref=e155]: 4 programmes
+            - listitem [ref=e156]: 10+ years
+            - listitem [ref=e157]: 2 countries
+      - generic [ref=e158]:
+        - text: 11 · Intro · photos
+        - generic [ref=e159]: — heading and copy above a small + large photo
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - heading [level=2] [ref=e163]:
+            - text: Dance education that builds
+            - emphasis [ref=e164]: confidence, not just steps
+          - paragraph [ref=e165]: For over ten years we have brought structured, joyful dance training to schools, families and celebrations.
+        - generic [ref=e166]:
+          - figure [ref=e167]:
+            - img "School children dancing" [ref=e168]
+          - figure [ref=e169]:
+            - img "A sangeet performance" [ref=e170]
+      - generic [ref=e171]:
+        - text: 12 · Intro · ruled
+        - generic [ref=e172]: — heading + photo cell beside a copy cell, hairline borders
+      - generic [ref=e175]:
+        - generic [ref=e176]:
+          - heading [level=2] [ref=e178]:
+            - text: Personal touch
+            - emphasis [ref=e179]: in every routine
+          - figure [ref=e180]:
+            - img "A family rehearsal" [ref=e181]
+        - generic [ref=e182]:
+          - paragraph [ref=e183]: "Every routine is built around the people dancing it: their age, their level and the occasion."
+          - link "See how we work" [ref=e185] [cursor=pointer]:
+            - /url: /offerings
+            - text: See how we work
+            - generic [aria-hidden] [ref=e186]: →
+      - generic [ref=e187]:
+        - text: 13 · ImageBand
+        - generic [ref=e188]: — mid-page photo band with a heading
+      - generic [ref=e190]:
+        - heading [level=2] [ref=e192]:
+          - text: Looking for your
+          - emphasis [ref=e193]: next performance?
+        - paragraph [ref=e194]: School stage, studio class or wedding floor, there is a programme for it.
+      - generic [ref=e195]:
+        - text: 14 · Tiles
+        - generic [ref=e196]: — four edge-to-edge photo tiles with titles
+      - generic [ref=e199]:
+        - link [ref=e200] [cursor=pointer]:
+          - /url: /offerings/weddings-shows
+          - figure [ref=e201]:
+            - img "Stage performance" [ref=e202]
+            - strong [ref=e204]: Stage shows
+        - link [ref=e205] [cursor=pointer]:
+          - /url: /offerings/annual-days
+          - figure [ref=e206]:
+            - img "Students performing" [ref=e207]
+            - strong [ref=e209]: Annual days
+        - link [ref=e210] [cursor=pointer]:
+          - /url: /offerings/regular-classes
+          - figure [ref=e211]:
+            - img "A dance class" [ref=e212]
+            - strong [ref=e214]: Regular classes
+        - link [ref=e215] [cursor=pointer]:
+          - /url: /offerings/online-classes
+          - figure [ref=e216]:
+            - img "Dancers on stage" [ref=e217]
+            - strong [ref=e219]: Online classes
+      - generic [ref=e220]:
+        - text: 15 · CardGrid · icons
+        - generic [ref=e221]: — bordered cards with icon, title, copy
+      - generic [ref=e223]:
+        - generic [ref=e224]:
+          - heading [level=2] [ref=e225]:
+            - text: Six ways to
+            - emphasis [ref=e226]: dance with us
+          - paragraph [ref=e227]: Pick the programme that fits where you are.
+        - generic [ref=e228]:
+          - article [ref=e229]:
+            - generic [ref=e230]: Schools
+            - generic [aria-hidden] [ref=e231]: 
+            - heading [level=3] [ref=e232]:
+              - link "↗ DanceED curriculum" [ref=e233] [cursor=pointer]:
+                - /url: /offerings/dance-ed
+            - paragraph [ref=e234]: A structured, NEP-aligned dance programme taught inside the school timetable.
+          - article [ref=e235]:
+            - generic [ref=e236]: Schools
+            - generic [aria-hidden] [ref=e237]: 
+            - heading [level=3] [ref=e238]:
+              - link "↗ Annual days" [ref=e239] [cursor=pointer]:
+                - /url: /offerings/annual-days
+            - paragraph [ref=e240]: Concept, choreography and rehearsals for the whole school, start to finish.
+          - article [ref=e241]:
+            - generic [ref=e242]: Everyone
+            - generic [aria-hidden] [ref=e243]: 
+            - heading "Regular classes" [level=3] [ref=e244]
+            - paragraph [ref=e245]: Weekly batches in Indore for children, teens and adults.
+          - article [ref=e246]:
+            - generic [ref=e247]: Everyone
+            - generic [aria-hidden] [ref=e248]: 
+            - heading "Online classes" [level=3] [ref=e249]
+            - paragraph [ref=e250]: Live batches across time zones, from India to the USA.
+          - article [ref=e251]:
+            - generic [ref=e252]: Celebrations
+            - generic [aria-hidden] [ref=e253]: 
+            - heading "Weddings" [level=3] [ref=e254]
+            - paragraph [ref=e255]: Sangeet choreography for couples, families and friends.
+          - article [ref=e256]:
+            - generic [ref=e257]: Celebrations
+            - generic [aria-hidden] [ref=e258]: 
+            - heading "Stage shows" [level=3] [ref=e259]
+            - paragraph [ref=e260]: Choreography and performers for corporate and public events.
+      - generic [ref=e261]:
+        - text: 16 · CardGrid · photos
+        - generic [ref=e262]: — bordered cards with a photo on top
+      - generic [ref=e264]:
+        - heading [level=2] [ref=e266]:
+          - text: Essential programmes
+          - emphasis [ref=e267]: for schools
+        - generic [ref=e268]:
+          - article [ref=e269]:
+            - figure [ref=e270]
+            - heading "DanceED curriculum" [level=3] [ref=e271]
+            - paragraph [ref=e272]: Weekly sessions with a clear syllabus and assessments.
+          - article [ref=e273]:
+            - figure [ref=e274]
+            - heading "Annual day choreography" [level=3] [ref=e275]
+            - paragraph [ref=e276]: One team handling concept, music, costumes and rehearsals.
+      - generic [ref=e277]:
+        - text: 17 · CategoryRows
+        - generic [ref=e278]: — label cell + three square photos per row
+      - generic [ref=e280]:
+        - generic [ref=e281]:
+          - generic [ref=e282]:
+            - heading "Wedding choreography" [level=3] [ref=e283]
+            - paragraph [ref=e284]: Couple dances, family medleys and full sangeet line-ups.
+            - link "Explore weddings" [ref=e285] [cursor=pointer]:
+              - /url: /offerings/weddings-shows
+              - text: Explore weddings
+              - generic [aria-hidden] [ref=e286]: →
+          - figure [ref=e287]:
+            - img "Couple dance" [ref=e288]
+          - figure [ref=e289]:
+            - img "Family dance" [ref=e290]
+          - figure [ref=e291]:
+            - img "A themed sangeet" [ref=e292]
+        - generic [ref=e293]:
+          - generic [ref=e294]:
+            - heading "On stage" [level=3] [ref=e295]
+            - paragraph [ref=e296]: Moments from our shows and classrooms.
+            - link "Open the gallery" [ref=e297] [cursor=pointer]:
+              - /url: /gallery
+              - text: Open the gallery
+              - generic [aria-hidden] [ref=e298]: →
+          - figure [ref=e299]:
+            - img "On stage" [ref=e300]
+          - figure [ref=e301]:
+            - img "In rehearsal" [ref=e302]
+          - figure [ref=e303]:
+            - img "After the show" [ref=e304]
+      - generic [ref=e305]:
+        - text: 18 · Showcase · stagger
+        - generic [ref=e306]: — wide photo, then photo beside title/copy/tags, sides alternate
+      - generic [ref=e308]:
+        - heading [level=2] [ref=e310]:
+          - text: Explore our most popular
+          - emphasis [ref=e311]: programmes
+        - generic [ref=e312]:
+          - figure [ref=e313]:
+            - img "A DanceED session" [ref=e314]
+          - generic [ref=e315]:
+            - generic [ref=e316]:
+              - heading "DanceED for schools" [level=3] [ref=e317]
+              - paragraph [ref=e318]: A year-long curriculum that grows with each class.
+              - link "Explore DanceED" [ref=e320] [cursor=pointer]:
+                - /url: /offerings/dance-ed
+              - list [ref=e321]:
+                - listitem [ref=e322]: Weekly sessions
+                - listitem [ref=e323]: Age-wise levels
+                - listitem [ref=e324]: Annual showcase
+            - figure [ref=e325]:
+              - img "Students in a DanceED class" [ref=e326]
+        - generic [ref=e327]:
+          - figure [ref=e328]:
+            - img "A sangeet night" [ref=e329]
+          - generic [ref=e330]:
+            - generic [ref=e331]:
+              - heading "Weddings and shows" [level=3] [ref=e332]
+              - paragraph [ref=e333]: Choreography that makes every guest part of the celebration.
+              - link "Explore weddings" [ref=e335] [cursor=pointer]:
+                - /url: /offerings/weddings-shows
+              - list [ref=e336]:
+                - listitem [ref=e337]: Couple dance
+                - listitem [ref=e338]: Family medley
+                - listitem [ref=e339]: Stage direction
+            - figure [ref=e340]:
+              - img "A rehearsal at home" [ref=e341]
+      - generic [ref=e342]:
+        - text: 19 · Showcase · cards
+        - generic [ref=e343]: — one large captioned photo above two smaller ones
+      - generic [ref=e345]:
+        - heading [level=2] [ref=e347]:
+          - text: Our work in
+          - emphasis [ref=e348]: action
+        - generic [ref=e349]:
+          - figure [ref=e350]:
+            - img "An annual day finale" [ref=e351]
+            - generic [ref=e352]:
+              - strong [ref=e353]: Annual day, Indore
+              - text: 600 students on one stage.
+          - generic [ref=e354]:
+            - figure [ref=e355]:
+              - img "A sangeet performance" [ref=e356]
+              - generic [ref=e357]:
+                - strong [ref=e358]: Sangeet night
+                - text: A family of forty, one medley.
+            - figure [ref=e359]:
+              - img "Ayush teaching an online class" [ref=e360]
+              - generic [ref=e361]:
+                - strong [ref=e362]: Online batch
+                - text: Live classes across time zones.
+      - generic [ref=e363]:
+        - text: 20 · People
+        - generic [ref=e364]: — portrait beside a list of names and roles
+      - generic [ref=e367]:
+        - figure [ref=e368]:
+          - img "Ayush Lokre" [ref=e369]
+        - generic [ref=e370]:
+          - heading [level=2] [ref=e372]:
+            - text: The people
+            - emphasis [ref=e373]: behind the movement
+          - list [ref=e374]:
+            - listitem [ref=e375]:
+              - generic [ref=e376]: Ayush Lokre
+              - generic [ref=e377]: Founder, choreographer
+            - listitem [ref=e378]:
+              - generic [ref=e379]: Ekta
+              - generic [ref=e380]: Faculty
+            - listitem [ref=e381]:
+              - generic [ref=e382]: Harshit
+              - generic [ref=e383]: Faculty
+            - listitem [ref=e384]:
+              - generic [ref=e385]: Prachi
+              - generic [ref=e386]: Faculty
+          - link "Meet the team" [ref=e388] [cursor=pointer]:
+            - /url: /about
+      - generic [ref=e389]:
+        - text: 21 · FaqBlock
+        - generic [ref=e390]: — side card + accordion
+      - generic [ref=e392]:
+        - heading [level=2] [ref=e394]:
+          - text: Answers that help you
+          - emphasis [ref=e395]: decide
+        - generic [ref=e396]:
+          - generic [ref=e397]:
+            - paragraph [ref=e398]: Do you have more questions?
+            - link "Talk to us" [ref=e400] [cursor=pointer]:
+              - /url: /contact
+          - generic [ref=e401]:
+            - group [ref=e402]:
+              - generic "Do I need any dance experience? +" [ref=e403] [cursor=pointer]
+            - group [ref=e404]:
+              - generic "What ages do you teach? +" [ref=e405] [cursor=pointer]
+            - group [ref=e406]:
+              - generic "Can you work with our school calendar? +" [ref=e407] [cursor=pointer]
+      - generic [ref=e408]:
+        - text: 22 · Cta · photo
+        - generic [ref=e409]: — centred over a photo
+      - generic [ref=e412]:
+        - heading [level=2] [ref=e413]:
+          - text: Bring dance
+          - emphasis [ref=e414]: into your school or celebration
+        - generic [ref=e415]:
+          - link "Enquire now" [ref=e416] [cursor=pointer]:
+            - /url: "#enquire"
+          - link "Explore offerings" [ref=e417] [cursor=pointer]:
+            - /url: /offerings
+      - generic [ref=e418]:
+        - text: 23 · Cta · light
+        - generic [ref=e419]: — left-aligned on cream
+      - generic [ref=e422]:
+        - heading [level=2] [ref=e423]:
+          - text: Let's make your stage ready
+          - emphasis [ref=e424]: and unforgettable
+        - paragraph [ref=e425]: Tell us what you are planning and we will call you back.
+        - generic [ref=e426]:
+          - link "Enquire now" [ref=e427] [cursor=pointer]:
+            - /url: "#enquire"
+          - link "Explore offerings" [ref=e428] [cursor=pointer]:
+            - /url: /offerings
+      - generic [ref=e429]:
+        - text: 25 · Hero · split
+        - generic [ref=e430]: — cream background, copy left, photo right
+      - generic [ref=e433]:
+        - generic [ref=e434]:
+          - generic [ref=e435]: Online classes
+          - heading [level=2] [ref=e436]:
+            - text: Learn from anywhere,
+            - emphasis [ref=e437]: dance everywhere
+          - paragraph [ref=e438]: Live batches for children, teens and adults across time zones.
+          - generic [ref=e439]:
+            - link "Enquire now" [ref=e440] [cursor=pointer]:
+              - /url: "#enquire"
+            - link "Explore offerings" [ref=e441] [cursor=pointer]:
+              - /url: /offerings
+        - figure [ref=e442]:
+          - img "Ayush teaching an online class" [ref=e443]
+      - generic [ref=e444]:
+        - text: 26 · Feature
+        - generic [ref=e445]: — photo beside heading, copy and tick list
+      - generic [ref=e448]:
+        - figure [ref=e449]:
+          - img "A DanceED session" [ref=e450]
+        - generic [ref=e451]:
+          - generic [ref=e452]:
+            - heading [level=2] [ref=e453]:
+              - text: What your school
+              - emphasis [ref=e454]: gets with DanceED
+            - paragraph [ref=e455]: A complete programme, not a one-off workshop.
+          - list [ref=e456]:
+            - listitem [ref=e457]: ✓ Weekly sessions inside the timetable
+            - listitem [ref=e458]: ✓ Age-wise syllabus and assessments
+            - listitem [ref=e459]: ✓ Trained faculty on campus
+            - listitem [ref=e460]: ✓ An annual showcase for parents
+          - link "Explore DanceED" [ref=e462] [cursor=pointer]:
+            - /url: /offerings/dance-ed
+      - generic [ref=e463]:
+        - text: 27 · Feature · reverse
+        - generic [ref=e464]: — same block with the photo on the right
+      - generic [ref=e467]:
+        - figure [ref=e468]:
+          - img "A family rehearsing" [ref=e469]
+        - generic [ref=e470]:
+          - heading [level=2] [ref=e472]:
+            - text: A sangeet
+            - emphasis [ref=e473]: everyone can dance
+          - list [ref=e474]:
+            - listitem [ref=e475]: ✓ Routines matched to each person
+            - listitem [ref=e476]: ✓ Rehearsals at home or online
+            - listitem [ref=e477]: ✓ Music edits and stage direction
+          - link "Explore weddings" [ref=e479] [cursor=pointer]:
+            - /url: /offerings/weddings-shows
+      - generic [ref=e480]:
+        - text: 28 · Steps
+        - generic [ref=e481]: — numbered process steps in a row
+      - generic [ref=e483]:
+        - generic [ref=e484]:
+          - generic [ref=e485]: How it works
+          - heading [level=2] [ref=e486]:
+            - text: From first call
+            - emphasis [ref=e487]: to the spotlight
+        - list [ref=e488]:
+          - listitem [ref=e489]:
+            - heading "Tell us your plan" [level=3] [ref=e490]
+            - paragraph [ref=e491]: A short call about your school, class or event.
+          - listitem [ref=e492]:
+            - heading "We design it" [level=3] [ref=e493]
+            - paragraph [ref=e494]: Concept, music and a rehearsal schedule.
+          - listitem [ref=e495]:
+            - heading "We rehearse" [level=3] [ref=e496]
+            - paragraph [ref=e497]: Sessions at your venue, our studio or online.
+          - listitem [ref=e498]:
+            - heading "You perform" [level=3] [ref=e499]
+            - paragraph [ref=e500]: We are there on the day, start to finish.
+      - generic [ref=e501]:
+        - text: 29 · Testimonials
+        - generic [ref=e502]: — bordered quote cards (2 or 3 columns)
+      - generic [ref=e504]:
+        - heading [level=2] [ref=e506]:
+          - text: Words from
+          - emphasis [ref=e507]: the schools we work with
+        - generic [ref=e508]:
+          - figure [ref=e509]:
+            - blockquote [ref=e510]: We had the pleasure of having Ayush Lokre as a dance instructor during the 2023-24 session. His positive energy, commitment, and inspiring teaching style made dance sessions fun and impactful for students. We wish him continued success in all his future endeavors.
+            - generic [ref=e512]:
+              - strong [ref=e513]: Dipti Ingley
+              - text: Principal, KLE International, Belgaum
+          - figure [ref=e514]:
+            - blockquote [ref=e515]: Ayush and his team, The FlexiiFeet, are among the finest instructors we have had for our dance sessions. Their unique teaching style fills the class with happiness and creates a supportive environment where every child feels encouraged to grow.
+            - generic [ref=e517]:
+              - strong [ref=e518]: Principal
+              - text: Crestwood International School
+      - generic [ref=e519]:
+        - text: 30 · Quote
+        - generic [ref=e520]: — one large quote beside a portrait
+      - generic [ref=e523]:
+        - figure [ref=e524]:
+          - img "Ayush Lokre" [ref=e525]
+        - figure [ref=e526]:
+          - generic [ref=e527]: From the founder
+          - blockquote [ref=e528]: "Technique is the foundation, but the real change happens inside: the shy child who finds a voice."
+          - generic [ref=e530]:
+            - strong [ref=e531]: Ayush Lokre
+            - text: Founder, The FlexiiFeet
+      - generic [ref=e532]:
+        - text: 31 · Plans
+        - generic [ref=e533]: — plan / pricing cards, one highlighted (prices are placeholders)
+      - generic [ref=e535]:
+        - heading [level=2] [ref=e537]:
+          - text: Plans built
+          - emphasis [ref=e538]: for every dancer
+        - generic [ref=e539]:
+          - article [ref=e540]:
+            - heading "Starter" [level=3] [ref=e541]
+            - paragraph [ref=e542]: One class a week.
+            - paragraph [ref=e543]: ₹0,000/ month
+            - list [ref=e544]:
+              - listitem [ref=e545]: ✓ 4 live classes
+              - listitem [ref=e546]: ✓ Class recordings
+            - link "Get started" [ref=e547] [cursor=pointer]:
+              - /url: "#enquire"
+          - article [ref=e548]:
+            - heading "Regular" [level=3] [ref=e549]
+            - paragraph [ref=e550]: Two classes a week.
+            - paragraph [ref=e551]: ₹0,000/ month
+            - list [ref=e552]:
+              - listitem [ref=e553]: ✓ 8 live classes
+              - listitem [ref=e554]: ✓ Class recordings
+              - listitem [ref=e555]: ✓ Monthly feedback
+            - link "Book a free trial" [ref=e556] [cursor=pointer]:
+              - /url: "#enquire"
+          - article [ref=e557]:
+            - heading "Schools" [level=3] [ref=e558]
+            - paragraph [ref=e559]: For a whole campus.
+            - paragraph [ref=e560]: Custom
+            - list [ref=e561]:
+              - listitem [ref=e562]: ✓ Full DanceED curriculum
+              - listitem [ref=e563]: ✓ On-campus faculty
+              - listitem [ref=e564]: ✓ Annual showcase
+            - link "Talk to us" [ref=e565] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e566]:
+        - text: 32 · LogoWall
+        - generic [ref=e567]: — hairline grid of logos or names
+      - generic [ref=e569]:
+        - generic [ref=e570]:
+          - generic [ref=e571]: Trusted in classrooms
+          - heading [level=2] [ref=e572]:
+            - text: Schools we have
+            - emphasis [ref=e573]: moved with
+        - list [ref=e574]:
+          - listitem [ref=e575]:
+            - img "KLE International, Belgaum"
+          - listitem [ref=e576]: HVB Global Academy, Mumbai
+          - listitem [ref=e577]:
+            - img "Dhirubhai Ambani International School, Mumbai"
+          - listitem [ref=e578]:
+            - img "SVIS, Gorai"
+          - listitem [ref=e579]: Universal School, Dahisar
+          - listitem [ref=e580]: Lakshya International, Kakinada
+          - listitem [ref=e581]: Crestwood International School
+      - generic [ref=e582]:
+        - text: 33 · Bento
+        - generic [ref=e583]: — photo mosaic, first photo large
+      - generic [ref=e585]:
+        - heading [level=2] [ref=e587]:
+          - text: Moments
+          - emphasis [ref=e588]: from our stages
+        - generic [ref=e589]:
+          - figure [ref=e590]:
+            - img "On stage" [ref=e591]
+          - figure [ref=e592]:
+            - img "Backstage" [ref=e593]
+          - figure [ref=e594]:
+            - img "With students" [ref=e595]
+          - figure [ref=e596]:
+            - img "After a show" [ref=e597]
+          - figure [ref=e598]:
+            - img "On tour" [ref=e599]
+      - generic [ref=e600]:
+        - text: 34 · Contact
+        - generic [ref=e601]: — heading + details left, form (or any content) right
+      - generic [ref=e604]:
+        - generic [ref=e605]:
+          - generic [ref=e606]:
+            - heading [level=2] [ref=e607]:
+              - text: Tell us what
+              - emphasis [ref=e608]: you are planning
+            - paragraph [ref=e609]: Leave your details and our team will call you back.
+          - list [ref=e610]:
+            - listitem [ref=e611]:
+              - generic [ref=e612]: Call / WhatsApp
+              - link "+91 96304 21593" [ref=e613] [cursor=pointer]:
+                - /url: tel:+919630421593
+            - listitem [ref=e614]:
+              - generic [ref=e615]: Email
+              - link "connect@theflexiifeet.com" [ref=e616] [cursor=pointer]:
+                - /url: mailto:connect@theflexiifeet.com
+        - generic [ref=e618]:
+          - heading "Have a question?" [level=3] [ref=e619]
+          - paragraph [ref=e620]: We reply within a day.
+          - generic [ref=e621]:
+            - generic [ref=e622]:
+              - generic [ref=e623]: Your name *
+              - textbox "Your name *" [ref=e624]
+            - generic [ref=e625]:
+              - generic [ref=e626]: Phone (WhatsApp) *
+              - textbox "Phone (WhatsApp) *" [ref=e627]
+            - generic [ref=e628]:
+              - generic [ref=e629]: Email
+              - textbox "Email" [ref=e630]
+            - generic [ref=e631]:
+              - generic [ref=e632]: Interested in *
+              - combobox "Interested in *" [ref=e633]:
+                - option "Choose one" [disabled] [selected]
+                - option "DanceED"
+                - option "Online Dance"
+                - option "Regular Classes"
+                - option "Weddings & Shows"
+                - option "Other"
+            - generic [ref=e634]:
+              - generic [ref=e635]: Anything we should know?
+              - textbox "Anything we should know?" [ref=e636]
+            - textbox [aria-hidden] [ref=e637]
+          - button "Get a free consultation" [ref=e638] [cursor=pointer]:
+            - text: Get a free consultation
+            - generic [aria-hidden] [ref=e639]: 
+          - list [ref=e640]:
+            - listitem [ref=e641]:
+              - generic [aria-hidden] [ref=e642]: 
+              - text: Free, no payment needed
+            - listitem [ref=e643]:
+              - generic [aria-hidden] [ref=e644]: 
+              - text: Our team will call you back
+          - paragraph [ref=e645]:
+            - text: Prefer to chat?
+            - link "Message us on WhatsApp" [ref=e646] [cursor=pointer]:
+              - /url: https://wa.me/919630421593?text=Hi%20FlexiiFeet!%20I'd%20like%20to%20know%20more.
+      - generic [ref=e647]:
+        - text: 35 · Footer · wordmark
+        - generic [ref=e648]: — brand + link columns, giant brand name at the bottom
+      - generic [ref=e650]:
+        - generic [ref=e651]:
+          - generic [ref=e652]:
+            - link "FlexiiFeet" [ref=e653] [cursor=pointer]:
+              - /url: /
+            - paragraph [ref=e654]: Dance education that builds confidence, not just steps.
+          - generic [ref=e655]:
+            - generic [ref=e656]:
+              - heading "Programmes" [level=3] [ref=e657]
+              - list [ref=e658]:
+                - listitem [ref=e659]:
+                  - link "Offerings" [ref=e660] [cursor=pointer]:
+                    - /url: /offerings
+                - listitem [ref=e661]:
+                  - link "Gallery" [ref=e662] [cursor=pointer]:
+                    - /url: /gallery
+            - generic [ref=e663]:
+              - heading "Company" [level=3] [ref=e664]
+              - list [ref=e665]:
+                - listitem [ref=e666]:
+                  - link "About" [ref=e667] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=e668]:
+                  - link "Contact" [ref=e669] [cursor=pointer]:
+                    - /url: /contact
+            - generic [ref=e670]:
+              - heading "Follow" [level=3] [ref=e671]
+              - list [ref=e672]:
+                - listitem [ref=e673]:
+                  - link "Instagram" [ref=e674] [cursor=pointer]:
+                    - /url: https://instagram.com
+        - paragraph [ref=e675]: © The FlexiiFeet. Layout kit preview.
+        - generic [aria-hidden] [ref=e676]: FlexiiFeet
+    - contentinfo [ref=e677]:
+      - generic [ref=e684]:
+        - generic [ref=e686]:
+          - link [ref=e688] [cursor=pointer]:
+            - /url: /
+            - img "The FlexiiFeet" [ref=e689]
+          - generic [ref=e690]:
+            - heading "Indore, India" [level=3] [ref=e691]
+            - paragraph [ref=e692]: Patrakar Square 5, near SBI, Joy Builder Colony, Saket Nagar, Indore, Madhya Pradesh 452018
+            - list [ref=e693]:
+              - listitem [ref=e694]:
+                - link "+91 96304 21593" [ref=e695] [cursor=pointer]:
+                  - /url: tel:+919630421593
+              - listitem [ref=e696]:
+                - link "connect@theflexiifeet.com" [ref=e697] [cursor=pointer]:
+                  - /url: mailto:connect@theflexiifeet.com
+        - generic [ref=e699]:
+          - heading "Quick Links" [level=3] [ref=e701]
+          - list [ref=e702]:
+            - listitem [ref=e703]:
+              - link "Home" [ref=e704] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e705]:
+              - link "About Us" [ref=e706] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e707]:
+              - link "Gallery" [ref=e708] [cursor=pointer]:
+                - /url: /gallery
+            - listitem [ref=e709]:
+              - link "Contact" [ref=e710] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e712]:
+          - heading "Offerings" [level=3] [ref=e714]
+          - list [ref=e715]:
+            - listitem [ref=e716]:
+              - link "DanceED" [ref=e717] [cursor=pointer]:
+                - /url: /offerings/dance-ed
+            - listitem [ref=e718]:
+              - link "Online Dance" [ref=e719] [cursor=pointer]:
+                - /url: /offerings/online-classes
+            - listitem [ref=e720]:
+              - link "Regular Classes" [ref=e721] [cursor=pointer]:
+                - /url: /offerings/regular-classes
+            - listitem [ref=e722]:
+              - link "Weddings & Shows" [ref=e723] [cursor=pointer]:
+                - /url: /offerings/weddings-shows
+        - generic [ref=e725]:
+          - heading "Follow Us" [level=3] [ref=e727]
+          - generic [ref=e728]:
+            - paragraph [ref=e730]: Follow us on Instagram for performances, classes & updates.
+            - list [ref=e732]:
+              - listitem [ref=e733]:
+                - link "Instagram" [ref=e734] [cursor=pointer]:
+                  - /url: https://www.instagram.com/theflexiifeetdance
+                  - generic [aria-hidden] [ref=e735]: 
+              - listitem [ref=e736]:
+                - link "WhatsApp" [ref=e737] [cursor=pointer]:
+                  - /url: https://wa.me/919630421593
+                  - generic [aria-hidden] [ref=e738]: 
+              - listitem [ref=e739]:
+                - link "YouTube" [ref=e740] [cursor=pointer]:
+                  - /url: https://www.youtube.com/@theflexiifeet
+                  - generic [aria-hidden] [ref=e741]: 
+              - listitem [ref=e742]:
+                - link "Email" [ref=e743] [cursor=pointer]:
+                  - /url: mailto:connect@theflexiifeet.com
+                  - generic [aria-hidden] [ref=e744]: 
+      - paragraph [ref=e751]:
+        - text: Copyright © 2026
+        - link "The FlexiiFeet" [ref=e752] [cursor=pointer]:
+          - /url: /
+        - text: . All Rights Reserved.
+  - text: 
+  - link "Chat with us on WhatsApp" [ref=e753] [cursor=pointer]:
+    - /url: https://wa.me/919630421593?text=Hi%20FlexiiFeet!%20I'd%20like%20to%20know%20more.
+    - generic [aria-hidden] [ref=e754]: 
+    - generic [ref=e755]: Chat with us
+  - alert [ref=e756]

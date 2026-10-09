@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { nav, type NavItem } from "@/lib/site";
+import Icon from "./Icon";
 
 // Template markup: about.html "main-header style5 style5withstyle6".
 // custom.js behaviours (mobile collapse, dropdown toggle) are re-done in React. The header itself is sticky (CSS),
@@ -60,7 +61,7 @@ function Menu({ id, onNavigate }: { id?: string; onNavigate?: () => void }) {
                     aria-label={`Toggle ${item.label} menu`}
                     onClick={() => setOpenDrop(openDrop === item.label ? null : item.label)}
                   >
-                    <span className="fa fa-angle-down"></span>
+                    <Icon name="chevron-down" />
                   </div>
                 </>
               )}

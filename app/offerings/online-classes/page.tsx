@@ -7,12 +7,13 @@ import {
   InfoAsk,
   OverlapFeature,
   SecTitle,
+  PageBanner,
 } from "@/components/sections";
 
 export const metadata: Metadata = {
-  title: "Online Dance Mania – Live Online Bollywood Dance Classes",
+  title: "Online Dance Mania – Live Bollywood Dance Classes",
   description:
-    "Online Dance Mania by Ayush Lokre: live online Bollywood dance classes for kids, teens and adults in the USA. Batch timings in EST, CST and PST, plans and pricing, and class terms.",
+    "Live online Bollywood dance classes by Ayush Lokre for kids, teens and adults in the USA. Batch timings in EST, CST and PST, plans and pricing.",
   alternates: { canonical: "/offerings/online-classes" },
 };
 
@@ -40,7 +41,7 @@ const zones: { name: string; label: string; rows: Row[] }[] = [
       { age: "4–7", option: "Option 3", days: "Sat & Sun", time: "1:00 PM" },
       { age: "8–15", option: "Option 1", days: "Mon & Wed", time: "7:00 PM" },
       { age: "8–15", option: "Option 2", days: "Tue & Thu", time: "7:00 PM" },
-      { age: "8–15", option: "Option 3", days: "Mon & Wed", time: "12:00 PM" },
+      { age: "8–15", option: "Option 3", days: "Sat & Sun", time: "12:00 PM" },
       { age: "Adults", option: "Option 1", days: "Mon & Wed", time: "8:30 PM" },
       { age: "Adults", option: "Option 2", days: "Tue & Thu", time: "8:30 PM" },
       { age: "Adults", option: "Option 3", days: "Sat & Sun", time: "11:00 AM" },
@@ -54,8 +55,8 @@ const zones: { name: string; label: string; rows: Row[] }[] = [
       { age: "4–7", option: "Option 2", days: "Tue & Thu", time: "5:00 PM" },
       { age: "4–7", option: "Option 3", days: "Sat & Sun", time: "12:00 PM" },
       { age: "8–15", option: "Option 1", days: "Mon & Wed", time: "6:00 PM" },
-      { age: "8–15", option: "Option 2", days: "Tue & Thu", time: "6:00 AM" },
-      { age: "8–15", option: "Option 3", days: "Sat & Sun", time: "11:00 PM" },
+      { age: "8–15", option: "Option 2", days: "Tue & Thu", time: "6:00 PM" },
+      { age: "8–15", option: "Option 3", days: "Sat & Sun", time: "11:00 AM" },
       { age: "Adults", option: "Option 1", days: "Mon & Wed", time: "7:30 PM" },
       { age: "Adults", option: "Option 2", days: "Tue & Thu", time: "7:30 PM" },
       { age: "Adults", option: "Option 3", days: "Sat & Sun", time: "10:00 AM" },
@@ -126,37 +127,27 @@ const terms = [
 export default function OnlineClassesInfo() {
   return (
     <>
-      <section className="ff-dhero">
-        <div className="container ff-dhero-grid">
-          <div>
-            <span className="ff-pill-tag">Live online · Bollywood · For the USA</span>
-            <h1>
-              Online Dance Mania with <span className="ff-underline">Ayush Lokre</span>
-            </h1>
-            <p>
-              Live online Bollywood dance classes for kids, teens and adults, taught by professional instructors trained
-              by Ayush Lokre, with master classes by Ayush himself.
-            </p>
-            <div className="ff-cta-buttons" style={{ justifyContent: "flex-start" }}>
-              <a className="ff-btn ff-btn--grad" href="#enquire">
-                Book a trial class
-              </a>
-              <a className="ff-btn ff-btn--outline" href="#timings">
-                See batch timings
-              </a>
-            </div>
-            <div className="ff-proof-row">
-              <span>
-                <strong>Twice a week · 8 classes a month</strong>
-                Batches for ages 4–7, 8–15 and adults
-              </span>
-            </div>
-          </div>
-          <div className="ff-dhero-portrait">
-            <img src="/live/ayush-online-portrait.webp" alt="Ayush Lokre, celebrity dance choreographer" />
-          </div>
+      <PageBanner
+        kicker="Live online · Bollywood · For the USA"
+        bg="/live/g2.webp"
+        cta="Book a trial class"
+        title={
+          <>
+            Online Dance Mania with <em>Ayush Lokre</em>
+          </>
+        }
+        sub="Live online Bollywood dance classes for kids, teens and adults, taught by professional instructors trained by Ayush Lokre, with master classes by Ayush himself."
+      >
+        <a className="ff-btn ff-btn--outline" href="#timings">
+          See batch timings
+        </a>
+        <div className="ff-proof-row">
+          <span>
+            <strong>Twice a week · 8 classes a month</strong>
+            Batches for ages 4–7, 8–15 and adults
+          </span>
         </div>
-      </section>
+      </PageBanner>
 
       <IconGrid kicker="How it works" title="Live classes, built like a studio" items={works} twoCol />
 
@@ -220,7 +211,7 @@ export default function OnlineClassesInfo() {
                   ))}
                 </ul>
                 <a className={`ff-btn ${pl.best ? "ff-btn--light" : "ff-btn--grad"}`} href="#enquire">
-                  Choose this plan
+                  Enquire about this plan
                 </a>
               </div>
             ))}
@@ -243,7 +234,7 @@ export default function OnlineClassesInfo() {
       </section>
 
       <ExplorePrograms current="/offerings/online-classes" />
-      <InfoAsk program="Online Classes" topic="online classes" />
+      <InfoAsk program="Online Classes" topic="online classes" action="Book a trial class" />
     </>
   );
 }

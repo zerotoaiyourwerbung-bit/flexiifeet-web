@@ -5,7 +5,7 @@ import type { LeadField } from "@/components/LeadForm";
 export const metadata: Metadata = {
   title: "DanceED – School-Integrated Dance Curriculum",
   description:
-    "DanceED: a structured, NEP 2020-aligned dance curriculum for schools, Nursery to Class 12. Weekly classes, annual function choreography, teacher training and competition prep.",
+    "DanceED: a structured, NEP 2020-aligned dance curriculum for schools, Nursery to Class 12. Weekly classes, annual function choreography and teacher training.",
 };
 
 const program = "DanceED (Schools)";
@@ -35,7 +35,7 @@ const included = [
 ];
 
 const steps = [
-  { title: "Free consultation", text: "We understand your school's goals, timetable, class strength and spaces." },
+  { title: "A quick chat", text: "We understand your school's goals, timetable, class strength and spaces." },
   { title: "Custom DanceED plan", text: "You get a curriculum and schedule designed around your school." },
   { title: "Classes begin", text: "Our instructors run weekly classes, workshops and event choreography." },
   { title: "Showcase & review", text: "Students perform, and we share progress with you through the year." },
@@ -46,7 +46,7 @@ const faqs = [
   { q: "Does it fit into our existing timetable?", a: "Yes. Classes run within school hours as part of your arts or co-curricular periods. We plan the schedule with your coordinator." },
   { q: "Who teaches the classes?", a: "Trained FlexiiFeet instructors, following a curriculum designed by our choreographers and educators under Ayush Lokre." },
   { q: "Can you also choreograph our annual day?", a: "Yes. Annual function and competition choreography is part of the DanceED program, and is also available on its own." },
-  { q: "How is the program priced?", a: "It depends on the number of students, classes per week and add-ons like annual day choreography. We share a clear proposal after the free consultation." },
+  { q: "How is the program priced?", a: "It depends on the number of students, classes per week and add-ons like annual day choreography. We share a clear proposal after a quick chat." },
 ];
 
 export default function DanceEd() {
@@ -63,8 +63,8 @@ export default function DanceEd() {
         points={["Age-wise syllabus for every class", "Fits your existing timetable", "Annual day choreography included"]}
         program={program}
         fields={fields}
-        formTitle="Book a free school consultation"
-        submitLabel="Request a consultation"
+        formTitle="Bring DanceED to your school"
+        submitLabel="Enquire for your school"
       />
       <CredStrip />
 
@@ -82,10 +82,10 @@ export default function DanceEd() {
       <Testimonials />
       <Cta
         title="Bring DanceED to your school"
-        text="Book a free consultation and we'll design a DanceED plan around your school's goals and timetable."
-        button="Book a free consultation"
+        text="Tell us about your school and we'll design a DanceED plan around your school's goals and timetable."
+        button="Enquire for your school"
       />
-      <EnquireFaq faqItems={faqs} program={program} fields={fields} submitLabel="Request a consultation" />
+      <EnquireFaq faqItems={faqs} program={program} fields={fields} submitLabel="Enquire for your school" />
     </>
   );
 }

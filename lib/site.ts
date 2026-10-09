@@ -65,9 +65,9 @@ export type NavItem = { label: string; href: string; children?: NavItem[] };
 export const offerings: NavItem[] = [
   { label: "DanceED", href: "/offerings/dance-ed" },
   // { label: "Annual Days", href: "/offerings/annual-days" },
-  { label: "Online Dance", href: "/offerings/online-classes" },
+  { label: "Online Classes", href: "/offerings/online-classes" },
   {
-    label: "Regular Classes",
+    label: "Offline Classes",
     href: "/offerings/regular-classes",
   },
   { label: "Weddings & Shows", href: "/offerings/weddings-shows" },
@@ -225,13 +225,13 @@ export const paths = [
     img: "/live/g2.webp",
   },
   {
-    title: "Regular Classes",
+    title: "Offline Classes",
     href: "/offerings/regular-classes",
     img: "/live/g5.webp",
   },
   {
     // who: "For educators",
-    title: "DanceED for Schools",
+    title: "DanceED",
     href: "/offerings/dance-ed",
     img: "/live/g3.webp",
   },
@@ -273,7 +273,7 @@ export const faqs = [
   },
   {
     q: "What happens after I send the form?",
-    a: "Your enquiry opens in WhatsApp with your details filled in. Send it and our team replies personally to understand what you need and suggest the right program. No payment is required to enquire.",
+    a: "Your details go straight to our team. We get back to you by phone or WhatsApp to understand what you need and suggest the right program. No payment is required to enquire.",
   },
 ];
 
