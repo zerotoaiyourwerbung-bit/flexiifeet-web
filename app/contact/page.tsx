@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import LeadForm from "@/components/LeadForm";
+import { GetInTouch } from "@/components/sections";
 import { site } from "@/lib/site";
 import Icon from "@/components/Icon";
 
@@ -11,29 +11,9 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <>
-      {/* Hero: copy left, enquiry form right; the form card hangs over the full-width photo below */}
-      <section className="ff-chero">
-        <div className="container ff-chero-grid">
-          <div className="ff-chero-copy">
-            <h1>Connect with us</h1>
-            <p>For DanceED, online classes, regular in-person classes, and weddings &amp; shows.</p>
-            <div className="ff-cta-buttons">
-              <a className="ff-btn ff-btn--grad" href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener">
-                Chat on WhatsApp
-              </a>
-              <a className="ff-btn ff-btn--outline" href={site.phoneHref}>
-                Call us
-              </a>
-            </div>
-          </div>
-          <div id="enquire" className="ff-chero-form">
-            <LeadForm title="Tell Us What You Have in Mind" subtitle="Fill in your details below, and we'll be in touch soon." />
-          </div>
-          <img className="ff-chero-img" src="/live/hero-khokho.jpg" alt="The FlexiiFeet team at the Kho Kho World Cup India 2025" />
-        </div>
-      </section>
+      <GetInTouch showCta={false} />
 
-      <section className="ff-section ff-reach">
+      <section className="ff-section ff-reach alt">
         <div className="container">
           <div className="ff-reach-head">
             <h2>Let&rsquo;s talk</h2>
