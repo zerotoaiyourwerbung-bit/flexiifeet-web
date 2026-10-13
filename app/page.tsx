@@ -85,14 +85,6 @@ export default function Home() {
       {/* Replaces the template "statements-area": the grow-through-dance idea + transformation illustration */}
       <section className="ff-grow">
         <div className="container">
-          <div className="ff-grow-media">
-            <img
-              className="ff-grow-img"
-              src="/live/grow-through-dance.webp"
-              alt="A child growing from shy and hesitant to joyful and confident, ending in a dancer's leap"
-              loading="lazy"
-            />
-          </div>
           <div className="ff-grow-band">
             <div>
               <h2>
@@ -107,6 +99,15 @@ export default function Home() {
               See how we do it
             </Link>
           </div>
+          <div className="ff-grow-media">
+            <img
+              className="ff-grow-img"
+              src="/live/grow-through-dance.webp"
+              alt="A child growing from shy and hesitant to joyful and confident, ending in a dancer's leap"
+              loading="lazy"
+            />
+          </div>
+
         </div>
       </section>
 

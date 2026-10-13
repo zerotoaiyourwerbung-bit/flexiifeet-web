@@ -142,15 +142,16 @@ export default function OnlineClassesInfo() {
         cta="Book a trial class"
         title={
           <>
-            Online Dance Mania with <em>FlexiiFeet</em>
+            Online Dance Mania with <em>The FlexiiFeet</em>
           </>
         }
-        sub="Live online Bollywood dance classes for kids, teens and adults, taught by professional instructors trained by Ayush Lokre, with master classes by Ayush himself."
+        sub="Live online Bollywood dance classes for kids, teens and adults, taught by professional instructors trained by Ayush Lokre and master classes by Ayush himself."
       >
         <a className="ff-btn ff-btn--outline" href="#timings">
           See batch timings
         </a>
         <div className="ff-proof-row">
+          Group and 1:1 classes
           <span>
             <strong>Twice a week · 8 classes a month</strong>
             Batches for ages 4–7, 8–15 and adults

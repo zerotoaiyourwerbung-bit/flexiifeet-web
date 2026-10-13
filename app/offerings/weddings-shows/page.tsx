@@ -96,7 +96,7 @@ From unforgettable sangeet performances to grand wedding entries and spectacular
 
       <section className="ff-section alt">
         <div className="container">
-          <SecTitle kicker="What we offer" title="Weddings, sangeet & entertainment" center />
+          <SecTitle kicker="What we offer" title="Weddings, Sangeet & Entertainment" center />
           <div className="row">
             {offers.map((o) => (
               <div key={o.title} className="col-lg-4 col-md-6">
@@ -157,7 +157,7 @@ From unforgettable sangeet performances to grand wedding entries and spectacular
 
       <section className="ff-section alt">
         <div className="container">
-          <SecTitle kicker="As seen at" title={<>India's most <span className="ff-highlight"> elite weddings</span> while associated with SDPI</>} center />
+          <SecTitle kicker="As seen at" title={<>India's most <span className="ff-highlight"> elite weddings</span> while associated with SDIPA</>} center />
           <div className="row">
             {seenAt.map((s) => (
               <div key={s.title} className="col-lg-4">

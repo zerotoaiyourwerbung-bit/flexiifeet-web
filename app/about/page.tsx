@@ -64,12 +64,12 @@ export default function About() {
           <div className="ff-ahero-proof">
             <p className="ff-ahero-note">A DECADE OF MOVEMENT & MILESTONES</p>
             <p className="ff-ahero-role">
-              Dance <span>Beyond Move</span>
+              Dance <span>Beyond Moves</span>
             </p>
             <ul className="ff-ahero-faces">
-              {["ayush", "ekta", "harshit", "prachi"].map((n) => (
+              {["01", "02", "03", "04"].map((n) => (
                 <li key={n}>
-                  <img src={`/live/team-${n}.webp`} alt="" />
+                  <img src={`/live/Kids/Joyful-Kids-Dancing-at-Home_${n}.png`} alt="Student" />
                 </li>
               ))}
               <li className="ff-ahero-badge">10+</li>
@@ -262,7 +262,7 @@ export default function About() {
 
       <section className="ff-section ff-founders">
         <div className="container">
-          <SecTitle kicker="Founders" title="Co-Founder " highlight="& Director" center />
+          <SecTitle kicker="Founders" title="Co-Founders " highlight="& Directors" center />
           <div className="ff-cofounders">
             <article className="ff-cofounder">
               <img src="/images/Founders/Aayush-lokre.webp" alt="Ayush Lokre" loading="lazy" />
@@ -339,7 +339,7 @@ export default function About() {
               kicker="As Seen On"
               title={
                 <>
-                  Some of the world&apos;s <span>largest stages</span>
+                  Some of the world&apos;s <span>biggest stages</span>
                 </>
               }
             />

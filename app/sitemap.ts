@@ -7,6 +7,7 @@ const routes = [
   "/about",
   "/offerings",
   ...infoPages.map((p) => p.href),
+  "/offerings/annual-days",
   "/dance-ed",
   "/annual-days",
   "/online-classes",
@@ -20,5 +21,11 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((r) => ({ url: `${site.url}${r}` }));
+  const uniqueRoutes = Array.from(new Set(routes));
+  return uniqueRoutes.map((r) => ({
+    url: `${site.url}${r}`,
+    lastModified: new Date(),
+    changeFrequency: r === "" ? "daily" : "weekly",
+    priority: r === "" ? 1 : 0.8,
+  }));
 }

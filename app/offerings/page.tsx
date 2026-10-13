@@ -17,6 +17,7 @@ export default function offerings() {
       <section className="ff-ohero">
         <div className="container ff-ohero-grid">
           <div className="ff-ohero-copy">
+
             <h1>Our Offerings</h1>
             <p>Dance education, classes and choreography for every stage of life.</p>
             <ul className="ff-chip-row ff-chip-row--left">

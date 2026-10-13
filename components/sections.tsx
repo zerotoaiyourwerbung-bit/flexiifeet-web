@@ -74,6 +74,7 @@ export function PageBanner({
   bg = heroImage,
   kicker,
   cta = "Enquire now",
+  ctaHref = "#enquire",
   children,
 }: {
   title: ReactNode;
@@ -82,6 +83,7 @@ export function PageBanner({
   kicker?: string;
   /** Label of the main button, which jumps to the enquiry form at the end of the page. */
   cta?: string;
+  ctaHref?: string;
   /** Extra hero content: a second button first, then anything else (proof row). */
   children?: ReactNode;
 }) {
@@ -97,7 +99,7 @@ export function PageBanner({
           <div className="ff-shero-copy">
             {sub && <p>{sub}</p>}
             <div className="ff-shero-actions">
-              <a className="ff-btn ff-btn--grad" href="#enquire">
+              <a className="ff-btn ff-btn--grad" href={ctaHref}>
                 {cta}
               </a>
               {children}
@@ -953,7 +955,7 @@ export function OverlapFeature({
     <section className="ff-section">
       <div className="container">
         <div className={`ff-overlap${reverse ? " ff-overlap--rev" : ""}`}>
-          <img src={img} alt={imgAlt} loading="lazy" className={cutout ? "is-cutout" : undefined} />
+          <img src={img} alt={imgAlt} loading="lazy" className={cutout ? "is-cutout" : undefined} style={{ objectFit: "cover" }} />
           <div className="ff-overlap-card">
             <SecTitle kicker={kicker} title={title} />
             {children}
@@ -1048,7 +1050,7 @@ export function StageCta({ targetId = "enquire" }: { targetId?: string }) {
               <a className="ff-btn ff-foot-btn" href={`#${targetId}`}>
                 Enquire now
               </a>
-              <a className="ff-btn ff-btn--outline" href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener">
+              <a className="ff-btn ff-btn--outline" href={whatsappLink()} target="_blank" rel="noopener">
                 Chat on WhatsApp
               </a>
             </div>

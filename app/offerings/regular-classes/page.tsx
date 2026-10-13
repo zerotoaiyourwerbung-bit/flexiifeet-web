@@ -52,7 +52,13 @@ const faqs = [
 export default function RegularClassesIndoreInfo() {
   return (
     <>
-      <PageBanner kicker="In Indore" bg="/live/Energetic Classroom Group Cheer.webp" title="Regular In-Person Classes – Indore" sub="About our studio dance classes for kids, teens and adults" />
+      <PageBanner
+        kicker="In Indore"
+        bg="/live/Energetic Classroom Group Cheer.webp"
+        title="Find Your Rhythm. Own Your Stage."
+        sub="Experience the joy of dance with The FlexiiFeet. Join our engaging dance classes designed for kids, teens, and adults to build confidence, master new moves, and express themselves through movement."
+        cta="EXPLORE OUR CLASSES"
+      />
 
       <Overview
         title={
@@ -66,12 +72,7 @@ export default function RegularClassesIndoreInfo() {
       >
         <p>Ready to groove? Join The FlexiiFeet for energetic dance classes, personalised guidance and an experience that goes beyond the dance floor.</p>
         <p>
-          At our Indore studio, students train in person with the team led by Ayush Lokre, an international choreographer trained under Shiamak Davar, who spent more than a decade teaching at
-          SDIPA.
-        </p>
-        <p>
-          Classes build confidence, discipline, creativity and self-expression through dance, following the same
-          age-wise structure we use in schools.
+          At The FlexiiFeet, our regular offline dance classes in Indore offer a structured and engaging learning experience for kids, teens and adults. Led by experienced instructors, our classes combine technique, choreography, musicality and performance skills while building confidence, fitness and creativity. Whether you’re a beginner or an experienced dancer, we provide a supportive environment to learn, grow and enjoy the art of dance.
         </p>
       </Overview>
 

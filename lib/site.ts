@@ -282,5 +282,5 @@ export const faqs = [
   },
 ];
 
-export const whatsappLink = (text = "Hi FlexiiFeet! I'd like to know more.") =>
+export const whatsappLink = (text = "Hi The FlexiiFeet! I'd like to know more.") =>
   `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;

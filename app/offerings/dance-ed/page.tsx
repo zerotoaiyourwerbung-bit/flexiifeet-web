@@ -136,8 +136,8 @@ export default function DanceEdInfo() {
         </a>
         <div className="ff-proof-row">
           <span className="ff-proof-faces">
-            {["team-ayush.webp", "team-ekta.webp", "team-harshit.webp", "team-prachi.webp"].map((f) => (
-              <img key={f} src={`/live/${f}`} alt="" />
+            {["01", "02", "03", "04"].map((f) => (
+              <img key={f} src={`/live/Kids/Joyful-Kids-Dancing-at-Home_${f}.png`} alt="Student" />
             ))}
           </span>
           <span>
