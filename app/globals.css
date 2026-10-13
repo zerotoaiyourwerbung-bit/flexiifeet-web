@@ -5847,3 +5847,145 @@ main .ff-faq details p {
   background: var(--ff-ink);
   color: #fff;
 }
+
+/* ---------- Legal Pages (Privacy Policy, Terms, Refund Policy) ---------- */
+.ff-legal-header {
+  padding: 80px 0 44px;
+  background: var(--ff-soft);
+  border-bottom: 1px solid var(--ff-line);
+  text-align: center;
+}
+.ff-legal-tag {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--ff-tint);
+  border: 1px solid rgba(255, 107, 26, 0.25);
+  color: var(--ff-orange-deep);
+  font:
+    700 11px/1 "Plus Jakarta Sans",
+    sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.ff-legal-header h1 {
+  font-family: var(--ff-serif, "Fraunces"), Georgia, serif;
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700;
+  color: var(--ff-ink);
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+.ff-legal-header p {
+  font-size: var(--fs-small);
+  color: var(--ff-muted);
+  margin: 0;
+}
+.ff-legal-section {
+  padding: 60px 0 100px;
+  background: #fff;
+}
+.ff-legal-content {
+  max-width: 840px;
+  margin: 0 auto;
+}
+.ff-legal-content h2 {
+  font-family: var(--ff-serif, "Fraunces"), Georgia, serif;
+  font-size: clamp(22px, 2.8vw, 28px);
+  font-weight: 700;
+  color: var(--ff-ink);
+  letter-spacing: -0.01em;
+  margin: 44px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ff-line);
+}
+.ff-legal-content h2:first-of-type {
+  margin-top: 0;
+}
+.ff-legal-content h3 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ff-ink);
+  margin: 28px 0 12px;
+}
+.ff-legal-content p {
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: var(--ff-text);
+  margin-bottom: 18px;
+}
+.ff-legal-content ul,
+.ff-legal-content ol {
+  margin: 0 0 22px;
+  padding-left: 24px;
+}
+.ff-legal-content li {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ff-text);
+  margin-bottom: 8px;
+}
+.ff-legal-content strong {
+  color: var(--ff-ink);
+  font-weight: 600;
+}
+.ff-legal-content a {
+  color: var(--ff-orange-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ff-legal-content a:hover {
+  color: var(--ff-orange);
+}
+.ff-legal-card {
+  background: var(--ff-soft);
+  border: 1px solid var(--ff-line);
+  border-radius: var(--ff-radius);
+  padding: 24px 28px;
+  margin: 28px 0;
+}
+.ff-legal-card h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ff-ink);
+  margin: 0 0 8px;
+}
+.ff-legal-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer bottom wrap with legal links */
+.ff-foot-bottom-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.ff-foot-legal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ff-foot-legal li {
+  font-size: var(--fs-small);
+}
+.ff-foot-legal a {
+  color: var(--ff-muted);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.ff-foot-legal a:hover {
+  color: var(--ff-orange);
+}
+@media (max-width: 767px) {
+  .ff-foot-bottom-wrap {
+    justify-content: center;
+    text-align: center;
+  }
+}

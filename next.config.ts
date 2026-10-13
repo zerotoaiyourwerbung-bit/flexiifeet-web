@@ -27,6 +27,10 @@ const nextConfig: NextConfig = {
       { source: "/schools", destination: "/offerings/dance-ed", permanent: true },
       { source: "/weddings-sangeet", destination: "/offerings/weddings-shows", permanent: true },
       { source: "/events", destination: "/offerings/weddings-shows", permanent: true },
+      { source: "/privacy", destination: "/privacy-policy", permanent: true },
+      { source: "/terms", destination: "/terms-and-conditions", permanent: true },
+      { source: "/refund", destination: "/refund-policy", permanent: true },
+      { source: "/cancellation-policy", destination: "/refund-policy", permanent: true },
     ];
   },
 };

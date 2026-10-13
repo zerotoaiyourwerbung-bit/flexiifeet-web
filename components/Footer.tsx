@@ -78,10 +78,21 @@ export default function Footer() {
         </div>
       </div>
       <div className="ff-foot-bottom">
-        <div className="container">
+        <div className="container ff-foot-bottom-wrap">
           <p>
             Copyright © {new Date().getFullYear()} <Link href="/">{site.name}</Link>. All Rights Reserved.
           </p>
+          <ul className="ff-foot-legal">
+            <li>
+              <Link href="/privacy-policy">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+            </li>
+            <li>
+              <Link href="/refund-policy">Refund Policy</Link>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>

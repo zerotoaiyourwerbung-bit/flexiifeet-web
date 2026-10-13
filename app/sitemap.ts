@@ -14,6 +14,9 @@ const routes = [
   "/weddings-shows",
   "/gallery",
   "/contact",
+  "/privacy-policy",
+  "/terms-and-conditions",
+  "/refund-policy",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
