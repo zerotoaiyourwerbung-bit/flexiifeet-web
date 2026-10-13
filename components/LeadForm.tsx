@@ -128,7 +128,7 @@ export default function LeadForm({ program, fields = [], title, subtitle, submit
           </label>
         ))}
         <label className="ff-span">
-          <span>Anything we should know?</span>
+          <span>Tell us more about your requirement</span>
           <textarea name="message" rows={3}></textarea>
         </label>
         {/* Honeypot for bots */}
@@ -145,10 +145,10 @@ export default function LeadForm({ program, fields = [], title, subtitle, submit
       </button>
       <ul className="ff-form-trust">
         <li>
-          <Icon name="check" /> Free, no payment needed
+          <Icon name="check" />No payment needed
         </li>
         <li>
-          <Icon name="phone" /> Our team will call you back
+          <Icon name="phone" />Our team will contact you soon
         </li>
       </ul>
       <p className="ff-form-alt">

@@ -5,10 +5,10 @@ import type { LeadField } from "@/components/LeadForm";
 export const metadata: Metadata = {
   title: "Dance Classes in Indore",
   description:
-    "Offline dance classes in Indore by The FlexiiFeet—Bollywood, contemporary, hip-hop and classical-fusion batches for kids, teens and adults.",
+    "Regular in-person dance classes in Indore by The FlexiiFeet—Bollywood, contemporary, hip-hop and classical-fusion batches for kids, teens and adults.",
 };
 
-const program = "Offline Classes – Indore";
+const program = "Regular In-Person Classes – Indore";
 
 const fields: LeadField[] = [
   { name: "age_group", label: "Learner's age group", type: "select", options: ["Kids (under 13)", "Teens (13–17)", "Adults (18+)", "Couple / Family (wedding prep)"], required: true },
@@ -43,12 +43,12 @@ const steps = [
 const faqs = [
   { q: "Where is the studio?", a: "We're based in Indore. Share your details and we'll send the studio location and the batch closest to your timing." },
   { q: "What age can my child start?", a: "Our curriculum starts at the Foundational level for the youngest learners and goes up to adults. We'll suggest the right batch for your child's age." },
-  { q: "Which dance styles do you teach?", a: "Bollywood, contemporary, hip-hop, jazz, semi-classical and Kathak fusion, and fitness dance, depending on the batch." },
+  { q: "Which dance styles do you teach?", a: "Bollywood, contemporary, hip-hop, jazz, semi-classical and Kathak fusion, and Dance fit, depending on the batch." },
   { q: "Do students get to perform?", a: "Yes. Showcases and performances are part of the journey, so students experience the stage, not just the studio." },
   { q: "What are the timings and fees?", a: "They depend on the batch and level. Leave your number and we'll share current timings and fees on a quick call." },
 ];
 
-export default function OfflineIndore() {
+export default function RegularClassesIndore() {
   return (
     <>
       <LeadHero

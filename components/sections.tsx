@@ -27,16 +27,42 @@ import Icon from "./Icon";
 // their label text, but it is not rendered.
 export function SecTitle({
   title,
+  sub,
+  subheading,
+  highlight,
+  highlightGradient = false,
   center,
+  className = "",
 }: {
   kicker?: string;
   title: ReactNode;
+  /** Optional subtitle or subheading text below the title */
+  sub?: ReactNode;
+  /** Alias for `sub` */
+  subheading?: ReactNode;
+  /** Optional second colored text/word to highlight */
+  highlight?: ReactNode;
+  /** Use brand gradient instead of solid orange for the highlight (default: false) */
+  highlightGradient?: boolean;
   center?: boolean;
   kickerVisibility?: boolean;
+  className?: string;
 }) {
+  const subText = sub ?? subheading;
   return (
-    <div className={`sec-title-style1${center ? " pdb-52 text-center" : ""}`}>
-      <div className="big-title">{title}</div>
+    <div className={`sec-title-style1${center ? " pdb-52 text-center" : ""}${className ? ` ${className}` : ""}`}>
+      <div className="big-title">
+        {title}
+        {highlight ? (
+          <>
+            {" "}
+            <span className={highlightGradient ? "ff-grad-text" : "ff-highlight"}>
+              {highlight}
+            </span>
+          </>
+        ) : null}
+      </div>
+      {subText && <p className="sec-title-sub">{subText}</p>}
     </div>
   );
 }
@@ -278,7 +304,7 @@ export function Testimonials({
       <div className="container">
         <SecTitle
           kicker="Testimonials"
-          title="Words from the schools we work with"
+          title="Testimonials"
         />
         <div className="row">
           {items.map((t) => (
@@ -467,8 +493,8 @@ export function Paths() {
           kickerVisibility={false}
           title={
             <>
-              One Passion, 
-              <br /> four ways to move.
+              One Passion.<br />
+              <span className="ff-grad-text">Four Ways to Experience Dance.</span>
             </>
           }
           center
@@ -482,6 +508,7 @@ export function Paths() {
                   <div className="ff-path-caption">
                     {/* <span>{p.who}</span> */}
                     <h3>{p.title}</h3>
+                    <p>{p.description}</p>
                     <Icon name="arrow-right" />
                   </div>
                 </div>
@@ -690,17 +717,24 @@ export function IconGrid({
   img,
   imgAlt = "",
   twoCol,
+  fourCol,
 }: {
   kicker: string;
   title: ReactNode;
   items: Card[];
   alt?: boolean;
   twoCol?: boolean;
+  fourCol?: boolean;
   img?: string;
   imgAlt?: string;
 }) {
+  const gridClass = fourCol
+    ? " ff-icon-grid--4"
+    : twoCol
+      ? " ff-icon-grid--2"
+      : "";
   const cards = (
-    <div className={`ff-icon-grid${twoCol ? " ff-icon-grid--2" : ""}`}>
+    <div className={`ff-icon-grid${gridClass}`}>
       {items.map((c) => (
         <div key={c.title} className="ff-icon-card">
           {c.iconImg ? (
@@ -836,12 +870,8 @@ export function EnquireFaq({
       </section>
       <GetInTouch
         id="enquire-bottom"
-        title="We'd love to hear from you."
-        intro="Leave your number and we'll answer every question personally. Prefer to talk? Reach us directly:"
         program={program}
         fields={fields}
-        formTitle="Still deciding? Talk to us."
-        formSubtitle="Leave your number and we'll answer every question personally."
         submitLabel={submitLabel}
       />
     </>
@@ -856,19 +886,32 @@ export function Overview({
   title,
   children,
   facts,
+  ctaText,
+  ctaHref,
+  highlight,
 }: {
   kicker?: string;
   title: ReactNode;
   children: ReactNode;
   facts: { label: string; value: string }[];
+  ctaText?: string;
+  ctaHref?: string;
+  highlight?: string;
 }) {
   return (
     <section className="ff-section">
       <div className="container">
         <div className="ff-overview">
           <div className="ff-prose">
-            <SecTitle kicker={kicker} title={title} />
+            <SecTitle kicker={kicker} title={title} highlight={highlight} />
             {children}
+            {ctaText && (
+              <div className="ff-overview-action">
+                <a className="ff-btn ff-btn--grad" href={ctaHref ?? "#enquire"}>
+                  {ctaText} <Icon name="arrow-right" />
+                </a>
+              </div>
+            )}
           </div>
           <aside className="ff-glance" aria-label="At a glance">
             <h3>At a glance</h3>
@@ -955,18 +998,80 @@ export function Explainer({
   );
 }
 
+// Callout section for expanding classes to other cities
+export function CityCta({
+  kicker = "Beyond Indore",
+  title = "Want The FlexiiFeet classes in",
+  highlight = "your city?",
+  sub = "Bring our structured dance curriculum, masterclasses, or studio batches to your school, studio, or community.",
+  ctaText = "Contact us",
+  ctaHref = "#enquire",
+}: {
+  kicker?: string;
+  title?: ReactNode;
+  highlight?: ReactNode;
+  sub?: ReactNode;
+  ctaText?: string;
+  ctaHref?: string;
+} = {}) {
+  return (
+    <section className="ff-section ff-city-cta-section">
+      <div className="container">
+        <SecTitle
+          kicker={kicker}
+          title={title}
+          highlight={highlight}
+          sub={sub}
+          center
+        />
+        <div className="ff-city-action">
+          <a className="ff-btn ff-btn--grad" href={ctaHref}>
+            {ctaText} <Icon name="arrow-right" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Floating CTA banner ("Your stage starts here") positioned above the closing enquiry section.
+export function StageCta({ targetId = "enquire" }: { targetId?: string }) {
+  return (
+    <div className="ff-foot-cta-wrap">
+      <div className="container">
+        <div className="ff-foot-cta">
+          <img src="/live/ayush-online-dance.webp" alt="Ayush Lokre dancing" loading="lazy" />
+          <div>
+            <h2>Your stage starts here.</h2>
+            <p>Tell us what you have in mind and our team will get back to you.</p>
+            <div className="ff-foot-cta-actions">
+              <a className="ff-btn ff-foot-btn" href={`#${targetId}`}>
+                Enquire now
+              </a>
+              <a className="ff-btn ff-btn--outline" href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener">
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // Closing enquiry block used on every page with a form: contact details left, lead form right (anchor #enquire).
 export function GetInTouch({
   id = "enquire",
   topic,
-  kicker = "Get in touch",
-  title,
-  intro = "Tell us a little about your school or plans and our team will get back to you. Prefer to talk? Reach us directly:",
+  kicker = "Start a conversation",
+  title = "Every Great Experience Starts with a Conversation.",
+  intro = "Whether you're looking for dance classes, a school program, a spectacular stage production or choreography for a special celebration, we'd love to hear from you.",
   program,
   fields,
-  formTitle = "Have a question?",
-  formSubtitle,
-  submitLabel = "Send my question",
+  formTitle = "Tell Us What You Have in Mind",
+  formSubtitle = "Fill in your details below, and we'll be in touch soon.",
+  submitLabel = "Send enquiry",
+  showCta = true,
 }: {
   id?: string;
   topic?: string;
@@ -978,68 +1083,72 @@ export function GetInTouch({
   formTitle?: string;
   formSubtitle?: string;
   submitLabel?: string;
+  showCta?: boolean;
 }) {
   return (
-    <section id={id} className="contact-form-area ff-enquiry">
-      <div className="container">
-        <div className="row">
-          <div className="col-xl-5 col-lg-12">
-            <div className="ff-ask-info">
-              <SecTitle kicker={kicker} title={title ?? (topic ? `Questions about ${topic}?` : "Tell us what you’re planning.")} />
-              <p>{intro}</p>
-              <ul>
-                <li>
-                  <Icon name="phone" />
-                  <span>
-                    <small>Call / WhatsApp</small>
-                    <a href={site.phoneHref}>{site.phone}</a>
-                  </span>
-                </li>
-                <li>
-                  <Icon name="mail" />
-                  <span>
-                    <small>Email</small>
-                    <a href={`mailto:${site.email}`}>{site.email}</a>
-                  </span>
-                </li>
-                {/* <li>
+    <>
+      {showCta && <StageCta targetId={id} />}
+      <section id={id} className="contact-form-area ff-enquiry">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-5 col-lg-12">
+              <div className="ff-ask-info">
+                <SecTitle kicker={kicker} title={title ?? "Every Great Experience Starts with a Conversation."} />
+                <p>{intro}</p>
+                <ul>
+                  <li>
+                    <Icon name="phone" />
+                    <span>
+                      <small>Call / WhatsApp</small>
+                      <a href={site.phoneHref}>{site.phone}</a>
+                    </span>
+                  </li>
+                  <li>
+                    <Icon name="mail" />
+                    <span>
+                      <small>Email</small>
+                      <a href={`mailto:${site.email}`}>{site.email}</a>
+                    </span>
+                  </li>
+                  {/* <li>
                   <Icon name="pin" />
                   <span>
                     <small>Visit us</small>
                     {site.address}
                   </span>
                 </li> */}
-                <li>
-                  <Icon name="instagram" />
-                  <span>
-                    <small>Follow us</small>
-                    <a href={site.instagram} target="_blank" rel="noopener">
-                      @theflexiifeetdance
-                    </a>
-                  </span>
-                </li>
-              </ul>
+                  <li>
+                    <Icon name="instagram" />
+                    <span>
+                      <small>Follow us</small>
+                      <a href={site.instagram} target="_blank" rel="noopener">
+                        @theflexiifeetdance
+                      </a>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-xl-7 col-lg-12">
+              <LeadForm
+                program={program}
+                fields={fields}
+                title={formTitle}
+                subtitle={formSubtitle ?? "Fill in your details below, and we'll be in touch soon."}
+                submitLabel={submitLabel}
+              />
             </div>
           </div>
-          <div className="col-xl-7 col-lg-12">
-            <LeadForm
-              program={program}
-              fields={fields}
-              title={formTitle}
-              subtitle={formSubtitle ?? (topic ? `Ask us anything about ${topic} and our team will get back to you.` : "Leave your details and tell us what you have in mind.")}
-              submitLabel={submitLabel}
-            />
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
 // Info-page closing block (FAQ intentionally not shown).
 // `action` names the form after the page's main button (e.g. "Book a trial class"), so the button and the form it jumps to match.
-export function InfoAsk({ program, topic, action = "Send enquiry" }: { faqItems?: { q: string; a: string }[]; program?: string; topic: string; action?: string }) {
-  return <GetInTouch topic={topic} program={program} formTitle={action === "Send enquiry" ? "Send us an enquiry" : action} submitLabel={action} />;
+export function InfoAsk({ program }: { faqItems?: { q: string; a: string }[]; program?: string; topic?: string; action?: string }) {
+  return <GetInTouch program={program} />;
 }
 
 // Links to the other program information pages.
@@ -1048,7 +1157,7 @@ export function ExplorePrograms({ current }: { current: string }) {
   return (
     <section className="ff-section alt">
       <div className="container">
-        <SecTitle kicker="Explore" title="Other ways to dance with us" center />
+        <SecTitle kicker="Explore" title="One Passion." highlight="Four Ways to Experience Dance." center />
         <div className="ff-explore">
           {items.map((p) => (
             <Link key={p.href} href={p.href} className="ff-explore-card">

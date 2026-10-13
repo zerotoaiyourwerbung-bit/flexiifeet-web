@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const program = "Online Classes";
-const styles = ["Bollywood", "Contemporary", "Hip-Hop", "Jazz", "Semi-Classical & Kathak Fusion", "Fitness Dance"];
+const styles = ["Bollywood", "Contemporary", "Hip-Hop", "Jazz", "Semi-Classical & Kathak Fusion", "Dance fit"];
 
 const fields: LeadField[] = [
   { name: "age_group", label: "Learner's age group", type: "select", options: ["Kids (under 13)", "Teens (13–17)", "Adults (18+)", "Couple / Family (wedding prep)"], required: true },

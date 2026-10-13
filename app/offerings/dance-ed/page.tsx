@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import {
-  AgeLevels,
   Explainer,
   ExplorePrograms,
   IconGrid,
   InfoAsk,
-  OverlapFeature,
   SchoolLogos,
   SecTitle,
   SplitList,
@@ -124,14 +122,14 @@ export default function DanceEdInfo() {
   return (
     <>
       <PageBanner
-        bg="/live/school-class.webp"
+        bg="/live/kids-illustration.webp"
         cta="Book a free workshop"
         title={
           <>
             Educating and Empowering Young Minds through <em>Dance &amp; Performing Arts</em>
           </>
         }
-        sub="DanceED is structured dance education for schools: a real syllabus, taught by trained instructors, right within the school day."
+        sub="DanceED is structured dance education for schools: a real syllabus, taught by trained instructors, right within the school curriculum."
       >
         <a className="ff-btn ff-btn--outline" href="#pathway">
           See how it works
@@ -170,42 +168,49 @@ export default function DanceEdInfo() {
               </p>
             </div>
           </div>
-          <div className="ff-diff">
-            <h3>What makes us different?</h3>
-            <dl>
-              {different.map((d) => (
-                <div key={d.title}>
-                  <dt>{d.title}</dt>
-                  <dd>{d.text}</dd>
-                </div>
-              ))}
-            </dl>
+        </div>
+      </section>
+
+
+
+      <section className="ff-section ff-pillars-diff-section">
+        <div className="container">
+          <div className="ff-pillars-diff-layout">
+            <div className="ff-pillars-diff-left">
+              <SecTitle kicker="The 4 pillars" title="The 4 pillars of dance-based development" />
+              <div className="ff-pillars-grid">
+                {pillars.map((c) => (
+                  <div key={c.title} className="ff-icon-card">
+                    {c.iconImg ? (
+                      <span className="ff-icon-card-icon ff-icon-card-icon--img" aria-hidden="true">
+                        <img src={c.iconImg} alt="" />
+                      </span>
+                    ) : (
+                      <span className={`ff-icon-card-icon ${c.icon}`} aria-hidden="true"></span>
+                    )}
+                    <h3>{c.title}</h3>
+                    <p>{c.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="ff-pillars-diff-right">
+              <div className="ff-diff">
+                <h3>What makes us different?</h3>
+                <dl>
+                  {different.map((d) => (
+                    <div key={d.title}>
+                      <dt>{d.title}</dt>
+                      <dd>{d.text}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <OverlapFeature kicker="Policy" title="Dance belongs in schools. And now, policy agrees." img="/live/school-class.webp" imgAlt="School students performing a dance together" reverse>
-        <p>
-          National Education Policy (NEP) 2020 recognizes performing arts, including dance, as essential to holistic
-          education. CBSE mandates art education (music, dance, visual arts, theatre) as compulsory for Classes 1–10,
-          with a minimum of 2 periods per week.
-        </p>
-        <p>This isn&rsquo;t an &ldquo;extra.&rdquo; It&rsquo;s part of how we&rsquo;re meant to educate children.</p>
-      </OverlapFeature>
-
-      <IconGrid kicker="The 4 pillars" title="The 4 pillars of dance-based development" items={pillars} twoCol />
-
-      <Explainer kicker="Why it works" title="Dance engages the whole child" img="/live/kids-illustration.webp" imgAlt="Illustration of joyful children dancing" alt>
-        <p>
-          Dance engages the whole child, body, mind, and emotion, in a single activity. It&rsquo;s experiential learning
-          at its best: structured, joyful, and deeply impactful.
-        </p>
-        <p>
-          When a child learns to move with intention, they learn to think with clarity and feel with awareness.
-        </p>
-      </Explainer>
-
-      <IconGrid kicker="What research tells us" title="This is not only about stage performances. It's about what happens inside your students." items={research} twoCol />
       <section className="ff-section ff-callout">
         <div className="container">
           <p className="ff-callout-line">
@@ -222,12 +227,67 @@ export default function DanceEdInfo() {
         </div>
       </section>
 
+      <section className="ff-section alt ff-policy-manifesto">
+        <div className="container">
+          <div className="ff-policy-manifesto-inner">
+            <SecTitle
+              kicker="Policy"
+              title="Dance belongs in schools."
+              highlight=" And now, policy agrees."
+              center
+            />
+            <p className="ff-policy-lead">
+              National Education Policy (NEP) 2020 recognizes performing arts, including dance, as essential to holistic
+              education. CBSE mandates art education (music, dance, visual arts, theatre) as compulsory for Classes 1–10,
+              with a minimum of 2 periods per week.
+            </p>
+            <blockquote className="ff-policy-pullquote">
+              &ldquo;This isn&rsquo;t an &ldquo;extra.&rdquo; It&rsquo;s part of how we&rsquo;re meant to educate children.&rdquo;
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* <Explainer kicker="Why it works" title="Dance engages the whole child" img="/live/kids-illustration.webp" imgAlt="Illustration of joyful children dancing" alt>
+        <p>
+          Dance engages the whole child, body, mind, and emotion, in a single activity. It&rsquo;s experiential learning
+          at its best: structured, joyful, and deeply impactful.
+        </p>
+        <p>
+          When a child learns to move with intention, they learn to think with clarity and feel with awareness.
+        </p>
+      </Explainer> */}
+
+      <IconGrid kicker="What research tells us" title="This is not only about stage performances. It's about what happens inside your students." items={research} fourCol />
+
+
       <section id="pathway" className="ff-section alt">
         <div className="container">
           <div className="ff-pathway">
             <div className="ff-pathway-intro">
               <SecTitle kicker="Structured. Syllabus-based. School-integrated." title="Every session follows a clear learning pathway" />
               <p>Seven steps, in the same order every class, that build from body readiness to creative expression.</p>
+
+              <div className="ff-pathway-levels">
+                <SecTitle title="From Play Group to" highlight=" Grade 12" />
+                {/* <div className="ff-pathway-levels-stack">
+                  {levels.map((lvl, i) => (
+                    <div key={lvl.title} className="ff-pathway-level-card">
+                      <div className="ff-pathway-level-top">
+                        <span className="ff-pathway-level-range">{lvl.range}</span>
+                        <span className="ff-pathway-level-step">Stage 0{i + 1}</span>
+                      </div>
+                      <h5 className="ff-pathway-level-name">{lvl.title}</h5>
+                      <p>{lvl.text}</p>
+                      <span className="ff-pathway-level-bars" aria-hidden="true">
+                        {levels.map((_, j) => (
+                          <i key={j} className={j <= i ? "on" : ""}></i>
+                        ))}
+                      </span>
+                    </div>
+                  ))}
+                </div> */}
+              </div>
             </div>
             <ol className="ff-pathway-list">
               {pathway.map((st, i) => (
@@ -244,21 +304,19 @@ export default function DanceEdInfo() {
         </div>
       </section>
 
-      <SplitList
+      {/* <SplitList
         kicker="What's included"
         title="In our DanceED program"
         text="It runs through the academic year, with weekly classes designed for each age group from Nursery to Grade 12."
         items={included}
         img="/live/school-kids.webp"
         imgAlt="Children in costume with their dance instructor"
-      />
-
-      <AgeLevels levels={levels} kicker="Grade-wise curriculum snapshot" title="From Play Group to Grade 12" />
+      /> */}
 
       <section className="ff-section alt">
         <div className="container">
-          <img className="ff-wide-photo" src="/live/school-kids.webp" alt="Students and their instructor in costumes at a FlexiiFeet dance session" loading="lazy" />
-          <SecTitle kicker="More ways to bring dance into your school" title="Programs beyond the weekly class" center />
+          {/* <img className="ff-wide-photo" src="/live/school-kids.webp" alt="Students and their instructor in costumes at a FlexiiFeet dance session" loading="lazy" /> */}
+          <SecTitle kicker="More ways to bring dance into your school" title="Programs beyond the " highlight="weekly class" center />
           <div className="ff-icon-grid">
             {moreWays.map((w) => (
               <div key={w.title} className="ff-hot-card">
@@ -282,7 +340,7 @@ export default function DanceEdInfo() {
         </div>
       </section>
 
-      <SchoolLogos />
+      {/* <SchoolLogos /> */}
       <Testimonials items={quotes} />
 
       <ExplorePrograms current="/offerings/dance-ed" />

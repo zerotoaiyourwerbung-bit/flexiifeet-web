@@ -65,6 +65,12 @@
   background-clip: text;
   color: transparent;
 }
+.ff-highlight,
+.ff-text-orange {
+  color: var(--ff-orange);
+  font-size: inherit;
+  font-weight: inherit;
+}
 ::selection {
   background: rgba(255, 107, 26, 0.18);
   color: inherit;
@@ -1444,7 +1450,7 @@ body .boxed_wrapper {
 /* ---------- About: Who we are ---------- */
 .ff-who-grid {
   display: grid;
-  grid-template-columns: 1fr 1.05fr;
+  grid-template-columns: 1.05fr 1fr;
   gap: 72px;
   align-items: center;
 }
@@ -1871,30 +1877,55 @@ body .boxed_wrapper {
 /* ---------- Information pages (/offerings/*) ---------- */
 .ff-overview {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 56px;
   align-items: start;
 }
 .ff-prose p {
   font-size: var(--fs-body);
   line-height: 1.8;
   margin-bottom: 18px;
+  color: var(--ff-text);
+}
+.ff-prose p:first-of-type {
+  font-size: var(--fs-lead);
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--ff-ink);
+  margin-bottom: 22px;
+}
+.ff-overview-action {
+  margin-top: 28px;
 }
 .ff-glance {
   position: sticky;
   top: 120px;
-  padding: 30px;
+  padding: 34px 30px;
   border-radius: var(--ff-radius);
   background: var(--ff-dark);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: #fff;
-  box-shadow: var(--ff-shadow-hover);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+}
+.ff-glance::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ff-grad);
 }
 .ff-glance h3 {
   color: #fff;
-  font-size: 14px;
-  letter-spacing: 0.14em;
+  font:
+    800 13px/1 "Plus Jakarta Sans",
+    sans-serif;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
 }
 .ff-glance h3::after {
   content: "";
@@ -1903,13 +1934,17 @@ body .boxed_wrapper {
   height: 2px;
   margin-top: 10px;
   background: var(--ff-orange);
+  border-radius: 2px;
 }
 .ff-glance dl {
   margin: 0;
 }
 .ff-glance dl > div {
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 .ff-glance dl > div:last-child {
   border-bottom: 0;
@@ -1917,17 +1952,18 @@ body .boxed_wrapper {
 }
 .ff-glance dt {
   font:
-    600 12px/1.4 "Plus Jakarta Sans",
+    700 11.5px/1.4 "Plus Jakarta Sans",
     sans-serif;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ff-orange-light);
+  color: var(--ff-orange);
 }
 .ff-glance dd {
-  margin: 4px 0 0;
-  font-size: var(--fs-body);
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 500;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.94);
 }
 
 .ff-explore {
@@ -2275,6 +2311,17 @@ body .sec-title-style1 .big-title {
 body .sec-title-style1 .big-title span {
   font-size: inherit;
 }
+body .sec-title-style1 .sec-title-sub {
+  margin: 12px 0 0;
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--ff-text);
+  max-width: 680px;
+}
+body .sec-title-style1.text-center .sec-title-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
 /* h1: inner-page banners */
 body .breadcrumb-style3-area .inner-content .big-title {
   font-size: var(--fs-h1);
@@ -2414,6 +2461,7 @@ body .title > h2 {
 .ff-story-head {
   position: sticky;
   top: 110px;
+  height: 100%;
 }
 .ff-story-head .big-title {
   font-size: var(--fs-h2);
@@ -2421,9 +2469,10 @@ body .title > h2 {
 .ff-story-photo {
   display: block;
   width: 100%;
-  max-width: 420px;
-  aspect-ratio: 4 / 5;
-  margin-top: 32px;
+  /* max-width: 420px; */
+  /* aspect-ratio: 4 / 5; */
+  /* margin-top: 32px; */
+  height: 100%;
   object-fit: cover;
   object-position: top;
   border-radius: var(--ff-radius);
@@ -2858,6 +2907,129 @@ body .title > h2 {
   color: var(--ff-text);
 }
 
+/* ---------- DanceED: 4 Pillars (left) + What Makes Us Different Table (right) ---------- */
+.ff-pillars-diff-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 48px;
+  align-items: stretch;
+}
+.ff-pillars-diff-left {
+  display: flex;
+  flex-direction: column;
+}
+.ff-pillars-diff-left .sec-title-style1 {
+  padding-bottom: 24px;
+}
+.ff-pillars-diff-left .sec-title-style1 .big-title {
+  padding-top: 0;
+}
+.ff-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  flex: 1;
+}
+.ff-pillars-grid .ff-icon-card {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.ff-pillars-grid .ff-icon-card-icon--img,
+.ff-pillars-grid .ff-icon-card-icon--img img {
+  width: 56px;
+  height: 56px;
+}
+.ff-pillars-grid .ff-icon-card h3 {
+  font-size: 18px;
+  margin: 12px 0 6px;
+}
+.ff-pillars-grid .ff-icon-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ff-text);
+}
+.ff-pillars-diff-right {
+  display: flex;
+  flex-direction: column;
+}
+.ff-pillars-diff-layout .ff-diff {
+  max-width: 100%;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: var(--ff-shadow);
+}
+.ff-pillars-diff-layout .ff-diff dl {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.ff-pillars-diff-layout .ff-diff dl > div {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+}
+.ff-pillars-diff-layout .ff-diff dt,
+.ff-pillars-diff-layout .ff-diff dd {
+  padding: 16px 20px;
+  font-size: 15px;
+}
+.ff-pillars-diff-layout .ff-diff h3 {
+  padding: 18px 24px;
+  font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+  .ff-pillars-diff-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 575px) {
+  .ff-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- DanceED: Creative Policy Statement Section (No Image) ---------- */
+/* ---------- DanceED: Centered Editorial Policy Manifesto ---------- */
+.ff-policy-manifesto {
+  background: var(--ff-soft);
+}
+.ff-policy-manifesto-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+.ff-policy-lead {
+  font-size: var(--fs-lead);
+  line-height: 1.75;
+  color: var(--ff-text);
+  margin: 0 0 32px;
+}
+.ff-policy-pullquote {
+  font-family: var(--ff-serif, "Fraunces"), Georgia, serif;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.4;
+  color: var(--ff-ink);
+  font-style: italic;
+  font-weight: 500;
+  margin: 32px auto 0;
+  padding: 28px 0 0;
+  border-top: 1px solid var(--ff-line);
+  max-width: 680px;
+}
+.ff-policy-pullquote strong {
+  color: var(--ff-orange-deep);
+  font-weight: 600;
+}
+
 /* Big photo with an overlapping white card */
 .ff-overlap {
   position: relative;
@@ -3051,6 +3223,33 @@ body .title > h2 {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+}
+.ff-icon-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 100%;
+  gap: 20px;
+}
+.ff-icon-grid--4 .ff-icon-card {
+  padding: 30px 22px;
+}
+.ff-icon-grid--4 .ff-icon-card h3 {
+  font-size: 19px;
+  margin: 14px 0 8px;
+}
+.ff-icon-grid--4 .ff-icon-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+@media (max-width: 1024px) {
+  .ff-icon-grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+@media (max-width: 575px) {
+  .ff-icon-grid--4 {
+    grid-template-columns: 1fr;
+  }
 }
 @media (max-width: 767px) {
   .ff-icon-grid--2 {
@@ -3280,6 +3479,84 @@ body .title > h2 {
   font-size: var(--fs-lead);
   line-height: 1.7;
   color: var(--ff-text);
+}
+.ff-pathway-levels {
+  margin-top: 36px;
+  max-width: 460px;
+}
+.ff-pathway-levels-title {
+  font-family: var(--ff-serif, "Fraunces"), Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ff-ink);
+  margin: 0 0 16px;
+}
+.ff-pathway-levels-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ff-pathway-level-card {
+  background: #fff;
+  border: 1px solid var(--ff-line);
+  border-radius: var(--ff-radius);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.ff-pathway-level-card:hover {
+  transform: translateX(4px);
+  border-color: rgba(255, 107, 26, 0.3);
+}
+.ff-pathway-level-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.ff-pathway-level-range {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--ff-tint);
+  color: var(--ff-orange-deep);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.ff-pathway-level-step {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ff-muted);
+}
+.ff-pathway-level-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ff-ink);
+  margin: 2px 0 0;
+}
+.ff-pathway-level-card p {
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+  color: var(--ff-text) !important;
+  margin: 0 !important;
+}
+.ff-pathway-level-bars {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+.ff-pathway-level-bars i {
+  height: 3px;
+  flex: 1;
+  background: var(--ff-line);
+  border-radius: 2px;
+}
+.ff-pathway-level-bars i.on {
+  background: var(--ff-orange);
 }
 .ff-pathway-list {
   position: relative;
@@ -4587,7 +4864,10 @@ h6 {
 }
 .ff-ahero-proof .ff-ahero-role {
   margin-bottom: 36px;
-  font: 500 var(--fs-h2) / 1 var(--ff-serif), Georgia, serif;
+  font:
+    500 var(--fs-h2) / 1 var(--ff-serif),
+    Georgia,
+    serif;
   letter-spacing: -0.02em;
   color: var(--ff-ink);
 }
@@ -4626,7 +4906,10 @@ h6 {
   color: var(--ff-text);
 }
 .ff-ahero-count strong {
-  font: 500 30px/1 var(--ff-serif), Georgia, serif;
+  font:
+    500 30px/1 var(--ff-serif),
+    Georgia,
+    serif;
   color: var(--ff-ink);
 }
 .ff-ahero-proof .ff-ahero-sub {
@@ -4661,7 +4944,7 @@ h6 {
 .ff-cofounder img {
   display: block;
   width: 100%;
-  aspect-ratio: 5 / 4;
+  /* aspect-ratio: 5 / 4; */
   border-radius: var(--ff-radius);
   object-fit: cover;
   object-position: top;
@@ -4749,7 +5032,10 @@ h6 {
   background: var(--ff-soft);
 }
 .ff-fact strong {
-  font: 400 clamp(56px, 6vw, 96px) / 1 var(--ff-serif), Georgia, serif;
+  font:
+    400 clamp(56px, 6vw, 96px) / 1 var(--ff-serif),
+    Georgia,
+    serif;
   letter-spacing: -0.03em;
   color: var(--ff-orange-deep);
 }
@@ -4794,7 +5080,11 @@ h6 {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15) 45%, rgba(0, 0, 0, 0.7));
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.15) 45%,
+    rgba(0, 0, 0, 0.7)
+  );
 }
 .ff-fact--photo strong {
   font-size: clamp(40px, 4vw, 64px);
@@ -4812,6 +5102,9 @@ h6 {
   }
   .ff-fact {
     min-height: 220px;
+  }
+  .ff-facts-grid > .ff-fact:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
   .ff-fact--photo {
     grid-column: 1 / -1;
@@ -5165,11 +5458,34 @@ h6 {
   }
 }
 
+/* ---------- City Expansion Section (Standard Centered Section) ---------- */
+.ff-city-cta-section {
+  padding: 90px 0;
+  background: var(--ff-soft);
+  border-top: 1px solid var(--ff-line);
+  border-bottom: 1px solid var(--ff-line);
+}
+.ff-city-cta-section .sec-title-style1 {
+  padding-bottom: 32px;
+}
+.ff-city-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
 /* ---------- Footer: orange call-to-action band straddling the top edge of a light footer ---------- */
 .ff-foot {
-  margin-top: 190px;
+  margin-top: 0;
   border-top: 1px solid var(--ff-line);
   background: var(--ff-soft);
+}
+.ff-foot-cta-wrap {
+  padding-top: 90px;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 2;
 }
 .ff-foot-cta {
   position: relative;
@@ -5178,7 +5494,7 @@ h6 {
   align-items: center;
   gap: 40px;
   max-width: 1160px;
-  margin: -130px auto 0;
+  margin: 0 auto;
   padding: 0 56px;
   background: var(--ff-grad);
   color: #fff;
@@ -5319,6 +5635,10 @@ h6 {
   color: var(--ff-ink);
 }
 @media (max-width: 991px) {
+  .ff-foot-cta-wrap {
+    padding-top: 40px;
+    padding-bottom: 10px;
+  }
   .ff-foot-cta {
     grid-template-columns: 1fr;
     gap: 0;
@@ -5367,7 +5687,8 @@ h6 {
   object-position: center 30%;
   opacity: 0;
   /* starts 1s in, so the first photo is already fully visible on load */
-  animation: ff-hero-slide calc(var(--n) * var(--each)) linear calc(var(--i) * var(--each) - 1s) infinite;
+  animation: ff-hero-slide calc(var(--n) * var(--each)) linear
+    calc(var(--i) * var(--each) - 1s) infinite;
 }
 .ff-hero-slides img:first-child {
   opacity: 1;
@@ -5451,7 +5772,8 @@ main .ff-faq details p {
 .ff-wa,
 .ff-foot-social a,
 .scroll-top {
-  transition-property: transform, scale, box-shadow, background-color, border-color, color;
+  transition-property:
+    transform, scale, box-shadow, background-color, border-color, color;
   transition-duration: 0.2s;
   transition-timing-function: ease;
 }
@@ -5468,7 +5790,12 @@ main .ff-faq details p {
 }
 .ff-hero-full::before {
   background:
-    linear-gradient(0deg, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.5) 45%, rgba(10, 10, 10, 0.05) 80%),
+    linear-gradient(
+      0deg,
+      rgba(10, 10, 10, 0.9) 0%,
+      rgba(10, 10, 10, 0.5) 45%,
+      rgba(10, 10, 10, 0.05) 80%
+    ),
     linear-gradient(90deg, rgba(10, 10, 10, 0.55) 0%, transparent 55%);
 }
 

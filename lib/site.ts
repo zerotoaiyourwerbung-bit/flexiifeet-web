@@ -15,7 +15,8 @@ export const site = {
   founderInstagram: "https://www.instagram.com/aayushsklokre",
   youtube: "https://www.youtube.com/@theflexiifeet", // guessed from the Instagram handle, verify
   city: "Indore",
-  address: "Patrakar Square 5, near SBI, Joy Builder Colony, Saket Nagar, Indore, Madhya Pradesh 452018",
+  address:
+    "Patrakar Square 5, near SBI, Joy Builder Colony, Saket Nagar, Indore, Madhya Pradesh 452018",
 };
 
 // Information pages under /offerings (the root-level program URLs are the ad landing pages).
@@ -24,7 +25,7 @@ export const infoPages = [
     who: "For schools",
     title: "DanceED",
     href: "/offerings/dance-ed",
-    img: "/live/g3.webp",
+    img: "/live/kids-illustration.webp",
     text: "A structured, NEP 2020-aligned dance curriculum from Nursery to Class 12.",
   },
   // {
@@ -38,14 +39,14 @@ export const infoPages = [
     who: "Learn from anywhere",
     title: "Online Classes",
     href: "/offerings/online-classes",
-    img: "/live/g2.webp",
+    img: "/live/Online-dance-class.webp",
     text: "Live, interactive dance classes for kids, teens and adults.",
   },
   {
     who: "In Indore",
-    title: "Offline Classes",
+    title: "Regular In-Person Classes",
     href: "/offerings/regular-classes",
-    img: "/live/g4.webp",
+    img: "/live/Energetic Classroom Group Cheer.webp",
     text: "Studio classes in Indore with our lead choreographers.",
   },
   {
@@ -67,7 +68,7 @@ export const offerings: NavItem[] = [
   // { label: "Annual Days", href: "/offerings/annual-days" },
   { label: "Online Classes", href: "/offerings/online-classes" },
   {
-    label: "Offline Classes",
+    label: "Regular In-Person Classes",
     href: "/offerings/regular-classes",
   },
   { label: "Weddings & Shows", href: "/offerings/weddings-shows" },
@@ -222,25 +223,29 @@ export const paths = [
     // who: "For families",
     title: "Online Classes",
     href: "/offerings/online-classes",
-    img: "/live/g2.webp",
+    description: "Dance any time anywhere online",
+    img: "/live/Online-dance-class.webp",
   },
   {
-    title: "Offline Classes",
+    title: "Regular In-Person Classes",
     href: "/offerings/regular-classes",
-    img: "/live/g5.webp",
+    description: "Learn • Perform • Be a Star",
+    img: "/live/Energetic Classroom Group Cheer.webp",
   },
   {
     // who: "For educators",
     title: "DanceED",
     href: "/offerings/dance-ed",
-    img: "/live/g3.webp",
+    description: "Educating & Empowering young mind",
+    img: "/live/kids-illustration.webp",
   },
-  
+
   {
     // who: "For celebrations",
     title: "Weddings & Shows",
     href: "/offerings/weddings-shows",
-    img: "/live/g4.webp",
+    description: "Make every moment unforgettable",
+    img: "/live/w-sangeet.webp",
   },
 ];
 

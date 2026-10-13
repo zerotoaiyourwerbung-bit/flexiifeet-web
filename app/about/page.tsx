@@ -47,7 +47,7 @@ export default function About() {
       <section className="ff-ahero">
         <div className="container ff-ahero-grid">
           <div className="ff-ahero-intro">
-            <span className="ff-ahero-hello">Hello, we are</span>
+            {/* <span className="ff-ahero-hello">Hello, we are</span> */}
             <h1>
               The <span>FlexiiFeet</span>
             </h1>
@@ -62,9 +62,9 @@ export default function About() {
           </div>
 
           <div className="ff-ahero-proof">
-            <p className="ff-ahero-note">International choreography and Dance Education</p>
+            <p className="ff-ahero-note">A DECADE OF MOVEMENT & MILESTONES</p>
             <p className="ff-ahero-role">
-              Dance <span>Education</span>
+              Dance <span>Beyond Move</span>
             </p>
             <ul className="ff-ahero-faces">
               {["ayush", "ekta", "harshit", "prachi"].map((n) => (
@@ -86,8 +86,8 @@ export default function About() {
         <div className="container">
           <div className="ff-story-grid">
             <div className="ff-story-head">
-              <SecTitle kicker="About The FlexiiFeet" title="We believe every body has a story to tell and dance gives it a language." />
-              <img className="ff-story-photo" src="/live/ayush-stage.webp" alt="Ayush Lokre performing on stage" />
+              {/* <SecTitle kicker="About The FlexiiFeet" title="We believe every body has a story to tell and dance gives it a language." /> */}
+              <img className="ff-story-photo" src="/images/about/Joyful Kindergarten Mushroom Mural Class Photo.webp" alt="Ayush Lokre performing on stage" />
             </div>
             <div className="ff-story-body">
               <p>
@@ -185,29 +185,25 @@ export default function About() {
 
 
       {/* Who we are: photo collage + story + vision/mission cards */}
+      {/* Who we are: story + vision/mission cards (left) + photo collage (right) */}
       <section className="ff-section ff-who">
         <div className="container">
           <div className="ff-who-grid">
-            <div className="ff-who-media">
-              <img
-                className="ff-who-main"
-                src="/live/g1.webp"
-                alt="Ayush Lokre with fellow artists"
-                loading="lazy"
-              />
-              <img
-                className="ff-who-sub"
-                src="/live/mic.webp"
-                alt="The FlexiiFeet at an event"
-                loading="lazy"
-              />
-              <div className="ff-who-badge">
-                <strong>10+</strong>
-                <span>years in professional dance</span>
-              </div>
-            </div>
             <div>
-              <SecTitle kicker="Our Story" title="This is only the beginning." />
+              <SecTitle
+                kicker="Our Story"
+                title={
+                  <>
+                    Our{" "}
+                    <span
+                      className="ff-grad-text"
+                      style={{ color: "var(--ff-orange)" }}
+                    >
+                      Story
+                    </span>
+                  </>
+                }
+              />
               <p className="ff-who-lead">
                 What began with a passion for dance has grown into a vision to create something much bigger.
               </p>
@@ -241,24 +237,43 @@ export default function About() {
                 </div>
               </div>
             </div>
+
+            <div className="ff-who-media">
+              <img
+                className="ff-who-main"
+                src="/images/about/Neon FlexiiFeet Dance Showcase.webp"
+                alt="Ayush Lokre with fellow artists"
+                loading="lazy"
+              />
+              {/* <img
+                className="ff-who-sub"
+                src="/live/mic.webp"
+                alt="The FlexiiFeet at an event"
+                loading="lazy"
+              /> */}
+              <div className="ff-who-badge">
+                <strong>10+</strong>
+                <span>years in professional dance</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="ff-section ff-founders">
         <div className="container">
-          <SecTitle kicker="Founders" title="The people behind The FlexiiFeet." center />
+          <SecTitle kicker="Founders" title="Co-Founder " highlight="& Director" center />
           <div className="ff-cofounders">
             <article className="ff-cofounder">
-              <img src="/live/founder-ayush.webp" alt="Ayush Lokre" loading="lazy" />
+              <img src="/images/Founders/Aayush-lokre.webp" alt="Ayush Lokre" loading="lazy" />
               <div>
                 <h3>
                   Ayush Lokre <i>&mdash;</i>
-                  <span>Co-Founder</span>
+                  <span>CEO & Artistic Director</span>
                 </h3>
                 <p>
                   With over a decade of experience in dance, choreography, and dance education, Ayush Lokre is the
-                  Co-Founder of The FlexiiFeet, a platform built on the belief that dance should be experienced with
+                  CEO & Artistic Director of The FlexiiFeet, a platform built on the belief that dance should be experienced with
                   joy, expression, and purpose.
                 </p>
                 <p>
@@ -284,11 +299,11 @@ export default function About() {
               </div>
             </article>
             <article className="ff-cofounder">
-              <img src="/live/founder-animesh.webp" alt="Animesh Lunavat, co-founder of The FlexiiFeet" loading="lazy" />
+              <img src="/images/Founders/Animesh.webp" alt="Animesh Lunavat, co-founder of The FlexiiFeet" loading="lazy" />
               <div>
                 <h3>
                   Animesh Lunavat <i>&mdash;</i>
-                  <span>Co-Founder</span>
+                  <span>Co-Founder & COO</span>
                 </h3>
                 <p className="ff-cofounder-lead">Four decades of experience, now giving back through dance.</p>
                 <p>
@@ -324,13 +339,13 @@ export default function About() {
               kicker="As Seen On"
               title={
                 <>
-                  Some of the world&apos;s <span>grandest stages</span>
+                  Some of the world&apos;s <span>largest stages</span>
                 </>
               }
             />
             <p>
               From award nights to stadiums and state events, our choreographers
-              have performed and assisted on stages watched by millions.
+              have performed and assisted on stages while associated with SDIPA.
             </p>
           </div>
           <ul className="ff-stage-grid">
@@ -356,7 +371,7 @@ export default function About() {
         </div>
       </section>
 
-      
+
 
       {/* <WhatWeDo title={<>Three stages, one passion.</>} /> */}
       {/* Proof in numbers: bento of stat tiles with a tall photo tile */}
@@ -375,12 +390,7 @@ export default function About() {
                 <b>Students trained</b> across India and internationally.
               </p>
             </li>
-            <li className="ff-fact ff-fact--photo">
-              <img src="/live/mic.webp" alt="Ayush Lokre addressing students on stage with a microphone" loading="lazy" />
-              <strong>World stages</strong>
-              <p>IIFA, IPL, Dubai Expo, Ambani weddings &amp; more.</p>
-            </li>
-            <li className="ff-fact ff-fact--wide">
+            <li className="ff-fact">
               <strong>10+</strong>
               <p>
                 <b>Years of experience</b> in school programs, wedding choreography and high-profile events.
@@ -395,13 +405,7 @@ export default function About() {
         title="A Trusted Partner in Bringing Dance to Life"
         text="Whether you're looking to educate, entertain, or celebrate, our team delivers with passion and professionalism."
       /> */}
-      <GetInTouch
-        kicker="Start a conversation"
-        title="Tell us what you're planning."
-        intro="Schools, classes, weddings or shows, tell us what you have in mind and our team will get back to you. Prefer to talk? Reach us directly:"
-        formTitle="Send us an enquiry"
-        submitLabel="Send enquiry"
-      />
+      <GetInTouch />
     </>
   );
 }

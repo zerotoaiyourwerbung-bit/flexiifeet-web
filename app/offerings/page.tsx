@@ -66,14 +66,7 @@ export default function offerings() {
           <Faq />
         </div>
       </section>
-      <GetInTouch
-        kicker="Not sure where to start?"
-        title="Not sure which program fits?"
-        intro="Tell us a little about what you're looking for and we'll help you choose. Prefer to talk? Reach us directly:"
-        formTitle="Tell us what you're looking for"
-        formSubtitle="A few details are enough for us to suggest the right program."
-        submitLabel="Help me choose"
-      />
+      <GetInTouch />
     </>
   );
 }

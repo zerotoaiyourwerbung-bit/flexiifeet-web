@@ -20,14 +20,15 @@ export default function Home() {
         </div>
         <div className="container">
           <div className="ff-hero-full-copy">
-            <div className="kicker">The FlexiiFeet · Ayush Lokre</div>
+            <div className="kicker">The FlexiiFeet</div>
             <h1>
-              Your stage
-              <br /> <span>starts here</span>
+              Your Stage
+              <br /> <span>Starts Here</span>
             </h1>
+
             <p>
-              Dance education, classes and choreography for schools, families and celebrations, from the team that has
-              trained 10,000+ students across India and the USA.
+              <span className="">Discover the joy of Dance.</span> <br />
+              Dance classes, professional choreography and creative experiences for children, teens and adults. 10,000+ students trained across India and USA.
             </p>
             <div className="ff-cta-buttons" style={{ justifyContent: "flex-start" }}>
               <Link className="ff-btn ff-btn--grad" href="/offerings">
@@ -112,7 +113,7 @@ export default function Home() {
       {/* <Journey /> */}
 
       {/* index.html "about-style1-area": about The FlexiiFeet */}
-      <section className="about-style1-area secpd1">
+      {/* <section className="about-style1-area secpd1">
         <div className="container">
           <div className="row">
             <div className="col-xl-6 col-lg-12">
@@ -156,18 +157,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <Moments title="Across celebrated stages" /> */}
 
       {/* contact.html "contact-form-area": enquiry + FAQ */}
-      <GetInTouch
-        kicker="Start a conversation"
-        title="Tell us where you'd like dance to take you."
-        intro="Whether it's a school program, classes or a celebration, tell us what you have in mind and our team will get back to you. Prefer to talk? Reach us directly:"
-        formTitle="Send us an enquiry"
-        submitLabel="Send enquiry"
-      />
+      <GetInTouch />
     </>
   );
 }

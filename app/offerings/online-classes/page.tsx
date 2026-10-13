@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BatchTimings from "@/components/BatchTimings";
+import Marquee from "@/components/Marquee";
 import {
   ExplorePrograms,
   Faq,
@@ -9,6 +10,14 @@ import {
   SecTitle,
   PageBanner,
 } from "@/components/sections";
+
+const galleryMoments = [
+  ["school-kids.webp", "Ayush with young dancers in costume"],
+  ["moment-1.webp", "Ayush Lokre with Shiamak Davar"],
+  ["moment-2.webp", "Ayush Lokre with a Bollywood guest"],
+  ["moment-3.webp", "Ayush Lokre with an IIFA award"],
+  ["ayush-stage.webp", "Ayush Lokre on stage"],
+];
 
 export const metadata: Metadata = {
   title: "Online Dance Mania – Live Bollywood Dance Classes",
@@ -119,21 +128,21 @@ const terms = [
   { q: "1. No carry forward of classes", a: "All enrolled classes must be attended within the selected package period. Missed classes cannot be carried forward to the next month, session, or season." },
   { q: "2. Make-up classes", a: "Make-up classes are offered only if the class was cancelled by The FlexiiFeet due to an emergency on our side, OR the student missed a class and an alternate slot is available within the same week. They are only available within your chosen package duration, cannot be carried forward to the next season, must be joined at the timing shared by the instructor, and are subject to availability and not guaranteed." },
   { q: "3. No refund policy", a: "Once enrolled, fees are non-refundable and non-transferable under any circumstances." },
-  { q: "4. Trial class policy", a: "If you enroll after attending a trial class, the trial will be counted as your first regular class." },
-  { q: "5. Punctuality & discipline", a: "Students are expected to join classes on time and follow class instructions to maintain a positive and productive learning environment for everyone." },
-  { q: "6. Class structure", a: "Our online classes follow a structured syllabus focused on building technique, discipline, confidence, and joyful learning, not just choreography." },
+  // { q: "4. Trial class policy", a: "If you enroll after attending a trial class, the trial will be counted as your first regular class." },
+  { q: "4. Punctuality & discipline", a: "Students are expected to join classes on time and follow class instructions to maintain a positive and productive learning environment for everyone." },
+  { q: "5. Class structure", a: "Our online classes follow a structured syllabus focused on building technique, discipline, confidence, and joyful learning, not just choreography." },
 ];
 
 export default function OnlineClassesInfo() {
   return (
     <>
       <PageBanner
-        kicker="Live online · Bollywood · For the USA"
-        bg="/live/g2.webp"
+        kicker="Learn from the comfort of your living room"
+        bg="/live/Online-dance-class.webp"
         cta="Book a trial class"
         title={
           <>
-            Online Dance Mania with <em>Ayush Lokre</em>
+            Online Dance Mania with <em>FlexiiFeet</em>
           </>
         }
         sub="Live online Bollywood dance classes for kids, teens and adults, taught by professional instructors trained by Ayush Lokre, with master classes by Ayush himself."
@@ -149,12 +158,12 @@ export default function OnlineClassesInfo() {
         </div>
       </PageBanner>
 
-      <IconGrid kicker="How it works" title="Live classes, built like a studio" items={works} twoCol />
+      <IconGrid kicker="How it works" title="Live classes, built like a studio" items={works} fourCol />
 
       <OverlapFeature
         kicker="Your choreographer"
         title="Ayush Lokre, celebrity dance choreographer"
-        img="/live/ayush-online-dance.webp"
+        img="/live/ayush-hand-fold.webp"
         imgAlt="Ayush Lokre in a dance pose"
         cutout
         reverse
@@ -169,30 +178,27 @@ export default function OnlineClassesInfo() {
         </p>
       </OverlapFeature>
 
-      <IconGrid kicker="On his résumé" title="Stages Ayush has worked on" items={credits} alt />
+      {/* <IconGrid kicker="On his résumé" title="Stages Ayush has worked on" items={credits} alt /> */}
 
-      <section className="ff-section">
-        <div className="container">
-          <SecTitle kicker="Gallery" title="Moments from the classroom and the stage" center />
-          <div className="ff-bento">
-            {[
-              ["school-kids.webp", "Ayush with young dancers in costume"],
-              ["moment-1.webp", "Ayush Lokre with Shiamak Davar"],
-              ["moment-2.webp", "Ayush Lokre with a Bollywood guest"],
-              ["moment-3.webp", "Ayush Lokre with an IIFA award"],
-              ["ayush-stage.webp", "Ayush Lokre on stage"],
-            ].map(([f, alt]) => (
-              <img key={f} src={`/live/${f}`} alt={alt} loading="lazy" />
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section id="timings" className="ff-section">
         <div className="container">
-          <SecTitle kicker="Batch timing" title="Twice a week class (8 classes per month)" center />
+          <SecTitle kicker="Batch timing" title="Class Schedule" subheading="Twice a week class (8 sessions per month)" center />
           <BatchTimings zones={zones} />
         </div>
+      </section>
+
+      <section className="ff-section ff-moments">
+        <div className="container">
+          <SecTitle kicker="Gallery" title="Moments from the classroom and the stage" center />
+        </div>
+        <Marquee speed={40}>
+          {[...galleryMoments, ...galleryMoments].map(([f, alt], i) => (
+            <div key={`${f}-${i}`} className="ff-moment">
+              <img src={`/live/${f}`} alt={alt} loading="lazy" />
+            </div>
+          ))}
+        </Marquee>
       </section>
 
       <section className="ff-section alt">

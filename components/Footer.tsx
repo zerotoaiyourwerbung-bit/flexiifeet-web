@@ -7,28 +7,12 @@ export default function Footer() {
   return (
     <footer className="ff-foot">
       <div className="container">
-        <div className="ff-foot-cta">
-          <img src="/live/ayush-online-dance.webp" alt="" loading="lazy" />
-          <div>
-            <h2>Your stage starts here.</h2>
-            <p>Tell us what you have in mind and our team will get back to you.</p>
-            <div className="ff-foot-cta-actions">
-              <Link className="ff-btn ff-foot-btn" href="/contact#enquire">
-                Enquire now
-              </Link>
-              <a className="ff-btn ff-btn--outline" href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener">
-                Chat on WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-
         <div className="ff-foot-main">
           <div className="ff-foot-brand">
             <Link href="/">
               <img src="/live/logo-flexiifeet.jpg" alt="The FlexiiFeet" />
             </Link>
-            <p>Dance education, classes and choreography for every stage of life.</p>
+            {/* <p>Dance education, classes and choreography for every stage of life.</p> */}
             <ul className="ff-foot-social">
               <li>
                 <a href={site.instagram} target="_blank" rel="noopener" aria-label="Instagram">

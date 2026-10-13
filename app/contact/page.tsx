@@ -16,7 +16,7 @@ export default function Contact() {
         <div className="container ff-chero-grid">
           <div className="ff-chero-copy">
             <h1>Connect with us</h1>
-            <p>For DanceED, online classes, offline classes, and weddings &amp; shows.</p>
+            <p>For DanceED, online classes, regular in-person classes, and weddings &amp; shows.</p>
             <div className="ff-cta-buttons">
               <a className="ff-btn ff-btn--grad" href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener">
                 Chat on WhatsApp
@@ -27,7 +27,7 @@ export default function Contact() {
             </div>
           </div>
           <div id="enquire" className="ff-chero-form">
-            <LeadForm title="Send us an enquiry" subtitle="Tell us what you're planning." />
+            <LeadForm title="Tell Us What You Have in Mind" subtitle="Fill in your details below, and we'll be in touch soon." />
           </div>
           <img className="ff-chero-img" src="/live/hero-khokho.jpg" alt="The FlexiiFeet team at the Kho Kho World Cup India 2025" />
         </div>
